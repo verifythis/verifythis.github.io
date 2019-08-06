@@ -4,8 +4,6 @@ title: Long-term Challenge
 
 ## The PGP Key Server
 
-<i class="fas fa-user-friends"></i>
-
 This *VerifyThis Collaborative Large Scale Challenge* aims at proving that
 deductive program verification can produce relevant results for real systems
 with acceptable effort.
