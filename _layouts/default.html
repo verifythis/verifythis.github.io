@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <meta name="description" content="{{description}}">
+        <meta name="author" content="{{author}}">
+        <link rel="stylesheet" href="css/styles.css?v=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Sacramento&display=swap" rel="stylesheet">
+        <link href="assets/css/solid.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/regular.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+
+        <style>
+
+         h1 {
+             font-family: 'Permanent Marker', cursive;
+             padding:1em 3em 3em 3em;
+             text-align:center;
+             border: 1px solid black;
+             border-radius: 3em;
+
+             background: url(assets/shattered-island.gif);
+             color:white;
+             font-size:32pt;
+         }
+
+         h1 + h2  {
+             text-align:center;
+             margin-top: -5em;
+             color:white;
+             margin-bottom:5em;
+         }
+
+         body {
+             font-family: 'Roboto', sans-serif;
+
+             width:60em;
+             margin:auto;
+         }
+        </style>
+    </head>
+
+    <body>
+        <div class="header">
+            {{head}}
+        </div>
+        {{ content }}
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
