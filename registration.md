@@ -39,6 +39,20 @@ This is a looooong-term challenge. Therefore we would appreciate if you let us
 know how your endeavour goes along, for example writing a short news entry for
 this web page.
 
+## Contributing
+
+This section gives you a number of hints how you can contribute to the
+collaborative long-term verification challenge.
+
+**The time line** 
+This long term challenge will be open from mid August 2019 until end
+of February 2020. Results will be presented at the VerifyThis workshop
+at ETAPS 2020 in XXXX. A call for papers for a special issue is
+planned for that time.
+
+Of course, contribution to the challenge after this time is equally
+welcome and will also be published on the online resources.
+
 
 
 ## Currently registered groups
