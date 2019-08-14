@@ -113,7 +113,7 @@ analysed. Any participant should feel free to add to the long term challenge by
 contributing additional questions and possibly answers for them.
 
 {: .challenge}
-Identify relevant properties
+**Identify relevant properties.**
 Identify properties of the key server that are worth being formally
 analysed. Formalise the properties in a formalism of your choice and
 verify them using the tool of your choice.
@@ -133,7 +133,7 @@ further user input. For this foundational verification question, no formal
 (full) specification is required.
 
 {: .challenge}
-Safety
+**Safety.**
 Verify that the implementation of the key server does not exhibit undesired
 runtime effects (no runtime exceptions in Java, no undefined behaviour in C,
 ...)
@@ -151,7 +151,7 @@ must be made accessible for formal verification.
 We assume that every operation 
 
 {: .challenge}
-Functionality
+**Functionality.**
 Formalise the natural language specifications for the five core operations.
 Prove that the implementation of the operations satisfy your
 formalisation.
@@ -169,7 +169,7 @@ example of these are privacy properties. The long term challenge shall not be
 bound to stop at function properties, but can go beyond if tools support it:
 
 {: .challenge}
-Privacy
+**Privacy.**
 Specify and prove that the key server adheres to privacy
 principles. In particular: (a)~Only exact query match results are
 ever returned to the user issuing a query. (b)~Deleted information
@@ -185,7 +185,7 @@ centered around the actual implementation. One interesting property
 amongst the ones dealing with concurrency is
 
 {: .challenge}
-Thread safety
+**Thread safety.**
 Specify and verify that the implementation under consideration is
 free of data races.
 
@@ -194,11 +194,11 @@ Let us close this section by listing a few more challenges that might inspire
 you when thinking about the challenges that you will tackle with the system.
 
 {: .challenge}
-Termination
+**Termination.**
 Prove that any operation of the server terminates.
 
 {: .challenge}
-Randomness
+**Randomness.**
 Prove that any created confirmation code is
 1. randomly chosen (i.e. that every string from the range is equally likely),
 1. cannot easily be predicted,
