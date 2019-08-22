@@ -44,11 +44,10 @@ this web page.
 This section gives you a number of hints how you can contribute to the
 collaborative long-term verification challenge.
 
-**The time line** 
-This long term challenge will be open from mid August 2019 until end
-of February 2020. Results will be presented at the VerifyThis workshop
-at ETAPS 2020 in XXXX. A call for papers for a special issue is
-planned for that time.
+**The time line** This long term challenge will be open from mid August 2019
+until end of February 2020. Results will be presented at the VerifyThis workshop
+at ETAPS 2020 in April 2020. A call for papers for a special issue is planned
+for that time.
 
 Of course, contribution to the challenge after this time is equally
 welcome and will also be published on the online resources.
@@ -57,5 +56,21 @@ welcome and will also be published on the online resources.
 
 ## Currently registered groups
 
+### Name: SecC Team
 
+* *+Affiliation:** LMU Munich, University of Melbourne
+* **Contact:** Gidon Ernst gidon.ernst@lmu.de
+* **Participants:** Gidon Ernst gidon.ernst@lmu.de, Toby Murray toby.murray@unimelb.edu.au
+
+* Webpages:
+  - Group -- https://covern.org/secc/
+  - Repository -- https://github.com/gernst/verifythis2020
+
+* **Description:**
+
+  SecC is a verifier for low-level systems code written in C. SecC supports
+  expressive annotations for value-dependent security classifications to prove
+  information flow security.
+
+* **Collaboration:** We are looking for feedback and collaboration!
 
