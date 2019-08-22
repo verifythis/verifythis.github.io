@@ -58,7 +58,7 @@ welcome and will also be published on the online resources.
 
 ### Name: SecC Team
 
-* *+Affiliation:** LMU Munich, University of Melbourne
+* **Affiliation:** LMU Munich, University of Melbourne
 * **Contact:** Gidon Ernst gidon.ernst@lmu.de
 * **Participants:** Gidon Ernst gidon.ernst@lmu.de, Toby Murray toby.murray@unimelb.edu.au
 
