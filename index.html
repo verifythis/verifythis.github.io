@@ -20,6 +20,25 @@ use-site-title: true
  .grid .column:first-of-type {
      border-right:1px solid #ccc;
  }
+ 
+/* 	Responsive video iframe.
+	From: https://blog.theodo.com/2018/01/responsive-iframes-css-trick/
+ */
+ 
+ .resp-container {
+     position: relative;
+     overflow: hidden;
+     padding-top: 56.25%;
+ }
+ 
+ .resp-iframe {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     border: 0;
+ }
 </style>
 
 <div class="grid">
@@ -32,6 +51,11 @@ use-site-title: true
                 challenges are proposed that participants have to verify in 90
                 minutes each using their favourite program verification tool.
             </p>
+			<p>
+				<div class="resp-container">
+					<iframe class="resp-iframe" src="https://player.vimeo.com/video/357544904" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+				</div>
+			</p>
             <p>
                 We have experienced that the state of the art of program
                 verification allows the participants to specify and verify
@@ -49,7 +73,7 @@ use-site-title: true
                 This <strong>VerifyThis Collaborative Large Scale Challenge</strong>
                 aims at proving that deductive program verification can produce
                 relevant results for real systems with acceptable effort.
-            </p>
+            </p>           
             <p>
                 For this year, we selected <a href="https://gitlab.com/hagrid-keyserver/hagrid">HAGRID</a>,
                 a PGP-keyserver, for the challenge.
