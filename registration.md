@@ -13,11 +13,11 @@ for HAGRID or Key servers.
 ## Registration 
 
 If you want to participate on this VerifyThis challenge, we appreciate if you
-would register your group via the an [issues
+would register your group via an [issues
 request](https://github.com/verifythis/verifythis.github.io/issues/new?template=registration.md).
 We provide a template for this issues.
 
-Along with your registristration, we would appreciate if you give us some information: 
+Along with your registration, we would appreciate if you give us some information: 
 
 * The **name** and **affiliation** of the group and its participants. 
 * A **contact** (name and e-mail) to the groups speaker.
@@ -32,7 +32,7 @@ Along with your registristration, we would appreciate if you give us some inform
   think could be beneficial to your endeavor?
 
 {: .box-note}
-**Note** your data will published below. 
+**Note** your data will be published below. 
 
 {: .box-note}
 This is a looooong-term challenge. Therefore we would appreciate if you let us
