@@ -52,17 +52,22 @@ for that time.
 Of course, contribution to the challenge after this time is equally
 welcome and will also be published on the online resources.
 
+**Collaboration is central** This is why we encourage you yo subscribe to our
+[mailing list](https://www.lists.kit.edu/sympa/info/verifythis-ltc) (verifythis-ltc@lists.kit.edu).
+There, you can share your results, ask for help or suggest for collaborations 
+with the rest of the teams working on the challenge.
 
 
 ## Currently registered groups
 
+---
 ### Name: SecC Team
 
 * **Affiliation:** LMU Munich, University of Melbourne
 * **Contact:** Gidon Ernst gidon.ernst@lmu.de
 * **Participants:** Gidon Ernst gidon.ernst@lmu.de, Toby Murray toby.murray@unimelb.edu.au
 
-* Webpages:
+* **Webpages:**
   - Group -- https://covern.org/secc/
   - Repository -- https://github.com/gernst/verifythis2020
 
@@ -74,3 +79,23 @@ welcome and will also be published on the online resources.
 
 * **Collaboration:** We are looking for feedback and collaboration!
 
+---
+### Name: VerCors Team
+
+* **Affiliation:** FMT - University of Twente
+* **Contact:** Raul Monti r.e.monti@utwente.nl
+* **Participants:** Raul Monti, Marieke Huisman, Wytze Oortwijn, Sebastiaan Joosten, Sophie Lathouwers, Fauzia Ehsan, Mohsen Safari.
+
+* **Webpages:**
+  - Group -- https://utwente-fmt.github.io/vercors/
+  - Repository -- https://vcs.utwente.nl/source/vt_lt_2020/
+
+
+* **Description:**
+
+  We plan to use VerCors separation logic instruments to verify permission concerns on the Server, such as thread safety.
+  We also plan to model the server protocol using a model checker such as MCRL2 and then verify that the code follows such protocol by using actions and futures in VerCors.
+
+* **Collaboration:** 
+
+  It would be great to compare our protocol models with other models and discuss about their correctness. Maybe the differences in abstraction would enrich our analysis. Anyone working with futures or history can directly collaborate also and we can interchange opinions and results in this direction. Finally we will like to know if you can make use of our permission based analysis or if you have ideas in how to tackle this issues using other tools.
