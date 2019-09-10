@@ -199,10 +199,10 @@ Prove that any operation of the server terminates.
 
 {: .challenge}
 **Randomness.**
-Prove that any created confirmation code is
-1. randomly chosen (i.e. that every string from the range is equally likely),
-1. cannot easily be predicted,
-1. is never leaked, but as the return value of the issuing operation
+Prove that any created confirmation code is<br>
+ a. randomly chosen (i.e. that every string from the range is equally likely),<br>
+ b. cannot easily be predicted,<br>
+ c. is never leaked, but as the return value of the issuing operation.
 
 
 [^1] It is the default server used by the Thunderbird public-key engine
