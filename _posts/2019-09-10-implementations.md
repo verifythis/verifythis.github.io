@@ -6,7 +6,7 @@ comments: false
 author: weigl
 ---
 
-In the mean time, two different implementations was created of the key-server.
+In the meantime, two different implementations of the key-server were created.
 
 Gidon Ernst created a Scala version: 
 
