@@ -68,8 +68,8 @@ with the rest of the teams working on the challenge.
 * **Participants:** Gidon Ernst gidon.ernst@lmu.de, Toby Murray toby.murray@unimelb.edu.au
 
 * **Webpages:**
-  - Group -- https://covern.org/secc/
-  - Repository -- https://github.com/gernst/verifythis2020
+  - Group -- <https://covern.org/secc/>
+  - Repository -- <https://github.com/gernst/verifythis2020>
 
 * **Description:**
 
@@ -87,8 +87,8 @@ with the rest of the teams working on the challenge.
 * **Participants:** Raul Monti, Marieke Huisman, Wytze Oortwijn, Sebastiaan Joosten, Sophie Lathouwers, Fauzia Ehsan, Mohsen Safari.
 
 * **Webpages:**
-  - Group -- https://utwente-fmt.github.io/vercors/
-  - Repository -- https://vcs.utwente.nl/source/vt_lt_2020/
+  - Group -- <https://utwente-fmt.github.io/vercors/>
+  - Repository -- <https://vcs.utwente.nl/source/vt_lt_2020/>
 
 
 * **Description:**
@@ -115,7 +115,7 @@ with the rest of the teams working on the challenge.
                between [AdaCore](https://www.adacore.com/) and [Inria](http://toccata.lri.fr/index.fr.html)
 * Contact: Yannick Moy (`<lastname>`@adacore.com) and Claude Marché (`<firstname>.<lastname>`@inria.fr)
 * Participants: Claude Marché, Sylvain Dailler, Johannes Kanig, Claire Dross, Yannick Moy
-* Webpage(s): https://github.com/AdaCore/Lumos_Maxima
+* Webpage(s): <https://github.com/AdaCore/Lumos_Maxima>
 
 * Description: 
 
