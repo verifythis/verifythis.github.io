@@ -22,6 +22,8 @@ description: "Long-term Challenge"
 navbar-links:
   Challenge: "challenge/"
   Registration: "registration/"
+  Contributions: "contributions/"
+
 #  Resources:
 #    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
 #    - Learn markdown: "http://www.markdowntutorial.com/"
