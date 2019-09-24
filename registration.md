@@ -140,3 +140,31 @@ with the rest of the teams working on the challenge.
   goals, either with people willing to contribute to the project directly, or
   with people sharing the same overall goals with other languages and tools.
   
+
+---
+### Name: Stainless Team
+
+* Affiliation: LARA, EPFL
+* Contact: Viktor Kunčak (viktor.kuncak@epfl.ch)
+* Participants: Viktor Kunčak, Jad Hamza, Romain Ruetschi
+* ?ost-doctoral group
+* Webpage(s):
+  - [Group](https://lara.epfl.ch)
+  - [Stainless](https://stainless.epfl.ch)
+  - [Repository](https://github.com/epfl-lara/verifythis2020)
+
+* Description:
+
+  We plan to implement the key server in Scala, and verify the functional
+  correctness of the implementation as well as the absence of runtime errors
+  using Stainless, our verification tool for Scala programs. The resulting
+  artifact will be a sbt project which verifies using Stainless, compiles down
+  to JVM bytecode with the Scala compiler, and runs as a regular JVM
+  application.
+
+* Collaboration:
+
+  We are not looking for collaboration on this very challenge, but are in
+  general very eager to collaborate with motivated partners to apply Stainless
+  to more real-world projects.
+ 
