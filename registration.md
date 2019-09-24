@@ -68,8 +68,8 @@ with the rest of the teams working on the challenge.
 * **Participants:** Gidon Ernst gidon.ernst@lmu.de, Toby Murray toby.murray@unimelb.edu.au
 
 * **Webpages:**
-  - Group -- https://covern.org/secc/
-  - Repository -- https://github.com/gernst/verifythis2020
+  - Group -- <https://covern.org/secc/>
+  - Repository -- <https://github.com/gernst/verifythis2020>
 
 * **Description:**
 
@@ -87,15 +87,56 @@ with the rest of the teams working on the challenge.
 * **Participants:** Raul Monti, Marieke Huisman, Wytze Oortwijn, Sebastiaan Joosten, Sophie Lathouwers, Fauzia Ehsan, Mohsen Safari.
 
 * **Webpages:**
-  - Group -- https://utwente-fmt.github.io/vercors/
-  - Repository -- https://vcs.utwente.nl/source/vt_lt_2020/
+  - Group -- <https://utwente-fmt.github.io/vercors/>
+  - Repository -- <https://vcs.utwente.nl/source/vt_lt_2020/>
 
 
 * **Description:**
 
-  We plan to use VerCors separation logic instruments to verify permission concerns on the Server, such as thread safety.
-  We also plan to model the server protocol using a model checker such as MCRL2 and then verify that the code follows such protocol by using actions and futures in VerCors.
+  We plan to use VerCors separation logic instruments to verify permission
+  concerns on the Server, such as thread safety. We also plan to model the
+  server protocol using a model checker such as MCRL2 and then verify that the
+  code follows such protocol by using actions and futures in VerCors.
 
 * **Collaboration:** 
 
-  It would be great to compare our protocol models with other models and discuss about their correctness. Maybe the differences in abstraction would enrich our analysis. Anyone working with futures or history can directly collaborate also and we can interchange opinions and results in this direction. Finally we will like to know if you can make use of our permission based analysis or if you have ideas in how to tackle this issues using other tools.
+  It would be great to compare our protocol models with other models and discuss
+  about their correctness. Maybe the differences in abstraction would enrich our
+  analysis. Anyone working with futures or history can directly collaborate also
+  and we can interchange opinions and results in this direction. Finally we will
+  like to know if you can make use of our permission based analysis or if you
+  have ideas in how to tackle this issues using other tools.
+
+
+---
+### Name: Lumos Maxima
+
+* Affiliation: [ProofInUse joint lab](https://why3.gitlabpages.inria.fr/proofinuse/) 
+               between [AdaCore](https://www.adacore.com/) and [Inria](http://toccata.lri.fr/index.fr.html)
+* Contact: Yannick Moy (`<lastname>`@adacore.com) and Claude Marché (`<firstname>.<lastname>`@inria.fr)
+* Participants: Claude Marché, Sylvain Dailler, Johannes Kanig, Claire Dross, Yannick Moy
+* Webpage(s): <https://github.com/AdaCore/Lumos_Maxima>
+
+* Description: 
+
+    Our objective is to redevelop HAGRID in
+    [SPARK](https://github.com/AdaCore/spark2014/), a subset of the Ada
+    programming language targeted at formal verification, and to prove the
+    following properties about the code:
+    
+    - absence of runtime errors
+    - correct data and information flows
+    - functional correctness
+    - security (privacy?) properties that can be encoded in data/control
+      contracts
+
+    We also plan to evaluate the efficiency of the executable code to compare it
+    with the original implementation in Rust, and to demonstrate its usability
+    on a variety of hardware platforms.
+
+* Collaboration:
+ 
+  We are interested in collaborating on the best approach to achieve the above
+  goals, either with people willing to contribute to the project directly, or
+  with people sharing the same overall goals with other languages and tools.
+  
