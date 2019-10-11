@@ -147,7 +147,7 @@ with the rest of the teams working on the challenge.
 * Affiliation: LARA, EPFL
 * Contact: Viktor Kunčak (viktor.kuncak@epfl.ch)
 * Participants: Viktor Kunčak, Jad Hamza, Romain Ruetschi
-* ?ost-doctoral group
+* post-doctoral group
 * Webpage(s):
   - [Group](https://lara.epfl.ch)
   - [Stainless](https://stainless.epfl.ch)
@@ -167,4 +167,57 @@ with the rest of the teams working on the challenge.
   We are not looking for collaboration on this very challenge, but are in
   general very eager to collaborate with motivated partners to apply Stainless
   to more real-world projects.
+ 
+---
+### Name: KeY Team
+
+* Affiliation: KIT, CWI
+* Contact: Mattias Ulbrich (ulbrich@kit.edu)
+* Participants: [Stijn de Gouw](https://www.cwi.nl/people/stijn-de-gouw),
+[Mattias Ulbrich](https://formal.iti.kit.edu/~ulbrich), 
+[Alexander Weigl](https://formal.iti.kit.edu/~weigl)
+* (post-)doctoral group
+* Webpage(s):
+  - [KeY-Project](https://key-project.org)
+  - [Repository](https://github.com/KeYProject/verifythis-lts20)
+
+* Description:
+
+  Our goal is the KeY-verified verifying key server! For this, we use use KeY to
+  verify functional JML-specification of the key server.
+  
+  Beside of functional properties, we are interrested into apply the relational
+  reasoning within this challenge. For example KeY has support for information
+  flow properties.
+  
+  KeY is an interactive deductive verification tool for the Java source level.
+
+
+* Collaboration:
+
+  The calculus behind of KeY is sound and complete with the price of
+  a labor-intensive verification. We are looking for teams which are also using
+  a Java implementation and JML as specification for cooperation with the goal,
+  that correctness results of KeY and the other tool could be combined.
+
+
+--- 
+### Name: SMACK Team
+
+* Affiliation: University of Utah
+* Contact: Zvonimir Rakamaric `zvonimir@cs.utah.edu` 
+* Participants: TBD
+* Webpage(s): [http://smackers.github.io/](http://smackers.github.io/)
+
+* Description: 
+  
+  Our plan is to try to apply our SMACK software verifier on the
+  target application. SMACK works at the level of LLVM IR, and hence there are
+  interesting challenges in terms of handling LLVM IR produced by the Rust
+  compiler. We also expect that modeling the environment will be challenging as
+  well. Unlike other tools, SMACK is a bounded verifier in its default mode.
+
+* Collaboration: 
+
+  We are eager to collaborate on formalizing the specs and environment for the server.
  
