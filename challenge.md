@@ -13,7 +13,7 @@ allows the participants to specify and verify impressively complex
 algorithms in this short a time span. If such sophisticated, realistic
 but not real, problems can be solved in real-time, what would be
 achievable if (a)~we as the program verification community
-collaborated and (b)~the time constraints were removed?
+collaborated and (b) the time constraints were removed?
 
 The *VerifyThis Collaborative Long Term Challenge* aims at proving that
 deductive program verification can produce relevant results for real systems
@@ -171,8 +171,8 @@ bound to stop at function properties, but can go beyond if tools support it:
 {: .challenge}
 **Privacy.**
 Specify and prove that the key server adheres to privacy
-principles. In particular: (a)~Only exact query match results are
-ever returned to the user issuing a query. (b)~Deleted information
+principles. In particular: (a) Only exact query match results are
+ever returned to the user issuing a query. (b) Deleted information
 cannot be retrieved anymore from the server.
 
 One example of such a property is that if an e-mail address has been
