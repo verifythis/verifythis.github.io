@@ -1,15 +1,16 @@
-<center markdown="0">
-Call for Presentations
+# Call for Presentations
 
-VerifyThis Long-Term Challenge 2020
-- Concluding Event -
+{:.header}
+**VerifyThis Long-Term Challenge 2020**<br>
+**- Concluding Event -**
 
-co-located with ETAPS and VerifyThis 
-25th and 26th April 2020, Dublin, Ireland
-http://verifythis.github.com/
+{:.header}
+co-located with ETAPS and VerifyThis <br>
+25th and 26th April 2020, Dublin, Ireland<br>
+http://verifythis.github.com/<br>
 
-Deadline: 1st March 2020
-</center>
+{:.header}
+Deadline: 1st March 2020<br>
 
 ## Introduction
 
