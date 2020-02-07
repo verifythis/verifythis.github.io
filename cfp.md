@@ -1,14 +1,14 @@
 <center>
 Call for Presentations
 
-                     VerifyThis Long-Term Challenge 2020
-                            - Concluding Event -
+VerifyThis Long-Term Challenge 2020
+- Concluding Event -
 
-                    co-located with ETAPS and VerifyThis 
-                  25th and 26th April 2020, Dublin, Ireland
-                        http://verifythis.github.com/
-                                        
-                          Deadline: 1st March 2020
+co-located with ETAPS and VerifyThis 
+25th and 26th April 2020, Dublin, Ireland
+http://verifythis.github.com/
+
+Deadline: 1st March 2020
 </center>
 
 ## Introduction
@@ -60,15 +60,14 @@ discussed on-site.
 
 ## Important dates
 
-Submission deadline: 1st March 2020
-Notifications: 15th March 2020
-Workshop: 25-26th April 2020
+* Submission deadline: 1st March 2020
+* Notifications: 15th March 2020
+* Workshop: 25-26th April 2020
 
 ## Program Chairs and Organizers
 
-Marieke Huisman                 Raul E. Monti
-Mattias Ulbrich                 Alexander Weigl
+Marieke Huisman, Raul E. Monti, Mattias Ulbrich, Alexander Weigl
 
 
-[1] https://www.pm.inf.ethz.ch/research/verifythis.html
-[2] https://sequoia-pgp.org/blog/2019/06/14/20190614-hagrid/
+[^1] https://www.pm.inf.ethz.ch/research/verifythis.html
+[^2] https://sequoia-pgp.org/blog/2019/06/14/20190614-hagrid/
