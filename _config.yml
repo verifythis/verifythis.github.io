@@ -20,7 +20,7 @@ description: "Long-term Challenge"
 
 # List of links in the navigation bar
 navbar-links:
-  "Call for participation": "cfp/"
+  "Call for Presentation": "cfp/"
   Challenge: "challenge/"
   Registration: "registration/"
   Contributions: "contributions/"
