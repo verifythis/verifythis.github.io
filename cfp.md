@@ -1,4 +1,3 @@
-# Call for Presentations
 
 {:.header}
 **VerifyThis Long-Term Challenge 2020**<br>
