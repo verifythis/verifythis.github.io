@@ -1,4 +1,4 @@
-<center>
+<center markdown="0">
 Call for Presentations
 
 VerifyThis Long-Term Challenge 2020
@@ -13,20 +13,25 @@ Deadline: 1st March 2020
 
 ## Introduction
 
-The VerifyThis  Long-Term Challenge complements the  on-site format of
-the  VerifyThis competition  with a  verification challenge,  in which
-teams contribute to  the verification of a  practically relevant piece
-of software over  a period of six  months. The challenge aims  to be a
-showcase  that deductive  program  verification  can produce  relevant
-results for  real systems with  acceptable effort. The  challenge 2020
-started in  September 2019, and  ends February 2020.  To  conclude the
-challenge, we will  have a final workshop session at  ETAPS along with
-the VerifyThis program verification competition [1].
+The VerifyThis Long-Term Challenge complements the on-site format of the
+VerifyThis competition with a verification challenge, in which teams contribute
+to the verification of a practically relevant piece of software over a period of
+six months. The challenge aims to be a showcase that deductive program
+verification can produce relevant results for real systems with acceptable
+effort. The challenge 2020 started in September 2019, and ends February 2020. To
+conclude the challenge, we will have a final workshop session at ETAPS along
+with the [VerifyThis program verification
+competition](https://www.pm.inf.ethz.ch/research/verifythis.html).
 
-For 2020, the  challenge system is the new, implementation  of the PGP
-server infrastructure,  called HAGRID [2]. The  old implementation did
-not  conform to  GDPR  and  was known  to  be  vulnerable against  DoS
-attacks.
+
+
+
+
+For 2020, the challenge system is the new, implementation of the PGP server
+infrastructure, called
+[HAGRID](https://sequoia-pgp.org/blog/2019/06/14/20190614-hagrid/). The old
+implementation did not conform to GDPR and was known to be vulnerable against
+DoS attacks.
 
 We invite  you to  present your  results on  the verification  of this
 security-relevant  challenge system  during a  special session  of the
@@ -66,8 +71,9 @@ discussed on-site.
 
 ## Program Chairs and Organizers
 
-Marieke Huisman, Raul E. Monti, Mattias Ulbrich, Alexander Weigl
+[Mareike Huisman](https://wwwhome.ewi.utwente.nl/~marieke/#contact), [Raul E.
+Monti](https://people.utwente.nl/r.e.monti), [Mattias
+Ulbrich](https://formal.iti.kit.edu/~ulbrich), [Alexander
+Weigl](https://formal.iti.kit.edu/~weigl)
 
 
-[^1] https://www.pm.inf.ethz.ch/research/verifythis.html
-[^2] https://sequoia-pgp.org/blog/2019/06/14/20190614-hagrid/
