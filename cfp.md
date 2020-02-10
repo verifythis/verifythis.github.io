@@ -6,7 +6,7 @@
 {:.header}
 co-located with ETAPS and VerifyThis <br>
 25th and 26th April 2020, Dublin, Ireland<br>
-http://verifythis.github.com/<br>
+<http://verifythis.github.io/><br>
 
 {:.header}
 Deadline: 1st March 2020<br>
@@ -53,7 +53,7 @@ It should discuss ...
   
 ## Submission Link
 
-https://easychair.org/conferences/?conf=vtltc2020
+<https://easychair.org/conferences/?conf=vtltc2020>
 
 ## Proceedings
 
@@ -73,7 +73,7 @@ discussed on-site.
 
 [Mareike Huisman](https://wwwhome.ewi.utwente.nl/~marieke/#contact), [Raul E.
 Monti](https://people.utwente.nl/r.e.monti), [Mattias
-Ulbrich](https://formal.iti.kit.edu/~ulbrich), [Alexander
+Ulbrich](https://formal.iti.kit.edu/~ulbrich), and [Alexander
 Weigl](https://formal.iti.kit.edu/~weigl)
 
 
