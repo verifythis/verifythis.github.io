@@ -9,7 +9,7 @@ co-located with ETAPS and VerifyThis <br>
 <http://verifythis.github.io/><br>
 
 {:.header}
-Deadline: 1st March 2020<br>
+Deadline: ~~1st March 2020~~ 8th March 2020<br>
 
 ## Introduction
 
@@ -65,7 +65,7 @@ discussed on-site.
 
 ## Important dates
 
-* Submission deadline: 1st March 2020
+* Submission deadline: ~~1st March 2020~~ 8th March 2020
 * Notifications: 15th March 2020
 * Workshop: 25-26th April 2020
 
