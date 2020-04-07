@@ -8,7 +8,7 @@ author: weigl
 
 ## Online Result and Exchange Event
 
-**27th April 2020, [11:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20200427T12&p1=964&ah=3)**
+**27th April 2020, [10:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=2020-04-27T10:00:00)**
 
 [Information for participating are below.](#participating)
 
