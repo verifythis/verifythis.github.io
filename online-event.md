@@ -8,7 +8,7 @@ author: weigl
 
 ## Online Result and Exchange Event
 
-**27th April 2020, 11:00 UTC?**
+**27th April 2020, [11:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20200427T12&p1=964&ah=3)**
 
 [Information for participating are below.](#participating)
 
@@ -24,31 +24,19 @@ one another and how further verification success can be stipulated.
 
 ### Agenda
 
-* **x o'clock** Greetings and Introduction of the VT-LTC
-* **x+15min o'clock** An  Approach
-	* [Abstract](abstracts/approach.pdf)
-	* Resources:
-		1. Keyserver.java 
-		2. Map.java
-		3. Spezifikation
-	* Bibliograph
-		* here you add references
-* **x+15 min + 30 min o'clock** A Different Approach
-		* 
-* **x+75 min o'clock** A Completely Different Approach
-		* 
-		*
+**Agenda follows on April, 20th**
+
 ### Who can join the meeting? 
 
-Everybody  who  is  interested   about  the  challenge,  the  proposed
-solutions and VerifyThis is cordially to join the meeting!
+Everybody  who  is  interested   about  the  challenge, formal verification,  
+the  proposed solutions and VerifyThis is cordially to join the meeting!
 
 ### How can I join the meeting?
 
-https://zoom.....
-
-You need to install a client on your desktop to participate. Follow the link.
-
+We are currently evaluating web conferences and web cast technologies. 
+We try to provide detail information how to join before the April, 20th. 
+Please stay tuned, as you might need to register yourself for the web conference 
+in our defence of spammers.
 
 ### Meetings rules
 
