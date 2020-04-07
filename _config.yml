@@ -19,7 +19,8 @@ description: "Long-term Challenge"
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
-navbar-links:
+navbar-links:  
+  "Online Event": "online-event/"
   "Call for Presentation": "cfp/"
   Challenge: "challenge/"
   Registration: "registration/"
