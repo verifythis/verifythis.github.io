@@ -1,0 +1,189 @@
+---
+layout: landing
+title: VerifyThis 2020
+subtitle: Collaborative Long-term Verification Challenge
+---
+
+<center>
+<h1>Online Result and Exchange Event</h1>
+
+<p><strong>27th April 2020, <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&amp;iso=2020-04-27T10:00:00">10:00 UTC</a></strong></p>
+
+<p><a href="#participating">Information for participating are below.</a></p>
+
+</center>
+
+<p>A final workshop  session for the challenge had been  planned at ETAPS
+(along  with the  <a href="https://www.pm.inf.ethz.ch/research/verifythis.html">VerifyThis  program  verification competition</a>).
+Since ETAPS has been postponed, we will meet and exchange online. We have
+received several submissions that each contribute a solution to different
+aspects of the challenge using different abstractions, different assumptions and
+different verification techniques. During this online meeting, the different
+solutions will be briefly explained, and we discuss the approaches, how they can
+benefit from one another and how further verification success can be stipulated.</p>
+
+<h3>Agenda</h3>
+
+<p>Selected timezone: <select id="tz"></select></p>
+
+<script src="/moment.min.js"></script>
+<script src="/moment.js"></script>
+
+<dl>
+    <dt><time value="2020-04-27 10:00 GMT+0000"></time></dt>
+    <dd>
+        Greeting and Introduction to the VerifyThis Longterm Challenge 2020
+        <b>by the organizers</b>
+    </dd>
+    <dt>
+        <time value="2020-04-27 10:20 GMT+0000"></time>
+    </dt>
+    <dd>
+        <strong>Claire Dross, Johannes Kanig, and Yannick Moy</strong><br>
+        A Solution to the Long-Term Challenge in SPARK
+        <ul>
+            <li><a href="abstracts/VTLTC_2020_paper_1.pdf">Abstract</a></li>
+            <li>Resources: tba </li>
+        </ul>
+    </dd>
+    <dt>
+        <time value="2020-04-27 10:50 GMT+0000"></time>
+    </dt>
+    <dd>
+        <strong>Diego Diverio, Cláudio Lourenço and Claude Marché</strong><br>
+        "You-Know-Why": an Early-Stage Prototype of a Key Server Developed using Why3
+        <ul>
+            <li><a href="abstracts/VTLTC_2020_paper_2.pdf">Abstract</a></li>
+            <li>Resources: tba </li>
+        </ul>
+    </dd>
+
+    <dt>
+        <time value="2020-04-27 11:20 GMT+0000"></time>
+    </dt>
+    <dd>Break (10 minutes).</dd>
+
+    <dt>
+        <time value="2020-04-27 11:30 GMT+0000"></time>
+    </dt>
+    <dd>
+        <strong>Stijn de Gouw, Mattias Ulbrich and Alexander Weigl</strong><br/>
+        The KeY Approach on Hagrid
+
+        <ul>
+            <li><a href="abstracts/VTLTC_2020_paper_3.pdf">Abstract</a></li>
+            <li>Resources:
+                <ul>
+                    <li><a href="https://github.com/KeYProject/verifythis-ltc-2020/blob/master/simplified/Keyserver.java">Keyserver</a>
+                        -- A simplified version of the Keyserver using only primitive datatypes
+                        and arrays.</li>
+                    <li>This approach was extended into version that uses a simple map
+                        implementation. This solution is split into multiple parts:</li>
+                    <li>The Keyserver has an interface <a href="https://github.com/KeYProject/verifythis-ltc-2020/blob/master/imap/KeyServer.java">KeyServer.java</a>
+                        and implementation <a href="https://github.com/KeYProject/verifythis-ltc-2020/blob/master/imap/KeyServerImpl.java">KeyServerImpl.java</a>.</li>
+                    <li>It uses a map between integers, also with an interface <a href="https://github.com/KeYProject/verifythis-ltc-2020/blob/master/imap/KIMap.java">KIMap.java</a>,
+                        and implementation <a href="https://github.com/KeYProject/verifythis-ltc-2020/blob/master/imap/KIMapImpl.java">KIMapImpl.java</a>.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </dd>
+
+    <dt>
+        <time value="2020-04-27 12:00 GMT+0000"></time>
+    </dt>
+    <dd>
+        <strong>Gidon Ernst and Lukas Rieger</strong><br>
+        Information Flow Testing of a PGP Keyserver
+        <ul>
+            <li><a href="abstracts/VTLTC_2020_paper_4.pdf">Abstract</a></li>
+            <li>Resources: tba</li>
+        </ul>
+    </dd>
+    <dt>
+        <time value="2020-04-27 12:30 GMT+0000"></time>
+    </dt>
+    <dd>
+        <strong>Gidon Ernst, Toby Murray and Mukesh Tiwari</strong><br>
+        Verifying the Security of a PGP Keyserver
+
+        <ul>
+            <li><a href="abstracts/VTLTC_2020_paper_5.pdf">Abstract</a></li>
+            <li>Resources: tba</li>
+        </ul>
+
+    </dd>
+    <dt>
+        <time value="2020-04-27 13:00 GMT+0000"></time>
+    </dt>
+    <dd>
+        Final discussion and feedback to the challenge.
+    </dd>
+
+    <dt>
+        <time value="2020-04-27 13:30 GMT+0000"></time>
+    </dt>
+    <dd>
+        Closing
+    </dd>
+</dl>
+
+
+<script>
+
+ let select = document.getElementById('tz');
+ let usertz = moment.tz.guess();
+
+ moment.tz.names().forEach( n => {
+     var opt = document.createElement('option');
+     opt.appendChild( document.createTextNode(n));
+     //opt.value = 'option value';
+     // add opt to end of select box (sel)
+     if(n==usertz) opt.selected=true;
+     select.appendChild(opt);
+ });
+
+ function updateTimes() {
+     var tz = document.getElementById('tz').value;
+     document.querySelectorAll('time').forEach((element) => {
+         let valueUTC = moment.utc(element.getAttribute('value'));
+         console.log(valueUTC);
+         element.innerHTML = valueUTC.tz(tz).format("HH:mm")
+         //moment().format("dddd, MMMM Do YYYY, h:mm:ss a"); // "Sunday, February 14th 2010, 3:25:50 pm"
+     });
+ }
+
+ select.addEventListener('change', updateTimes);
+ updateTimes();
+</script>
+
+<style> dd {padding-left:1cm;} </style>
+
+
+<h3>Who can join the meeting?</h3>
+
+<p>Everybody who is interested about the challenge, formal verification, the  proposed solutions and VerifyThis is cordially to join the meeting!</p>
+
+<h3 id="participating">How can I join the meeting?</h3>
+
+<p>We are currently evaluating web conferences and web cast technologies. We try to provide detail
+    information how to join before the April, 20th.</p>
+
+<p>
+    In protection against spammers, we require a short registration beforehand.  The login credentials will
+    be sent via your provided email address.  Please register yourself via our
+    <a href="https://forms.gle/ujCR1vFebCZ5Jn1m8">Google Form</a>
+    or with a email to <code>weigl at kit dot edu</code>.
+</p>
+
+<h3>Meetings rules</h3>
+
+<p>
+    Please respect the following simple meeting rules to have a productive meeting:
+    <ul>
+        <li>dial in 5 minutes in advance</li>
+        <li>mute when not speaking (avoid noise)</li>
+        <!-- * turn off video to save bandwidth, turn on video when you want to speak -->
+        <li>use a headset if possible (avoid reverberation)</li>
+    </ul>
+</p>
