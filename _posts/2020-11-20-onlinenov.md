@@ -24,7 +24,7 @@ originally planned for the seminar to have a discussion on the
 features that an ideal specification language would possess. We will
 use the recent Verify This Long Term Challenge as a show case.
 
-:bangbang: Friday, 27th November 2020 10:00 - 12:00 UTC
+**Friday, 27th November 2020 10:00 - 12:00 UTC**
 
 [Click here for more details.](https://verifythis.github.io/online-event-nov/)
  
