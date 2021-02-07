@@ -22,9 +22,9 @@ description: "Long-term Challenge"
 navbar-links:  
   "Next Event": "online-event-feb/"
   "Events":
-    "Discussion Event (Feb'21)": "online-event-feb/"
-    "Discussion Event (Nov'20)": "online-event-nov/"
-    "Online Event": "online-event/"
+    - "Discussion Event (Feb'21)": "online-event-feb/"
+    - "Discussion Event (Nov'20)": "online-event-nov/"
+    - "Online Event": "online-event/"
   "Call for Presentation": "cfp/"
   Challenge: "challenge/"
   Registration: "registration/"
