@@ -127,8 +127,8 @@ img {
   color: {{ site.navbar-text-col }};
 }
 
-.navlinks-children {
-  color: black;
+.navlinks-children a {
+  color: black !important;
 }
 
 .navbar-custom .navbar-brand:hover,
