@@ -127,6 +127,10 @@ img {
   color: {{ site.navbar-text-col }};
 }
 
+.navlinks-children {
+  color: black;
+}
+
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus ,
 .navbar-custom .nav li a:hover,
