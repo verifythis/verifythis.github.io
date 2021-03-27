@@ -19,9 +19,10 @@ description: "Long-term Challenge"
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
-navbar-links:  
-  "Next Event": "online-event-feb/"
+navbar-links:
+  "Next Event": "online-event-mai/"
   "Events":
+    - "Discussion Event (Mai'21)": "online-event-mai/"
     - "Discussion Event (Feb'21)": "online-event-feb/"
     - "Discussion Event (Nov'20)": "online-event-nov/"
     - "Online Event": "online-event/"
