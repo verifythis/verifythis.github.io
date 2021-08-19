@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Next Meeting: 29 September 2021
+title: "Next Meeting: 29 September 2021"
 tags: [general,corona]
 comments: false
 author: weigl
