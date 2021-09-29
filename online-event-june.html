@@ -80,4 +80,135 @@ subtitle: Collaborative Long-term Verification Challenge
 
 <h2>Minutes of the Meeting: Contracts Discussion</h2>
 
-tda.
+<p><emph>VerifyThis discussion June 23, 2021<br>Marieke Huisman, Raúl
+    Monti, Mattias Ulbrich, Alexander Weigl</emph></p>
+
+<p>
+  The discussion starts with a presentation by Christian Lidström
+  about different formalisms to specify automata-like properties (slides
+  attached).
+</p>
+
+<p>
+  The presentation contains the following formalisms: - Finite state
+  machines describe finite traces of events. Such FSMs can be described
+  in different formats, e.g. NuSMV style models). - Regular
+  expressions - Context-free grammars - Interval temporal logic, which
+  is typically used to described sequences of states, rather than
+  events. - TimedCSP: one important take-away is that we even forget to
+  think about time. With explanation by Paula Herber: can be used to
+  describe external behaviour, by abstracting away from the internal
+  details. The specification formalisms also allows to distinguish
+  between external and internal choice. - Model-based specifications in
+  VerCors (with brief explanation by Wytse Oortwijn)
+</p>
+
+<p>
+  Afterwards, we discuss what this tells us about specifications.
+</p>
+
+<p>
+  In particular, considering the CSP-like specifications, how does
+  this come together with classical deductive verification approaches
+  (design by contract, program verification). Could the CSP-actions
+  correspond to methods?
+</p>
+
+<p>
+  Combining the two is very challenging: it is possible to show that
+  certain actions or methods are called in a specific order, but
+  incorporating reasoning about the internal state is difficult (but
+  desirable). The VerCors approach with process algebras is an attempt
+  to do this, but the difference is that it works more at an internal
+  level, while the CSP-style of specifications is more external.
+</p>
+
+<p>
+  What we would need is some way to specify state changes in an
+  abstract way. Often we wish to talk about events that happen, and
+  about state dependencies and updates in a mixed way, and we would need
+  a single logic that supports both.
+</p>
+
+<p>
+  Daniel Grahl did something in this direction with adding temporal
+  logic specifications to KeY (see his PhD thesis).
+</p>
+
+<p>
+  Another typical use case where this would be welcome would be
+  protocol specifications (both sequential and concurrent).
+</p>
+
+<p>
+  Also TLA (+) is mentioned as a maybe suitable all-in-one
+  specification language, but it also has limitations, because it does
+  not allow to describe how programs are connected to actions. We
+  could maybe use deductive verification to see how the program
+  changes the state (a bit a la what is done in VerCors), and then
+  derive the TLA+ specifications. This could be an extension to the
+  VerCors approach, which would make it less specific to the VerCors
+  style of specifications.
+</p>
+
+<p>
+  TLA* is mentioned. This is an extension of TLA+ that allows one to
+  say that an action has been taken. It could be worth looking more into
+  this.
+</p>
+
+<p>
+  We continue the discussion about the other formalisms that Christian
+  mentioned. Some are just subsets of more complex ones. The advantage
+  of using them would be that they might be easier to automate (because
+  less expressive), and might be easier to use.
+</p>
+
+<p>
+  It might be interesting to think about such specifications as
+  interface-level specifications. They describe possible orders of
+  calls, the user has to check for protocol adherence. Thus, the
+  combination may enable a separation of concerns: The automata-based
+  specification describes the order of events/calls whereas the
+  contract-based languages are used to specify the effects of
+  individual events.
+</p>
+
+<p>
+  The code would only look at a single automaton, and the automata
+  exchange messages for communication, from which global properties
+  could be derived. Distributed programs might be a good use case for
+  this.
+</p>
+
+<p>
+  We also should think about the direction in which we would like to
+  go. Do we want to start with a model, and then synthesise the code,
+  or do we want to start with a program, and then construct a model.
+  It seems there are use cases for both of them. It also depends on
+  what is your starting point: sometimes this will be a protocol
+  description, sometimes the code is the main artifact.
+</p>
+
+<p>
+  Inferring the automaton from the code is still a major challenge.
+  Some work has been done in this direction on process mining, or
+  using automata learning for protocols. A major problem is that the
+  resulting model does not have any abstraction (at least, you don’t
+  get this for free). Getting the intent of the code as a model is
+  a major challenge.
+</p>
+
+<p>
+  What is the best formalisms depends on what is verifiable, and on
+  what sort of properties we want to capture.
+</p>
+
+<p>
+  We end with a short discussion about follow up discussions. The
+  attendants like it if the discussion is concrete, about a particular
+  case (the long term challenge, or some other challenge). It would be
+  good if concrete programs or properties are the starting point for
+  the discussion, so we could talk for example about how a certain
+  property could be specified (as a community effort).
+</p>
