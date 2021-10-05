@@ -1,6 +1,11 @@
 
 ![](LasBlockchainSign.svg)
- 
+
+
+![](LasBlockchainSign.svg | =250x250)
+
+![](LasBlockchainSign.svg | width=250)
+
 
 ## Introduction
 
