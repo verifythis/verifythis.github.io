@@ -17,19 +17,50 @@ can challenge the casino by placing a bet, and guessing the secret. If
 players win, their bet is doubled, otherwise the deposit is taken.
 A play of the game is given in the next section. 
 
-From a service oriented architecture, the casino is a component which
-offers several services (or methods). 
+From a service-oriented point of view, the casino is a component which
+offers several services (or methods) for altering the state, and only
+certain roles are allowed to trigger them.
 
-## A Play
+## A Play in the Casino
+
+Let us consider a play of our casino game. We assume, that the casino
+exists. But it has no money in its account. 
+
+![](A1.jpg)
+
+
+Firstly, the operator places money in the pot from his own money. They
+call the designated service `addToPot`. 
+
+![](A2.jpg)
+
+Secondly, a new round needs to be initialised (`createGame`). The
+operator chooses a number, where the number's least-significant bit
+determines whether the operator selected HEAD or TAIL. The hash of the
+number is stored inside the contract. This is a simple bit commitment
+protocol: The operators is not able to change their choice, and the
+player can not guess the operator's choice as it is obfuscated by the
+other bits in the number.
+
+![](A3.jpg) 
+
+The game is ready for a player, which is first one, who places a bet
+and guess (`placeBet`). The bet is transformed from the player's
+wallet. The guess is boolean value: HEAD or TAIL.
+
+![](A4.jpg)
+
+
+The game of the looks as follows, and is ready to be decided.
 
 ![](A0.jpg)
-![](A1.jpg)
-![](A2.jpg)
-![](A3.jpg)
-![](A4.jpg)
-![](B0.jpg)
+
+If the players win, they become their bet doubled. If the oprator
+wins, the player's money stays in the pot. In both cases, the casino
+is ready for a new play.
 
 
+<!-- [](B0.jpg) -->
 
 ## State Space
 The example models a Casino Game (and is due to Gordon Pace), encoded as
