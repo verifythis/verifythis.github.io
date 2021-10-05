@@ -1,15 +1,34 @@
 
 ![](LasBlockchainSign.svg)
 
+> Smart Contracts are not contracts and not smart. 
+> -- Wolfgang Ahrendt 
+
 ## Introduction
 
-During the last discussion, the feedback was that participants would like to
-discuss concrete examples. Therefore, Wolfgang Ahrendt prepared a concrete
-example.
+On this page, we introduce the example case of casino implemented as
+a Smart Contract on the blockchain. This example was prepared by
+Wolfgang Ahrendt for discussion in September 2021, and also bases on
+Gordon Pace.
 
-The example will be introduced, then we will split into different breakout rooms
-(where the discussion is not summarised) and at the end of the meeting, we put
-everything together.
+The casino offers a simple bet game. The casino operator places
+a (hidden) secret (HEAD or TAIL) inside the contract. Then, a player
+can challenge the casino by placing a bet, and guessing the secret. If
+players win, their bet is doubled, otherwise the deposit is taken.
+A play of the game is given in the next section. 
+
+From a service oriented architecture, the casino is a component which
+offers several services (or methods). 
+
+## A Play
+
+![](A0.jpg)
+![](A1.jpg)
+![](A2.jpg)
+![](A3.jpg)
+![](A4.jpg)
+![](B0.jpg)
+
 
 
 ## State Space
@@ -29,14 +48,6 @@ State space of the game consists of:
   scheme)
 - the current player and the operator identified by their unique addresses.
 
-## A Play
-
-![](A0.jpg)
-![](A1.jpg)
-![](A2.jpg)
-![](A3.jpg)
-![](A4.jpg)
-![](B0.jpg)
 
 ## Solidity Contract
 
