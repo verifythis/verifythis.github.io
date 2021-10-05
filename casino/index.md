@@ -1,5 +1,5 @@
 
-![](LasBlockchainSign.svg | width=500)
+![](LasBlockchainSign.svg)
  
 
 ## Introduction
@@ -30,7 +30,8 @@ State space of the game consists of:
   scheme)
 - the current player and the operator identified by their unique addresses.
 
-![](A0.JPG)
+![](A0.jpg)
+
 ## A Play
 
 Initially both, `pot` and `bet`, are empty. The hashed `secret` and the `guess`
