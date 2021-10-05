@@ -63,24 +63,25 @@ is ready for a new play.
 <!-- [](B0.jpg) -->
 
 ## State Space
-The example models a Casino Game (and is due to Gordon Pace), encoded as
-a Solidity smart contract.
 
-There is 1 operator, and 1 player. 
+There is one operator over the casino's lifecycle , and one at most
+one player at the time in the casino. State space of the game consists
+of:
 
-State space of the game consists of:
-- the `pot` (an integer value)
-- the player's `bet` (an integer value)
-- player's `guess` (head or tail)
-- a hashed `secret` (an integer value), given by the casino operator. 
-  By using a hash value, it is ensured that the secret stays is unchanged
-  during a play and the player is not able to obtain whether it is head or tail.
-  The least-significant digit defines whether it is head or tail. (Bit commitment
-  scheme)
+- the `pot` (an integer value),
+- the player's `bet` (an integer value),
+- player's `guess` (head or tail),
+- a hashed `secret` (an integer value), given by the casino operator, and
 - the current player and the operator identified by their unique addresses.
 
 
 ## Solidity Contract
+
+First: 
+
+> This contracts contains security issues. Please do not use this
+> Smart Contract as the basis for your new disruptive business model.
+
 
 ```solidity
 contract Casino {
@@ -174,49 +175,43 @@ contract Casino {
 
 ```
 
+## Explanation of the contract 
 
-## A Play
+Initially both, `pot` and `bet`, are empty. The hashed `secret` and
+the `guess` have a default value value. The program allows the
+following operations:
 
-Initially both, `pot` and `bet`, are empty. The hashed `secret` and the `guess`
-have a default value value. The program allows the following operations:
+- `constructor` Initialises the state of the contract, e.g., sets 
+  the `operator` to the account which added the contract to the
+  blockchain.
+  
+- `createGame(_hashedNumber)`: Initialises a new play of the game, e.g., 
+   sets the `secret` value.
 
-- constructor: Initialises the state of the contract, e.g., sets the `operator`.
+- `addToPot()`. Transfers money from the operator to the pot.
+    This is implemented by a *payable* method. The *payable* modifier
+    gives a method an implicit argument which holds the amount of
+    money which was sent along with the method invocation. Here, it
+    indicates that the method caller sends the amount of money which
+    goes into the `pot` from his blockchain wallet. The operation can
+    only be executed by the operator. If this condition fails, the
+    state will roll back to the point where the external call to the
+    blockchain was made. In Solidity, the roll back conditions are
+    expressed as require instructions.
 
-- create game: Initialises a new play of the game, e.g., sets the `secret`.
+- `removeFromPot()`. Transfers money from the pot to the `operator`. 
+   This can only be done if no bet is placed.
 
-- add money to pot: This is implemented by a *payable* method. The *payable*
-  modifier gives a method an implicit argument which holds the amount of money
-  which was sent along with the method invocation. Here, it indicates that the
-  method caller sends the amount of money which goes into the `pot` from his
-  blockchain wallet. The operation can only be executed by the operator. If this
-  condition fails, the state will roll back to the point where the external call
-  to the blockchain was made. In Solidity, the roll back conditions are
-  expressed as require instructions.
+- `placeBet(guess)`. Let the sender place a bet. If the game is available, 
+   the caller of this method becomes the player, its sent money is
+   added to the pot, the given `guess` is stored.
 
-- remove money from the pot: This can only be done if no bet is placed. It will 
-  send money back to the operator.
-
-- place bet: If the game is available, the caller of this method becomes the player.
-
-- decide bet: can only be called if the bet is placed. If the player wins, the
-  amount of the bet will be doubled, and send to the player. If the operator
+- `decideBet(secretNumber)`. Decides the winner of a play. It can only
+  be called if the bet is placed. If the player wins, the amount of
+  the bet will be doubled, and send to the player. If the operator
   wins, the bet is moved into the pot.
 
-The idea would be that the code ensures that the player can get the money by
-calling decide bet. In smart contracts: calling a method and money transfer are
-done hand-in-hand.
-
-In this example, all the money is modeled in the game. Variants are possible,
-where the operator can enforce the player to pay a fee to place a bet.
-
-The code has several challenges. It would be possible to create a denial of
-service contract. The transfer might be implemented wrongly, by refusing payment
-(`require(false);` on the transfer method). In that case, the state would always
-roll back, and the game state would never become idle anymore. The player might
-not be able to win anything, but it does damage to the operator.
-
-There are solutions, like using the send method, that allows to check if the
-payment actually succeeded.
-
-In parallel there was a discussion about how to express absence of denial of
-service attacks, by using temporal properties like AG EF (state = idle).
+Note, Solidity has an internal transaction system. An external service
+calls starts a new transaction. If the execution fails, e.g.,
+a `require` is not met, the transaction is rolled backed, and the
+state remains the same in the block chain.
