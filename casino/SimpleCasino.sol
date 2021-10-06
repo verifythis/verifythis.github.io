@@ -1,3 +1,11 @@
+/* This smart contract uses simplified Solidity syntax
+   and does not compile as is. The original contract was
+   written by Gordon Pace, and contained also a timeout
+   as a counter measure against the operator not calling
+   decideBet. The current simplified version was written
+   by Wolfgang Ahrendt. It deliberately introduces
+   security bugs. */
+
 contract Casino {
 
   address public operator;
