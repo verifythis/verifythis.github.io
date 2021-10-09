@@ -4,13 +4,16 @@ subtitle: Collaborative
 Long-term Verification Challenge 
 ---
 
+<center>
+
 Online Discussion
 =================
 
-<center>
 
 **[September 29, 2021, 12:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** - 14:00 UHR UTC
+
 **[September 29, 2021, 14:00 CEST](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** -16:00 UHR CEST
+
 **[September 29, 2021, 08:00 EDT](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** - 10:00 UHR EDT
 
 </center>
