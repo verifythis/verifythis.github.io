@@ -1,7 +1,7 @@
 --- 
-layout: landing title: VerifyThis 2020 
-subtitle: Collaborative
-Long-term Verification Challenge 
+layout: landing 
+title: VerifyThis 2020 
+subtitle: Collaborative Long-term Verification Challenge 
 ---
 
 <center>
