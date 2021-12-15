@@ -1,5 +1,8 @@
 # Specifications for the Casino
 
+**Currently under construction ...**
+
+
 * [Original Solidity file](../SimpleCasino.sol)
 
 * Timed Automata (Uppaal)
