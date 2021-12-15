@@ -9,6 +9,9 @@
 
   
 * Timed Automata (Uppaal)
+ 
+    ![](uppaal/first.png)
+    ![](uppaal/second.png)
 
     > The "direct" versions are closely based on the source code, the
     >     "state" versions on the state chart. The versions without
@@ -17,6 +20,9 @@
     >     integer overflows and underflows, because Uppaal does not
     >     allow to check other properties while those are still
     >     possible.
+
+
+
 
   * [uppaal/DirectCasinoOverflowProtection.xml](uppaal/DirectCasinoOverflowProtection.xml)
   * [uppaal/DirectCasino.xml](uppaal/DirectCasino.xml)
