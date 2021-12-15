@@ -38,7 +38,7 @@ Secondly, a new round needs to be initialised (`createGame`). The
 operator chooses a number, where the number's least-significant bit
 determines whether the operator selected HEAD or TAIL. The hash of the
 number is stored inside the contract. This is a simple bit commitment
-protocol: The operators is not able to change their choice, and the
+protocol: The operator is not able to change their choice, and the
 player can not guess the operator's choice as it is obfuscated by the
 other bits in the number.
 
@@ -193,8 +193,8 @@ following operations:
   the `operator` to the account which added the contract to the
   blockchain.
   
-- `createGame(_hashedNumber)`: Initialises a new play of the game, e.g., 
-   sets the `secret` value.
+- `createGame(_hashedNumber)`: Initialises a new play of the game,
+   e.g., sets the given hashed value of the `secret` internally.
 
 - `addToPot()`. Transfers money from the operator to the pot.
     This is implemented by a *payable* method. The *payable* modifier
