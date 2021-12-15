@@ -5,15 +5,21 @@ title: Specifications for the Casino
 **Currently under construction ...**
 
 
-* [Original Solidity file](../SimpleCasino.sol)
+* [Original Solidity file](../SimpleCasino.sol) contributed by Wolfgang Ahrendt
 
 * [Verified Solidity](Casino.sol), [Logfile of SLCVerify](slcverify-out.txt)
+contributed by Jonas Schiffl  
 
-  
-* Timed Automata (Uppaal)
+* Timed Automata (Uppaal) contributed by Jonas Becker and Paula Herber
  
+ 
+     Automata describing the smart contract calls:
     ![](uppaal/first.png)
+    
+    
+    Automata describing the smart contract operations:
     ![](uppaal/second.png)
+
 
     > The "direct" versions are closely based on the source code, the
     >     "state" versions on the state chart. The versions without
@@ -22,18 +28,15 @@ title: Specifications for the Casino
     >     integer overflows and underflows, because Uppaal does not
     >     allow to check other properties while those are still
     >     possible.
-
-
-
-
+    
   * [uppaal/DirectCasinoOverflowProtection.xml](uppaal/DirectCasinoOverflowProtection.xml)
   * [uppaal/DirectCasino.xml](uppaal/DirectCasino.xml)
   * [uppaal/StateCasinoOverflowProtection.xml](uppaal/StateCasinoOverflowProtection.xml)
   * [uppaal/StateCasino.xml](uppaal/StateCasino.xml)
   
-* Temporal Logic of Actions (TLA)
+* Temporal Logic of Actions (TLA) contributed by Alexander Weigl
   * [Casino.tla](Casino.tla)
   
-* Translation to C
+* Translation to C contributed by Alexander Weigl
   * [Casino.c](Casino.c)
   
