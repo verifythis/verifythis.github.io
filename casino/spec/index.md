@@ -1,4 +1,6 @@
-# Specifications for the Casino
+---
+title: Specifications for the Casino
+---
 
 **Currently under construction ...**
 
