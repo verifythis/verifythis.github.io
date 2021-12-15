@@ -34,9 +34,10 @@ contributed by Jonas Schiffl
   * [uppaal/StateCasinoOverflowProtection.xml](uppaal/StateCasinoOverflowProtection.xml)
   * [uppaal/StateCasino.xml](uppaal/StateCasino.xml)
   
-* Temporal Logic of Actions (TLA) contributed by Alexander Weigl
+* [Temporal Logic of Actions (TLA)](https://lamport.azurewebsites.net/tla/book.html) contributed by Alexander Weigl
   * [Casino.tla](Casino.tla)
   
-* Translation to C contributed by Alexander Weigl
+* Translation to C contributed by Alexander Weigl for the use in 
+  C-based verification tools (e.g., CBMC, SEAHORN)
   * [Casino.c](Casino.c)
   
