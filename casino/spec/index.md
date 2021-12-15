@@ -41,3 +41,5 @@ contributed by Jonas Schiffl
   C-based verification tools (e.g., CBMC, SEAHORN)
   * [Casino.c](Casino.c)
   
+* Automata describing the protocol contributed by Mattias Ulbrich
+  ![](CasinoStates.svg)
