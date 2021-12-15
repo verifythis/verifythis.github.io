@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>const int ACTORS = 2;
+typedef int[0,ACTORS-1] actor_t;
+
+typedef int[0,2] coin;
+const coin HEADS = 0;
+const coin TAILS = 1;
+
+chan addToPot[actor_t];
+chan removeFromPot[actor_t];
+chan createGame[actor_t];
+chan placeBet[actor_t];
+chan decideBet[actor_t];
+chan transferPayment[actor_t];
+
+int paramAmount[actor_t];
+int paramNumber[actor_t];
+int paramHash[actor_t];
+coin paramGuess[actor_t];
+
+int hash(int x) { return x; }</declaration>
+	<template>
+		<name x="5" y="5">Actor</name>
+		<parameter>actor_t id</parameter>
+		<declaration>const int MAX_AMOUNT = 4;
+const int MAX_SECRET = 4;</declaration>
+		<location id="id0" x="-450" y="-85">
+			<committed/>
+		</location>
+		<location id="id1" x="-697" y="-144">
+			<committed/>
+		</location>
+		<location id="id2" x="-510" y="85">
+			<committed/>
+		</location>
+		<location id="id3" x="-901" y="102">
+			<committed/>
+		</location>
+		<location id="id4" x="-901" y="-68">
+			<committed/>
+		</location>
+		<location id="id5" x="-697" y="238">
+			<committed/>
+		</location>
+		<location id="id6" x="-807" y="-119">
+		</location>
+		<location id="id7" x="-511" y="168">
+			<committed/>
+		</location>
+		<location id="id8" x="-467" y="-144">
+			<committed/>
+		</location>
+		<location id="id9" x="-450" y="8">
+			<committed/>
+		</location>
+		<location id="id10" x="-901" y="178">
+			<committed/>
+		</location>
+		<location id="id11" x="-901" y="8">
+			<committed/>
+		</location>
+		<location id="id12" x="-696" y="8">
+		</location>
+		<init ref="id12"/>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id1"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id0"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id2"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id3"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id4"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id6"/>
+			<nail x="-855" y="-143"/>
+			<nail x="-807" y="-167"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="-552" y="221">decideBet[id]!</label>
+			<nail x="-535" y="216"/>
+			<nail x="-479" y="216"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id12"/>
+			<label kind="assignment" x="-663" y="127">paramNumber[id] = 0</label>
+			<nail x="-544" y="93"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id7"/>
+			<label kind="select" x="-501" y="110">secretNumber: int[0,MAX_SECRET]</label>
+			<label kind="assignment" x="-501" y="126">paramNumber[id] = secretNumber</label>
+			<nail x="-510" y="110"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id12"/>
+			<label kind="assignment" x="-663" y="-119">paramHash[id] = 0</label>
+			<nail x="-671" y="-119"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id12"/>
+			<label kind="assignment" x="-603" y="8">paramAmount[id] = 0,
+paramGuess[id] = 0</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-484" y="59">placeBet[id]!</label>
+			<nail x="-474" y="56"/>
+			<nail x="-418" y="56"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id9"/>
+			<label kind="select" x="-442" y="-76">amount: int[-MAX_AMOUNT,MAX_AMOUNT],
+guess: coin</label>
+			<label kind="assignment" x="-442" y="-42">paramAmount[id] = amount,
+paramGuess[id] = guess</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-399" y="-153">createGame[id]!</label>
+			<nail x="-408" y="-119"/>
+			<nail x="-408" y="-170"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id8"/>
+			<label kind="select" x="-705" y="-187">hashedNumber: int[0,MAX_SECRET]</label>
+			<label kind="assignment" x="-680" y="-170">paramHash[id] = hashedNumber</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id12"/>
+			<nail x="-680" y="120"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-841" y="170">transferPayment[id]?</label>
+			<nail x="-712" y="120"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id10"/>
+			<label kind="synchronisation" x="-969" y="229">removeFromPot[id]!</label>
+			<nail x="-925" y="226"/>
+			<nail x="-869" y="226"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id12"/>
+			<label kind="assignment" x="-884" y="136">paramAmount[id] = 0</label>
+			<nail x="-875" y="110"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id10"/>
+			<label kind="select" x="-1181" y="119">amount: int[-MAX_AMOUNT,MAX_AMOUNT]</label>
+			<label kind="assignment" x="-1079" y="136">paramAmount[id] = amount</label>
+			<nail x="-901" y="114"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id12"/>
+			<label kind="assignment" x="-875" y="8">paramAmount[id] = 0</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id11"/>
+			<label kind="synchronisation" x="-952" y="51">addToPot[id]!</label>
+			<nail x="-925" y="48"/>
+			<nail x="-869" y="48"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id11"/>
+			<label kind="select" x="-1181" y="-51">amount: int[-MAX_AMOUNT,MAX_AMOUNT]</label>
+			<label kind="assignment" x="-1079" y="-34">paramAmount[id] = amount</label>
+			<nail x="-901" y="-25"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id6"/>
+			<label kind="comments" x="-782" y="-136">quit</label>
+		</transition>
+	</template>
+	<template>
+		<name>Casino</name>
+		<parameter>actor_t operator</parameter>
+		<declaration>typedef int[0,2] sstate;
+const sstate IDLE = 0;
+const sstate GAME_AVAILABLE = 1;
+const sstate BET_PLACED = 2;
+
+const int MAX_AMOUNT = 8; //32767
+const int MAX_SECRET = 4;
+
+sstate gameState;
+actor_t player;
+
+int[0,MAX_AMOUNT] pot;
+int[0,MAX_AMOUNT] bet;
+
+int[0,MAX_SECRET] hashedNumber;
+coin guess;
+
+int[0,MAX_AMOUNT] tempAmount;
+int[0,MAX_SECRET] tempSecretNumber;</declaration>
+		<location id="id13" x="360" y="-80">
+			<committed/>
+		</location>
+		<location id="id14" x="360" y="-256">
+		</location>
+		<location id="id15" x="360" y="-168">
+			<committed/>
+		</location>
+		<location id="id16" x="-144" y="-264">
+		</location>
+		<location id="id17" x="-442" y="-170">
+			<committed/>
+		</location>
+		<location id="id18" x="0" y="-170">
+		</location>
+		<init ref="id17"/>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id18"/>
+			<label kind="assignment" x="195" y="-153">bet = 0,
+player = 0,
+gameState = IDLE,
+tempSecretNumber = 0</label>
+			<nail x="184" y="-80"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id13"/>
+			<label kind="synchronisation" x="480" y="-280">transferPayment[player]!</label>
+			<nail x="752" y="-256"/>
+			<nail x="752" y="-80"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id13"/>
+			<label kind="guard" x="368" y="-144">guess != ((tempSecretNumber % 2 == 0)? HEADS : TAILS)</label>
+			<label kind="assignment" x="368" y="-128">pot += bet</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="guard" x="368" y="-232">guess == ((tempSecretNumber % 2 == 0)? HEADS : TAILS)</label>
+			<label kind="assignment" x="368" y="-216">pot -= bet</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id15"/>
+			<label kind="guard" x="48" y="-240">gameState == BET_PLACED &amp;&amp;
+hashedNumber == hash(paramNumber[operator])</label>
+			<label kind="synchronisation" x="48" y="-208">decideBet[operator]?</label>
+			<label kind="assignment" x="48" y="-192">tempSecretNumber = paramNumber[operator]</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id16"/>
+			<label kind="guard" x="-314" y="-246">gameState != BET_PLACED</label>
+			<label kind="synchronisation" x="-306" y="-229">removeFromPot[operator]?</label>
+			<label kind="assignment" x="-382" y="-212">tempAmount = paramAmount[operator]</label>
+			<nail x="-96" y="-192"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id18"/>
+			<label kind="select" x="-51" y="-450">_player: actor_t</label>
+			<label kind="guard" x="-51" y="-433">gameState == GAME_AVAILABLE &amp;&amp;
+_player != operator &amp;&amp;
+paramAmount[_player] &lt;= pot &amp;&amp;
+paramAmount[_player] &gt; 0</label>
+			<label kind="synchronisation" x="-51" y="-357">placeBet[_player]?</label>
+			<label kind="assignment" x="-51" y="-340">gameState = BET_PLACED,
+player = _player,
+bet = paramAmount[player],
+guess = paramGuess[player]</label>
+			<nail x="-63" y="-264"/>
+			<nail x="64" y="-264"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-60" y="-65">gameState == IDLE</label>
+			<label kind="synchronisation" x="-60" y="-48">createGame[operator]?</label>
+			<label kind="assignment" x="-60" y="-31">hashedNumber = paramHash[operator],
+gameState = GAME_AVAILABLE</label>
+			<nail x="64" y="-72"/>
+			<nail x="-63" y="-72"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id18"/>
+			<label kind="synchronisation" x="-238" y="-331">transferPayment[operator]!</label>
+			<label kind="assignment" x="-187" y="-314">pot -= tempAmount,
+tempAmount = 0</label>
+			<nail x="-72" y="-264"/>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-246" y="-144">paramAmount[operator] &gt; 0</label>
+			<label kind="synchronisation" x="-204" y="-127">addToPot[operator]?</label>
+			<label kind="assignment" x="-272" y="-110">pot += paramAmount[operator]</label>
+			<nail x="-72" y="-72"/>
+			<nail x="-68" y="-161"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id18"/>
+			<label kind="assignment" x="-424" y="-168">gameState = IDLE,
+pot = 0,
+bet = 0</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+PCas = Casino(0);
+// List one or more processes to be composed into a system.
+system PCas, Actor;
+</system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
