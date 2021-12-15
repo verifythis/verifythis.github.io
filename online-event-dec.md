@@ -38,6 +38,7 @@ favorite specification formalism.
 
 ### Aggregated Materials
 
+-   **[Specifications for the Casino Example](/casino/spec)**
 -   [Casino Example](/casino)
 -   [Slides from the meeting in Feburar](/VerifyThisLTC-Feb2021.pdf)
 -   [Slides from the meeting in November](/VerifyThisLTC-Nov2020.pdf)
