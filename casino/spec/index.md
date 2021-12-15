@@ -1,5 +1,6 @@
 # Specifications for the Casino
 
+* [Original Solidity file](../SimpleCasino.sol)
 
 * Timed Automata (Uppaal)
   * <uppaal/DirectCasinoOverflowProtection.xml>
@@ -10,4 +11,6 @@
 * Temporal Logic of Actions (TLA)
   * <Casino.tla>
   
-* C
+* Translation to C
+  * <Casino.c>
+  
