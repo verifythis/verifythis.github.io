@@ -33,7 +33,9 @@ contributed by Jonas Schiffl
   * [uppaal/DirectCasino.xml](uppaal/DirectCasino.xml)
   * [uppaal/StateCasinoOverflowProtection.xml](uppaal/StateCasinoOverflowProtection.xml)
   * [uppaal/StateCasino.xml](uppaal/StateCasino.xml)
-  
+
+* [Vercors Examples with explanation](vercors/)
+
 * [Temporal Logic of Actions (TLA)](https://lamport.azurewebsites.net/tla/book.html) contributed by Alexander Weigl
   * [Casino.tla](Casino.tla)
   

@@ -70,35 +70,42 @@ DecideBetWin(sender, secret) ==
     /\ bet = 0
     /\ state' = IDLE
 
+
 \* Operator resolves a bet    
 DecideBetLoose(sender, secret) ==
-    /\ DecideBet0(sender, secret)
     /\ (secret % 2) = guess
     /\ \* operator wins, bet transfered to pot
         pot' = pot + bet
     /\ bet = 0
     /\ state' = IDLE
-  
+    /\ DecideBet0(sender, secret)
+
+Spec == Init /\ [](A /\ B)
+
 
 Spec == CHOOSE op \in Int : 
-        CHOOSE secret \in Int :        
-        /\ Init(op)
-        /\ []( 
-            \forall sender  \in Int : 
-            \forall secret2 \in Int : 
-            \forall money   \in Int :             
-                /\ CreateGame(sender, secret)
-                /\ AddToPot(sender, money)
-                /\ RemoveFromPot(sender, money)
-                /\ (\forall g \in BOOLEAN  : 
-                     PlaceBet(sender, money, g))
-                /\ DecideBetWin(sender, secret2)
-                /\ DecideBetLoose(sender, secret2)
-        )
+        CHOOSE secret \in Int :
+          /\ Init(op)
+          /\ [](
+              \forall sender  \in Int :
+              \forall secret2 \in Int :
+              \forall money   \in Int :
+                  /\ CreateGame(sender, secret)
+                  /\ AddToPot(sender, money)
+                  /\ RemoveFromPot(sender, money)
+                  /\ (\forall g \in BOOLEAN  :
+                        PlaceBet(sender, money, g))
+                  /\ DecideBetWin(sender, secret2)
+                  /\ DecideBetLoose(sender, secret2)
+            )
 
 (* PROPERTY 
    LIVENESS(DecideBetWin/Loose) G F (state = IDLE)
 *)
+
+(* + Notion of ENABLED actions and deadlocks
+ * + Modeling of different contracts via modules possible.
+ *)
 
 ===============================================================================
 
