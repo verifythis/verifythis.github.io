@@ -1,4 +1,6 @@
-# Verifying the Casino contract with VerCors
+---
+title: Verifying the Casino contract with VerCors
+---
 
 ## INTRODUCTION
 
