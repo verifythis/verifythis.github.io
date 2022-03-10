@@ -53,13 +53,15 @@ specifications can be integrated.*
 -   [Slides from the meeting in November](/VerifyThisLTC-Nov2020.pdf)
 -   [Informal Proceedings of the solutions](https://publikationen.bibliothek.kit.edu/1000119426)
 
+
+
 ### Who can join the meeting?
 
 Everybody who is interested in the challenge, formal verification, the
 proposed solutions or VerifyThis is cordially invited to join the
 meeting!
 
-### How can I join the meeting? {#participating}
+### How can I join the meeting?
 
 The online event takes place with Zoom.
 
@@ -68,8 +70,6 @@ beforehand. The login credentials will be sent via your provided email
 address. Please register yourself with an email to
 [weigl\@kit.edu](mailto:weigl@kit.edu?subject=VTLTC%20registration).
 
-**Note:** If you had already registered for the [Online Event in
-November](/online-event-nov/) [or Feburary](/online-event-feb/), [or
-June](/online-event-june/) we will send you the required login
-credentials automatically. Another registration is not required in this
-case.
+**Note:** If you had already registered for a previous online event,
+we will send you the required login credentials automatically. Another
+registration is not required in this case.

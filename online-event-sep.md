@@ -87,8 +87,8 @@ The example will be introduced, then we will split into different breakout rooms
 (where the discussion is not summarised) and at the end of the meeting, we put
 everything together.
 
-The example models a Casino Game (and is due to Gordon Pace), encoded as
-a Solidity smart contract.
+The example models a Casino Game (and is due to Gordon Pace), encoded
+as a Solidity smart contract.
 
 There is 1 operator, and at most 1 player (opponent). 
 

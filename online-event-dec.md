@@ -89,11 +89,11 @@ system, and these specifications are discussed.
 Jonas Becker has modeled the system using timed automata (in Uppaal).
 He modelled two variants of the system:
 
-1. closely following the implementation, having a special variable
-   called state, and model with a single location: all calls loop back
-   to that location, and the guards describe from which state the call
-   may be made. Also the requirements in the contract implementation
-   are modelled as guards.
+* closely following the implementation, having a special variable
+  called state, and model with a single location: all calls loop back
+  to that location, and the guards describe from which state the call
+  may be made. Also the requirements in the contract implementation
+  are modelled as guards.
 
 While rediscussing the example implementation, Jonas realised that his
 model of transfer is not completely faithful to the Solidity
@@ -101,17 +101,19 @@ implementation, as it misses that you wait until you are called within
 the transfer function. He will look into this, and see if this can be
 adjusted.
 
-2. a model with multiple location, where each location corresponds to
-   a possible value of the state variable. This model gives a nicer
-   view on the state machine that is implemented.
+* a model with multiple location, where each location corresponds to
+  a possible value of the state variable. This model gives a nicer
+  view on the state machine that is implemented.
 
 Several properties are checked, such as absence of deadlocks, and if
 a bet is placed, then at some point it will be decided
-`(PCas.bet_placed --> PCas.idle`, which is Uppaal notation for `AG
+`PCas.bet_placed --> PCas.idle`, which is Uppaal notation for `AG
 (p -> EF q))`.
 
 The counterexample trace shows that an actor can decide to quit, and
 then no return is possible.
+
+### Uppaal
 
 The Uppaal model was relatively simple to make, but there are some
 limitations, in particular there is a fixed number of players and
@@ -139,6 +141,8 @@ explosion? An idea is to abstract away from parts of the system by
 replacing a component by a nondeterministic component. That works for
 small systems, but does not scale well. Translate the idea of
 contracts into automata to obtain benefits for model checking.
+
+### TLA
 
 Alexander Weigl then showed how he modelled the system in TLA.
 Interestingly, the specification language is more expressive than what
@@ -170,7 +174,9 @@ is irrelevant, and we can ignore the difference. As a side remark,
 Elvira Albert and her team are working on resource analysis, and they
 use this to model gas-based properties of smart contracts.
 
-Jonas S. remarks that the transfer contract including its possible
+
+
+Jonas Schiffl remarks that the transfer contract including its possible
 revert is the most interesting one, because it is hard to compute the
 weakest precondition for this one. The weakest precondition depends on
 the execution (i.e. a dynamic property). But as Wolfgang remarks, you
@@ -202,7 +208,9 @@ Wolfgang then tells that the real world code actually has a time out,
 and that with a model in Uppaal these timing aspects could be modelled
 as well (after a certain time, a player can always win).
 
-Jonas S then shows his formalisation in SolC-verify. This is
+### SolC-verify
+
+Jonas Schiffl then shows his formalisation in SolC-verify. This is
 a contract-based tool for Solidity. The require statements are
 considered preconditions, the user adds postconditions and modifies
 clauses. Internally, this is translated into Boogie.
@@ -211,6 +219,9 @@ The tool is still in early stages, and it only considers partial
 correctness and normal termination. It misses the possibility to
 specify an exceptional behaviour (in this specific case a reverting
 behaviour). Reverting is now completely ignored in the tool.
+
+
+### VerCors
 
 Raúl Monti is working on modelling safety properties of the example in
 VerCors, using a translation into VerCors's internal language PVL. To
@@ -224,9 +235,15 @@ VerCors to executable SC code is conceptually possible.
 Proving that you will get back to the idle state is out of reach for
 VerCors.
 
+
+### Event B
+
 Mattias Ulbrich developed an EventB model, also modelling the
 preservation property. The specification is essentially a repetition
 of the implementation.
+
+
+## Next Meeting
 
 For the next meeting, the participants will further refine their
 models and formalisations. They will also see if there are properties
