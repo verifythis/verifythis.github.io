@@ -50,7 +50,7 @@ Everybody who is interested in the challenge, formal verification, the
 proposed solutions or VerifyThis is cordially invited to join the
 meeting!
 
-### How can I join the meeting? {#participating}
+### How can I join the meeting? 
 
 The online event takes place with Zoom.
 
