@@ -64,4 +64,5 @@ should be on the mailing list and have received the Zoom link.
 
 ## Artifacts Summary 
 
-* tba.
+**[To the submitted specification](/casino/spec)**
+
