@@ -2,7 +2,7 @@
 
 use File::Slurp;
 
-my $template = read_file('template.html');
+my $template = read_file('template.in');
 # print $template;
 
 open IN, "< Solutions.csv";

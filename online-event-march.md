@@ -18,42 +18,33 @@ Online Discussion
 
 [Information for participating are below.](#participating)
 
-The [VerifyThis Collaborative Large Scale Challenge](/) aims at proving
-that deductive program verification can produce relevant results for
-real systems with acceptable effort. We selected
-[HAGRID](https://gitlab.com/hagrid-keyserver/hagrid), a recently
-developed PGP-keyserver, for the challenge. Its development became
-necessary as the old keyserver had serious data protection and security
-issues.
+**Backgrund:** The [VerifyThis Collaborative Large Scale Challenge](/)
+aims at proving that deductive program verification can produce
+relevant results for real systems with acceptable effort. We initially
+looked [HAGRID](https://gitlab.com/hagrid-keyserver/hagrid) as a case
+study, but have since moved on to considering [a simple Solidity
+casino](/casino) as the running example.
 
-**Agenda:** We will continue and deepen this discussion by means of a
-concrete example to be specified in this meeting. By discussing how
-automata-related and contract-related specification artifacts could be
-formulated, we plan to identify particular benefits from the viewpoints.
-Moreover, it will allow us to constructively think about ideas how such
-specifications can be integrated.
+**Agenda:** We will continue and deepen this discussion by trying to
+identify how different approaches can exchange informations.  We will
+compare artifacts and specififications and will see what each approach
+could provide and where it could benefit from other tools.
 
-In April 2020 four approaches to the verification challenge have been
-submitted to and presented during an online workshop, and in November
-2020, a [follow-up online discussion](online-event-nov/) revealed
-interesting new ideas regarding specification and verifiation of
-interacting systems like Hagrid.
+To this end, we have collected the solutions presented last time as in
+a [fact sheet gallery](/casino/spec/factsheets) quickly summarising
+the approaches and provided models/implementations.
 
-*We will continue and deepen this discussion by means of a concrete
-example to be specified in this meeting. By discussing how
-automata-related and contract-related specification artifacts could be
-formulated, we plan to identify particular benefits from the viewpoints.
-Moreover, it will allow us to constructive think about ideas how such
-specifications can be integrated.*
+It will be the goal of the time until the meeting and of the meeting
+itself to fill the items in "Can offer" and "Look for".
+
+We present some ideas on how contracts can be used to communicate
+between different verification approaches.
 
 ### Aggregated Materials
 
 -   [Casino Example](/casino)
--   [Slides from the meeting in Feburar](/VerifyThisLTC-Feb2021.pdf)
--   [Slides from the meeting in November](/VerifyThisLTC-Nov2020.pdf)
--   [Informal Proceedings of the solutions](https://publikationen.bibliothek.kit.edu/1000119426)
-
-
+-   [Fact Sheets](/casino/spec/factsheets), [submitted solutions](/casino/spec)
+-   [Last meeting](/online-event-dec.html)
 
 ### Who can join the meeting?
 
