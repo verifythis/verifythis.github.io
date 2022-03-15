@@ -10,7 +10,7 @@ title: Specifications for the Casino
 * [Verified Solidity](Casino.sol), [Logfile of SLCVerify](slcverify-out.txt)
 contributed by Jonas Schiffl  
 
-* Timed Automata (Uppaal) contributed by Jonas Becker and Paula Herber
+* <a name="timed">Timed Automata (Uppaal) contributed by Jonas Becker and Paula Herber</a>
  
  
      Automata describing the smart contract calls:

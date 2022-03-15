@@ -64,7 +64,7 @@ should be on the mailing list and have received the Zoom link.
 
 ## Artifacts Summary 
 
-**[To the submitted specification](/casino/spec)**
+**[To the submitted specifications](/casino/spec)**
 
 
 ## Minutes 
