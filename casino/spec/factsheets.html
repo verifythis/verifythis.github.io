@@ -5,89 +5,29 @@ subtitle: Collaborative Long-term Verification Challenge
 ---
 
 <style>
- .sheet {
-   border-radius: .5em;
-   border: 1px solid black;
-   background: #efe;
-   padding:1em;
- }
- .grid {
-   display: flex;
-   align-items: stretch;
-   justify-content: space-evenly;
-   align-content: flex-start;
-   flex-wrap: wrap;
- }
- .sheet .h2 {
-   text-align:center;
- }
-
- th {
-   text-align: right;
-   padding:1ex;
-   max-width: 15em;
- }
-
+    .grid {
+        width: 150%;
+        margin-left: -16.7%;display: flex;
+        flex-wrap: wrap;}
+    .sheet {
+        border-radius: .5em;
+        border: 1px solid black;
+        background: #efe;
+        padding:1em;
+        width: 300px;
+        margin: 1em;
+        float: left;
+    }
+    .sheet h2 {
+        font-size: 16pt;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    .sheet ul {
+        padding: 1em;
+    }
 </style>
 
 <div class="grid">
-  <div class="sheet">
-    <h2>Temporal Logics of Actions</h2>
-    <table>
-      <tr>
-        <th>Name</th>
-        <td>Temporal Logics of Actions</td>
-      </tr>
-      <tr>
-        <th>Language for Specification or Modeling?</th>
-        <td>Modeling</td>
-      </tr>
-      <tr>
-        <th>Level of Interaction</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Underlying logical structure</th>
-        <td>Kripke-Structure</td>
-      </tr>
-      <tr>
-        <th>Support for Tansactions</th>
-        <td>Actions can be disabled</td>
-      </tr>
-      <tr>
-        <th>Real-Time</th>
-        <td>No</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="sheet">
-    <h2>UPPAAL</h2>
-    <table>
-      <tr>
-        <th>Name</th>
-        <td>Temporal Logics of Actions</td>
-      </tr>
-      <tr>
-        <th>Language for Specification or Modeling?</th>
-        <td>Modeling</td>
-      </tr>
-      <tr>
-        <th>Level of Interaction</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Underlying logical structure</th>
-        <td>Kripke-Structure</td>
-      </tr>
-      <tr>
-        <th>Support for Tansactions</th>
-        <td>Actions can be disabled</td>
-      </tr>
-      <tr>
-        <th>Real-Time</th>
-        <td>No</td>
-      </tr>
-    </table>
-  </div>
+{% include_relative _sheets.html %}
 </div>
