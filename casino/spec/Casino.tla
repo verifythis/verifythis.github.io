@@ -3,7 +3,7 @@ EXTENDS Integers, FiniteSets, TLC
 
 VARIABLES 
     operator,      \* Identifier of the contract operator
-    player         \* Identifier of the current player
+    player,         \* Identifier of the current player
     pot,           \* Value of the pot
     hashedNumber,  \* bit commitment
     guess,         \* (true,false) player's guess
@@ -22,7 +22,7 @@ INVARIANT ==
 
 Init(op) == 
     /\ operator = op
-    /\ state = IDLE
+    /\ state = "IDLE"
     /\ pot = 0
     /\ bet = 0
             
@@ -31,34 +31,33 @@ AddToPot(sender, money) ==
     /\ pot' = pot + money
     
 \* Remove money from pot
-RemoveFromPot(sender, amount) == 
-    // no active bet ongoing:
-    /\ state <> "BET_PLACED"
+RemoveFromPot(sender, amount) ==     
+    /\ state # "BET_PLACED" \* no active bet ongoing:    
     /\ sender = operator
     /\ WALLETS'[operator] = WALLETS[operator] + amount \* operator.transfer(amount);
-    /\ pot' = pot - amount;
+    /\ pot' = pot - amount
     
 \* Operator opens a bet
 CreateGame(sender, hash) == 
-    /\ state = IDLE
+    /\ state = "IDLE"
     /\ sender = operator
     /\ hashedNumber' = hash
     /\ state' = "GAME_AVAILABLE"
 
 \* Player places a bet
 PlaceBet(sender, money, _guess) == 
-    /\ state = GAME_AVAILABLE
-    /\ sender <> operator
+    /\ state = "GAME_AVAILABLE"
+    /\ sender # operator
     /\ money <= pot
-    /\ state' = BET_PLACED
+    /\ state' = "BET_PLACED"
     /\ player' = sender
-    /\ bet' = msg.value
+    /\ bet' = money
     /\ guess' = _guess
 
 DecideBet0(sender, secret) ==
-    /\ state = BET_PLACED
+    /\ state = "BET_PLACED"
     /\ sender = operator
-    /\ hashedNumber == cryptohash(secret)
+    \* /\ hashedNumber == cryptohash(secret)
 
 \* Operator resolves a bet    
 DecideBetWin(sender, secret) ==
@@ -68,7 +67,7 @@ DecideBetWin(sender, secret) ==
         pot' = pot - bet
     /\ WALLETS[player] = WALLETS[player] + 2*bet
     /\ bet = 0
-    /\ state' = IDLE
+    /\ state' = "IDLE"
 
 
 \* Operator resolves a bet    
@@ -77,27 +76,29 @@ DecideBetLoose(sender, secret) ==
     /\ \* operator wins, bet transfered to pot
         pot' = pot + bet
     /\ bet = 0
-    /\ state' = IDLE
+    /\ state' = "IDLE"
     /\ DecideBet0(sender, secret)
 
-Spec == Init /\ [](A /\ B)
+\* Normal form: Spec == Init /\ [](A /\ B)
 
+A == bet = CHOOSE a \in Int: (\forall x \in Int : a # x)
+B == bet = CHOOSE a \in Int: (CHOOSE x \in Int : a # x)
 
-Spec == CHOOSE op \in Int : 
-        CHOOSE secret \in Int :
+Step(secret) ==  \exists sender  \in Int :
+         \exists secret2 \in Int :
+         \exists money   \in Int :
+              \/ CreateGame(sender, secret)
+              \/ AddToPot(sender, money)
+              \/ RemoveFromPot(sender, money)
+              \/ (\exists g \in BOOLEAN  : PlaceBet(sender, money, g))
+              \/ DecideBetWin(sender, secret2)
+              \/ DecideBetLoose(sender, secret2) 
+
+Spec == \forall op \in Int : \forall secret \in Int :
           /\ Init(op)
-          /\ [](
-              \forall sender  \in Int :
-              \forall secret2 \in Int :
-              \forall money   \in Int :
-                  /\ CreateGame(sender, secret)
-                  /\ AddToPot(sender, money)
-                  /\ RemoveFromPot(sender, money)
-                  /\ (\forall g \in BOOLEAN  :
-                        PlaceBet(sender, money, g))
-                  /\ DecideBetWin(sender, secret2)
-                  /\ DecideBetLoose(sender, secret2)
-            )
+          /\ [][Step(secret)]_<<>>
+              
+
 
 (* PROPERTY 
    LIVENESS(DecideBetWin/Loose) G F (state = IDLE)
