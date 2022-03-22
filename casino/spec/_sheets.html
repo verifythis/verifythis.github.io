@@ -38,10 +38,9 @@
         <dd>Jonas Schiffl</dd>
     </dl>
     <ul>
-<li><a href="https://verifythis.github.io/casino/spec/Casino.sol">Annotated Solidity implementation</a>
-<li><a href="https://verifythis.github.io/casino/spec/slcverify-out.txt">Verifier output</a>
-</ul>
-
+      <li><a href="https://verifythis.github.io/casino/spec/Casino.sol">Annotated Solidity implementation</a></li>
+      <li><a href="https://verifythis.github.io/casino/spec/slcverify-out.txt">Verifier output</a></li>
+    </ul>
 </div>
 
 
@@ -158,6 +157,55 @@
 </ul>
 
 </div>
+
+
+<div>
+  <h2>Casino with SecC</h2>
+  <dl>
+    <dt>Artifacts</dt>
+    <dd>
+      <ul>
+        <li>C code</li>
+        <li>function contracts</li>
+        <li>automata-like specification</li>
+      </ul>
+    </dd>
+    <dt>Investigated Properties</dt>
+    <dd>
+      <ul>
+        <li>safety property</li>
+        <li>correctness of individual operations</li>
+        <li>framing</li>
+        <li>security</li>
+        <li>adherence to protocol steps</li>
+      </ul>
+    </dd>
+    <dt>Verification Techniques</dt>
+    <ul>
+      <li>Separation Logic (symbolic execution)</li>
+      <li>SMT solving</li>
+      <li>regular languages</li>
+    </ul>
+    <dt>Can offer:</dt>
+    <dd>
+      <ul>
+        <li>bridge between automata and code</li>
+        <li>nice discussion</li>
+      </ul>
+    </dd>
+    <dt>Looking for:</dt>
+    <dd>
+      <ul>
+        <li>extend the trace-based specs with more details</li>
+      </ul>
+    </dd>
+    <dt>Author(s)</dt>
+    <dd>Gidon Ernst, Toby Murray</dd>
+    <a href="https://bitbucket.org/covern/secc/src/master/examples/case-studies/casino-statemachine.c">State machine verification</a>
+    <a href="https://bitbucket.org/covern/secc/src/master/examples/case-studies/casino.c">Full version</a>
+  </dl>
+</div>
+
 
 
 <div class="sheet">
