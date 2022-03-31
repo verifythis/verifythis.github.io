@@ -34,6 +34,26 @@ contributed by Jonas Schiffl
   * [uppaal/StateCasinoOverflowProtection.xml](uppaal/StateCasinoOverflowProtection.xml)
   * [uppaal/StateCasino.xml](uppaal/StateCasino.xml)
 
+  * [uppaal/CasinoReentrant.xml](uppaal/StateCasino.xml)
+
+    > We extended our Uppaal modelto take into account the possibility
+    > of reentrant behavior. Using this model, Uppaal can show that
+    > integer over-/underflows are still possible, even with usual
+    > countermeasures (requires in appropriate methods) in place. For
+    > example, a player can cause an integer underflow for the pot
+    > variable by claiming a timeout if the operator does not decide
+    > the bet, and then claiming the timeout again when the casino
+    > tries to transfer his winnings to him.
+    >
+    > We also created a variant of our model (see attachment) that
+    > contains an easy countermeasure against any reentrant behaviour:
+    > Whenever a method on the casino is called, a boolean busy is set
+    > to true. All methods require that busy is false, so any
+    > reentrant method call would cause a rollback. Uppaal can verify
+    > that this countermeasure indeed prevents any reentrant
+    > behaviour, and that over- or underflows are no longer possible.
+
+
 * [Vercors Examples with explanation](vercors/)
 
 * [Temporal Logic of Actions (TLA)](https://lamport.azurewebsites.net/tla/book.html) contributed by Alexander Weigl
