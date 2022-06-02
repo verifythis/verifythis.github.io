@@ -27,7 +27,7 @@ casino](/casino) as the running example.
 
 **Agenda:** We will continue and deepen this discussion by trying to
 identify how different approaches can exchange informations. We will
-have to talks:
+have two talks:
 
 - Jonas Schiffl on TLA translations for Smart Contracts, 
 - Mattias Ulbrich on his concept of Co-Contracts.
