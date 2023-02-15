@@ -27,8 +27,8 @@ casino](/casino) as the running example.
 
 **Agenda:** We are happy to invite you to join for the final round of presentations
 on the Casino case study, one by Franck Cassez (Macquarie University)
-and one by Alexander J. Summers (University of British Columbia), and 
-one by and Marco Eilers (ETH Zurich).
+and one by [Alexander J. Summers (University of British Columbia)](https://www.cs.ubc.ca/~alexsumm/), and 
+one by and [Marco Eilers (ETH Zurich)](https://www.pm.inf.ethz.ch/people/personal/meilers-pers.html).
 
 We aim to wrap up the discussion of the Casino case study and make
 plans for follow-up work. See you soon!
