@@ -1,0 +1,152 @@
+baseURL = 'https://verifythis.github.io/'
+languageCode = 'en-us'
+title = 'VerifyThis Long-Term Challenge'
+theme = "beautifulhugo"
+#theme="piko"
+
+pygmentsStyle = "monokai"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+# pygmentsCodefencesGuessSyntax = true
+
+
+
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      wrapStandAloneImageWithinParagraph = true
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+        image = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+
+[Params]
+#  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
+  subtitle = "Formal Verification of Real-World Software"
+  mainSections = ["post","posts"]
+  logo = "img/avatar-icon.png" # Expecting square dimensions
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = false
+  readingTime = false
+  wordCount = false
+#  useHLJS = true
+  socialShare = true
+  delayDisqus = false
+  showRelatedPosts = true
+#  hideAuthor = true
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#  # position: see values of CSS background-position.
+#  position = "center top"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")
+  # name = "Some Person"
+  # website = "yourwebsite.com"
+  # email = "youremail@domain.com"
+  # facebook = "username"
+  # github = "username"
+  # gitlab = "username"
+  # bitbucket = "username"
+  # twitter = "username"
+  # reddit = "username"
+  # linkedin = "username"
+  # xing = "username"
+  # stackoverflow = "users/XXXXXXX/username"
+  # snapchat = "username"
+  # instagram = "username"
+  # youtube = "user/username" # or channel/channelname
+  # soundcloud = "username"
+  # spotify = "username"
+  # bandcamp = "username"
+  # itchio = "username"
+  # vk = "username"
+  # paypal = "username"
+  # telegram = "username"
+  # 500px = "username"
+  # codepen = "username"
+  # mastodon = "url"
+  # kaggle = "username"
+  # weibo = "username"
+  # slack = "username"
+  # discord = "invite code (https://discord.gg/XXXXXXX)"
+  # strava = "userid"
+
+[[menu.main]]
+    name = "Next Event"
+    url = ""
+    weight = 1
+
+[[menu.main]]
+    name = "Current Challenge"
+    url = ""
+    weight = 2
+
+[[menu.main]]
+    identifier = "prev"
+    name = "Previously"
+    weight = 3
+
+[[menu.main]]
+    parent = "prev"
+    name = "1st Challenge: Hagrid"
+    url = "01hagrid"
+    weight = 1
+
+[[menu.main]]
+    parent = "prev"
+    name = "Challenge: Casino"
+    url = "02casino"
+    weight = 2
+
+# [[menu.main]]
+#     name = "Tags"
+#     url = "tags"
+#     weight = 3
