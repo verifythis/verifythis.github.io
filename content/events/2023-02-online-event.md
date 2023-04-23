@@ -1,7 +1,9 @@
 --- 
-layout: landing 
-title: VerifyThis 2022
-subtitle: Collaborative Long-term Verification Challenge 
+title: Finalisation of the Casino Example
+subtitle: "Online Discussion" 
+date: 2023-02-15
+tags:
+  - casino
 ---
 
 <center>
@@ -23,7 +25,7 @@ aims at proving that deductive program verification can produce
 relevant results for real systems with acceptable effort. We initially
 looked [HAGRID](https://gitlab.com/hagrid-keyserver/hagrid) as a case
 study, but have since moved on to considering [a simple Solidity
-casino](/casino) as the running example.
+casino](/02casino) as the running example.
 
 **Agenda:** We are happy to invite you to join for the final round of presentations
 on the Casino case study, one by [Franck Cassez (Macquarie University)](https://franck44.github.io/)
@@ -35,9 +37,9 @@ plans for follow-up work. See you soon!
 
 ### Aggregated Materials
 
--   [Casino Example](/casino)
--   [Fact Sheets](/casino/spec/factsheets), [submitted solutions](/casino/spec)
--   [Last meeting](/online-event-dec.html)
+-   [Casino Example](/02casino/)
+-   [Fact Sheets](/02casino/factsheets), [submitted solutions](/02casino/)
+-   [Last meeting](/online-event-dec/)
 
 ### Who can join the meeting?
 

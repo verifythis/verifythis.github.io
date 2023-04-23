@@ -1,18 +1,18 @@
 --- 
-layout: landing 
-title: VerifyThis 2020 
-subtitle: Collaborative Long-term Verification Challenge 
+title: "Casino Example #1"
+subtitle: "Online Discussion"
+date: 2021-09-29
+tags:
+  - casino
+aliases:
+  - /online-event-sep/
 ---
 
 <center>
 
-Online Discussion
-=================
-
-
-**[September 29, 2021, 12:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** - 14:00 UHR UTC<br>
-**[September 29, 2021, 14:00 CEST](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** -16:00 UHR CEST<br>
-**[September 29, 2021, 08:00 EDT](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** - 10:00 UHR EDT
+- **[September 29, 2021, 12:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** - 14:00 UHR UTC<br>
+- **[September 29, 2021, 14:00 CEST](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** -16:00 UHR CEST<br>
+- **[September 29, 2021, 08:00 EDT](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20210519T12&p1=%3A&ah=2)** - 10:00 UHR EDT
 
 </center>
 
@@ -35,7 +35,7 @@ specifications can be integrated.
 
 In April 2020 four approaches to the verification challenge have been
 submitted to and presented during an online workshop, and in November
-2020, a [follow-up online discussion](online-event-nov/) revealed
+2020, a [follow-up online discussion](/events/2021-06-23-online-event/) revealed
 interesting new ideas regarding specification and verifiation of
 interacting systems like Hagrid.
 
@@ -48,9 +48,9 @@ specifications can be integrated.*
 
 ### Aggregated Materials
 
--   [Casino Example](/casino)
--   [Slides from the meeting in Feburar](/VerifyThisLTC-Feb2021.pdf)
--   [Slides from the meeting in November](/VerifyThisLTC-Nov2020.pdf)
+-   [Casino Example](/02casino)
+-   [Slides from the meeting in Feburar](/01hagrid/VerifyThisLTC-Feb2021.pdf)
+-   [Slides from the meeting in November](/01hagrid/VerifyThisLTC-Nov2020.pdf)
 -   [Informal Proceedings of the solutions](https://publikationen.bibliothek.kit.edu/1000119426)
 
 ### Who can join the meeting?
@@ -69,8 +69,8 @@ address. Please register yourself with an email to
 [weigl\@kit.edu](mailto:weigl@kit.edu?subject=VTLTC%20registration).
 
 **Note:** If you had already registered for the [Online Event in
-November](/online-event-nov/) [or Feburary](/online-event-feb/), [or
-June](/online-event-june/) we will send you the required login
+November](/events/2020-11-27-online-event/) [or Feburary](/events/2020-02-12-online-event/), [or
+June](/events/2021-06-23-online-event/) we will send you the required login
 credentials automatically. Another registration is not required in this
 case.
 

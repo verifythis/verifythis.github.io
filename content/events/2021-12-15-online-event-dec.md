@@ -1,18 +1,18 @@
 --- 
-layout: landing 
-title: VerifyThis 2020 
-subtitle: Collaborative Long-term Verification Challenge 
+title: "Casino Example #2"
+date: 2021-12-15
+subtitle: "Online Discussion"
+tags:
+  - casino
+aliases:
+  - /online-event-dec/
 ---
 
 <center>
 
-Online Discussion
-=================
-
-
-**[December 15, 2021, 12:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20211215T14&p1=964&ah=2)** - 14:00 UHR UTC<br>
-**[December 15, 2021, 14:00 CST](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20211215T14&p1=964&ah=2)** -16:00 UHR CST<br>
-**[December 15, 2021, 08:00 EDT](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20211215T14&p1=964&ah=2)** - 10:00 UHR EDT
+- **[December 15, 2021, 12:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20211215T14&p1=964&ah=2)** - 14:00 UHR UTC<br>
+- **[December 15, 2021, 14:00 CST](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20211215T14&p1=964&ah=2)** -16:00 UHR CST<br>
+- **[December 15, 2021, 08:00 EDT](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20211215T14&p1=964&ah=2)** - 10:00 UHR EDT
 
 </center>
 
@@ -38,10 +38,10 @@ favorite specification formalism.
 
 ### Aggregated Materials
 
--   **[Specifications for the Casino Example](/casino/spec)**
--   [Casino Example](/casino)
--   [Slides from the meeting in Feburar](/VerifyThisLTC-Feb2021.pdf)
--   [Slides from the meeting in November](/VerifyThisLTC-Nov2020.pdf)
+-   **[Specifications for the Casino Example](/02casino)**
+-   [Casino Example](/02casino)
+-   [Slides from the meeting in Feburar](/01hagrid/VerifyThisLTC-Feb2021.pdf)
+-   [Slides from the meeting in November](/01hagrid/VerifyThisLTC-Nov2020.pdf)
 -   [Informal Proceedings of the solutions](https://publikationen.bibliothek.kit.edu/1000119426)
 
 ### Who can join the meeting?
@@ -64,7 +64,7 @@ should be on the mailing list and have received the Zoom link.
 
 ## Artifacts Summary 
 
-**[To the submitted specifications](/casino/spec)**
+**[To the submitted specifications](/02casino)**
 
 
 ## Minutes 

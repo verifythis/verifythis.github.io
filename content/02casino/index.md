@@ -226,7 +226,7 @@ state remains the same in the block chain.
 
 ## Submitted Material
 
-* [Original Solidity file](../SimpleCasino.sol) contributed by Wolfgang Ahrendt
+* [Original Solidity file](SimpleCasino.sol) contributed by Wolfgang Ahrendt
 
 * [Verified Solidity](Casino.sol), [Logfile of SLCVerify](slcverify-out.txt)
 contributed by Jonas Schiffl  

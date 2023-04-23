@@ -1,18 +1,16 @@
 --- 
-layout: landing 
-title: VerifyThis 2022
-subtitle: Collaborative Long-term Verification Challenge 
+title: "Casino-Example #4"
+subtitle: Online Discussion
+date: 2022-07-13
+tags:
+  - casino
 ---
 
 <center>
 
-Online Discussion
-=================
-
-
-**[July 13, 2022, 12:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20220713T12&p1=%3A&ah=2)** - 14:00 UHR UTC<br>
-**[July 13, 2022, 14:00 CEST](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20220713T12&p1=%3A&ah=2)** -16:00 UHR CEST<br>
-**[July 13, 2022, 08:00 EDT](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20220713T12&p1=%3A&ah=2)** - 10:00 UHR EDT
+- **[July 13, 2022, 12:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20220713T12&p1=%3A&ah=2)** - 14:00 UHR UTC<br>
+- **[July 13, 2022, 14:00 CEST](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20220713T12&p1=%3A&ah=2)** -16:00 UHR CEST<br>
+- **[July 13, 2022, 08:00 EDT](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20220713T12&p1=%3A&ah=2)** - 10:00 UHR EDT
 
 </center>
 
@@ -23,7 +21,7 @@ aims at proving that deductive program verification can produce
 relevant results for real systems with acceptable effort. We initially
 looked [HAGRID](https://gitlab.com/hagrid-keyserver/hagrid) as a case
 study, but have since moved on to considering [a simple Solidity
-casino](/casino) as the running example.
+casino](/02casino) as the running example.
 
 **Agenda:** We will continue and deepen this discussion by trying to
 identify how different approaches can exchange informations. We will
@@ -35,9 +33,9 @@ have two talks:
 
 ### Aggregated Materials
 
--   [Casino Example](/casino)
--   [Fact Sheets](/casino/spec/factsheets), [submitted solutions](/casino/spec)
--   [Last meeting](/online-event-march.html)
+-   [Casino Example](/02casino)
+-   [Fact Sheets](/02casino/factsheets), [submitted solutions](/02casino)
+-   [Last meeting](/online-event-march)
 
 ### Who can join the meeting?
 

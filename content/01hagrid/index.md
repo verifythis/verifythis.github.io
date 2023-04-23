@@ -39,12 +39,11 @@ For citation, please use the [following publication](https://doi.org/10.1007/978
 }
 ```
 
-[Challenge Description](challenge)
+[Challenge Description](/01hagrid/challenge)
 &mid;
 [Informal Proceedings](https://publikationen.bibliothek.kit.edu/1000119426)
 &mid;
-[Call For Papers](cfp)
-Events: 
+[Call For Papers](/01hagrid/cfp)
 
 
 
@@ -52,16 +51,16 @@ Events:
 
 -   Gidon Ernst and Lukas Rieger  
     **Information Flow Testing of a PGP Keyserver**
-    -   [Abstract](/abstracts/VTLTC_2020_paper_4.pdf)
+    -   [Abstract](/01hagrid/abstracts/VTLTC_2020_paper_4.pdf)
     -   Resources: <https://github.com/gernst/verifythis2020>
 -   Diego Diverio, Cláudio Lourenço and Claude Marché  
     **"You-Know-Why": an Early-Stage Prototype of a Key Server Developed
     using Why3**
-    -   [Abstract](/abstracts/VTLTC_2020_paper_2.pdf)
+    -   [Abstract](/01hagrid/abstracts/VTLTC_2020_paper_2.pdf)
     -   Resources: <https://gitlab.inria.fr/why3/verifythis2020>
 -   Stijn de Gouw, Mattias Ulbrich and Alexander Weigl  
     **The KeY Approach on Hagrid**
-    -   [Abstract](/abstracts/VTLTC_2020_paper_3.pdf)
+    -   [Abstract](/01hagrid/abstracts/VTLTC_2020_paper_3.pdf)
     -   Resources:
         -   [Keyserver](https://github.com/KeYProject/verifythis-ltc-2020/blob/master/simplified/Keyserver.java)
             -- A simplified single-class version of the Keyserver using
@@ -70,11 +69,11 @@ Events:
             -- A multi-class version using map data types.
 -   Claire Dross, Johannes Kanig, and Yannick Moy  
     **A Solution to the Long-Term Challenge in SPARK**
-    -   [Abstract](/abstracts/VTLTC_2020_paper_1.pdf)
+    -   [Abstract](/01hagrid/abstracts/VTLTC_2020_paper_1.pdf)
     -   Resources: <https://github.com/AdaCore/Lumos_Maxima>
 -   Gidon Ernst, Toby Murray and Mukesh Tiwari  
     **Verifying the Security of a PGP Keyserver**
-    -   [Abstract](/abstracts/VTLTC_2020_paper_5.pdf)
+    -   [Abstract](/01hagrid/abstracts/VTLTC_2020_paper_5.pdf)
     -   Resources:
         -   [Case Study
             (tiny-email.c)](https://bitbucket.org/covern/secc/src/master/examples/tiny-email.c)
@@ -83,10 +82,10 @@ Events:
             slides](https://www.sosy-lab.org/research/prs/2019-07-18-CAV19-SecCSL_Security_Concurrent_Separation_Logic.pdf)
 -   Mattias Ulbrich  
     **Event-B Formalisation of the key manager**
-    -   [\[PDF documentation of the Event-B
+    -   [PDF documentation of the Event-B
         model](https://formal.iti.kit.edu/~ulbrich/pub/LongTermChallenge.pdf)
-    -   Event-B (RODIN) sources are available on request. Just send me a
-        mail (ulbrich@kit.edu).
+    -   Event-B (RODIN) sources are available on request. Just send me
+        a mail (ulbrich@kit.edu).
 
 ### Alternative Implementations
 

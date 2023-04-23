@@ -58,7 +58,7 @@ pygmentsCodeFences = true
 [Params]
 #  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
   subtitle = "Formal Verification of Real-World Software"
-  mainSections = ["post","posts"]
+  mainSections = ["news","post","posts"]
   logo = "img/avatar-icon.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
@@ -121,7 +121,7 @@ pygmentsCodeFences = true
 
 [[menu.main]]
     name = "Next Event"
-    url = ""
+    url = "/news/2023-04-21-2nd-challenge/"
     weight = 1
 
 [[menu.main]]
@@ -137,14 +137,20 @@ pygmentsCodeFences = true
 [[menu.main]]
     parent = "prev"
     name = "1st Challenge: Hagrid"
-    url = "01hagrid"
+    url = "/01hagrid"
     weight = 1
 
 [[menu.main]]
     parent = "prev"
     name = "Challenge: Casino"
-    url = "02casino"
+    url = "/02casino"
     weight = 2
+
+[[menu.main]]
+    parent = "prev"
+    name = "Events"
+    url = "/events"
+    weight = 3
 
 # [[menu.main]]
 #     name = "Tags"
