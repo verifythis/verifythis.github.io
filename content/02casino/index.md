@@ -1,3 +1,7 @@
+---
+aliases:
+  - /casino/
+---
 
 ![](LasBlockchainSign.svg)
 
