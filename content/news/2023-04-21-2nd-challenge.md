@@ -1,5 +1,5 @@
 ---
-title: 2nd Challange
+title: 2nd Challenge
 author: weigl
 date: 2023-04-21
 ---
