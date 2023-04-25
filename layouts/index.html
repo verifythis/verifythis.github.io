@@ -46,11 +46,7 @@
         challenges are proposed that participants have to verify in 90
         minutes each using their favourite program verification tool.
       </p>
-      <p>
-	<div class="resp-container">
-	  <iframe class="resp-iframe" src="https://player.vimeo.com/video/357544904" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
-	</div>
-      </p>
+
       <p>
         We have experienced that the state of the art of program
         verification allows the participants to specify and verify
@@ -63,27 +59,26 @@
     </div>
 
     <div class="entry">
-      <h2><i class="fas fa-bullseye"></i> The Challenge</h2>
+      <h2><i class="fas fa-bullseye"></i> The 2nd Challenge</h2>
+      <img src="/img/logo.svg" width="25%" align="right" />
       <p>
-        This <strong>VerifyThis Collaborative Large Scale Challenge</strong>
-        aims at proving that deductive program verification can produce
-        relevant results for real systems with acceptable effort.
+        <strong>VerifyThis Long-Term Challenge</strong> aims at
+        proving that deductive program verification can produce
+        relevant results for real systems with acceptable effort on
+        a large scale in a collaborative manner.
       </p>
       <p>
-        For this year, we selected <a href="https://gitlab.com/hagrid-keyserver/hagrid">HAGRID</a>,
-        a PGP-keyserver, for the challenge.
-
-        HAGRID is a fresh development, which became necessary as the old
-        keyserver (SKS) is vulnerable against DoS attacks
-        <a href="https://access.redhat.com/articles/4264021">CVE-2019-13050</a>,
-        does not conform to GDPR, and had performance issues.
-        More background information are available in the
-        <a href="https://sequoia-pgp.org/blog/2019/06/14/20190614-hagrid">blog
-          post of the developers</a> HAGRID is already in <a href="https://keys.openpgp.org">production</a>.
+        The second challenge is dedicated <a href="/03memcached">memcached</a>,
+        a simple LRU-cache based key-value server. Memcached is the backbone for fast
+        response times in distributed web-application. The goal is not
+        only to provide an investigation on the server alone, but also
+        take the client-side and the protocol into our considerations.
+      <p>
+        <ul>
+          <li><a href="/03memcached/challenge.pdf">Here is the complete description of the challenge.</a>
+	    <li><a href="/03memcached/slides_etaps2023.pdf">Here are the presentation slides (Talk given at ETAPS'23).</a>
+        </ul>
       </p>
-      <p><ul><li><a href="/01hagrid/VerifyThisLongTerm.pdf">Here is the complete description of the challenge.</a>
-	<li><a href="/01hagrid/VerifyThisLongTermSlides.pdf">Here is a slide presentation of the challenge.</a>
-      </ul></p>
     </div>
 
     <div class="entry">
@@ -101,13 +96,10 @@
 	<a href="https://www.lists.kit.edu/sympa/info/verifythis-ltc"> mailing list </a>
 	(verifythis-ltc@lists.kit.edu) to be able to share your questions and
 	your work and to keep up to date with the work of the rest of the teams.
-
       </p>
       <p>
-        We plan to publish on the VerifyThis workshop at the
-        <a href="https://www.etaps.org/2020">ETAPS2020</a>,
-        where we kindly invite each participant to present their results
-        of this challenge.
+        We plan to go for a Track on ISoLA 2024. In the intermediate,
+        we plan rather informal meetings on iFM'23 and ETAPS'24.
       </p>
     </div>
   </div>
@@ -118,9 +110,6 @@
       {{ with .Site.GetPage "/news"}}
       {{ range .Pages.ByDate.Reverse | first 5 }}
       {{ partial "post_preview.html" .}}
-      <!-- <li>
-           <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2, 2006" }} | {{ .Title }}</a>
-           </li> -->
       {{ end }}
       {{end}}
       <ul class="pager main-pager">

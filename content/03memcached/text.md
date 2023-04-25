@@ -1,14 +1,3 @@
----
-title: 2nd VerifyThis Long-term Challenge
-subtitle: Specifying and Verifying a Real-life Remote Key-Value Cache (memcached)
----
-
-{{< columns >}}
-This is column 1.
-{{< column >}}
-This is column 2.
-{{< endcolumns >}}
-
 # Introduction
 
 Program verification is an established and important research area with
@@ -701,4 +690,3 @@ in this document.
 [2] <https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks>
 
 [3] <https://verifythis.github.io/casino/>
-

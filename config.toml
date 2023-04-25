@@ -59,7 +59,7 @@ pygmentsCodeFences = true
 #  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
   subtitle = "Formal Verification of Real-World Software"
   mainSections = ["news","post","posts"]
-  logo = "img/avatar-icon.png" # Expecting square dimensions
+  logo = "img/logo.svg" # Expecting square dimensions
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
   commit = false
@@ -126,7 +126,7 @@ pygmentsCodeFences = true
 
 [[menu.main]]
     name = "Current Challenge"
-    url = ""
+    url = "/03memcached"
     weight = 2
 
 [[menu.main]]
