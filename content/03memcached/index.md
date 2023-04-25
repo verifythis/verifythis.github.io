@@ -75,7 +75,7 @@ in use by the application.
 ![](arch.svg)
 {.a style="background:#bbb;padding:1ex"}
 
-## {{< awesome fas fa-file-exclamation >}} Resources:
+## Resources
 
 Please feel free to use the following resources to familiarize yourself
 with the functionality and internals of the `memcached` server and its
