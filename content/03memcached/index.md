@@ -1,5 +1,5 @@
 ---
-title: Memcached: VerifyThis Long-term Challenge
+title: "Memcached: VerifyThis Long-term Challenge"
 subtitle: Specifying and Verifying a Real-life Remote Key-Value Cache
 ---
 
