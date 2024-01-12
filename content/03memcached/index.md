@@ -1,6 +1,6 @@
 ---
-title: 2nd VerifyThis Long-term Challenge
-subtitle: Specifying and Verifying a Real-life Remote Key-Value Cache (memcached)
+title: Memcached: VerifyThis Long-term Challenge
+subtitle: Specifying and Verifying a Real-life Remote Key-Value Cache
 ---
 
 We propose the **second VerifyThis long-term challenge**: A verified
