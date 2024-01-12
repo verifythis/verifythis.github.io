@@ -122,7 +122,7 @@ pygmentsCodeFences = true
 
 [[menu.main]]
     name = "Next Event"
-    url = "/news/2023-04-21-2nd-challenge/"
+    url = "/news/2024-01-23-online-event/"
     weight = 1
 
 [[menu.main]]
