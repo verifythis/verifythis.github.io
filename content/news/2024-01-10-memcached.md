@@ -18,4 +18,4 @@ Please sign up on the [mailing list](https://www.lists.kit.edu/sympa/info/verify
 we will post the Zoom link shortly before the meeting; alternatively send an E-Mail directly to the organizers.
 
 
-[More Information](/2024-01-online-event/)
+[More Information](/2024-01-23-online-event/)
