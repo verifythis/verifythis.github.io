@@ -1,5 +1,5 @@
 ---
-title: Next Meeting: 23 January 2024
+title: "Next Meeting: 23 January 2024"
 author: ernst
 date: 2024-01-10
 ---
@@ -9,10 +9,9 @@ The next discussion meeting will be on
 
 Program
 
-- Presentation by [Aurel Bílý](https://inf.ethz.ch/people/people-atoz/person-detail.Mjc4NjIx.TGlzdC8zMDQsLTIxNDE4MTU0NjA=.html)
-  on their approach using Prusti
-- Technical Discussions
-- Collaboration and Follow-up
+*   Presentation by [Aurel Bílý](https://inf.ethz.ch/people/people-atoz/person-detail.Mjc4NjIx.TGlzdC8zMDQsLTIxNDE4MTU0NjA=.html) on their approach using Prusti
+*   Technical Discussions
+*   Collaboration and Follow-up
 
 Registration:
 Please sign up on the [mailing list](https://www.lists.kit.edu/sympa/info/verifythis-ltc),
