@@ -4,21 +4,26 @@ author: ulbrich
 date: 2024-07-03
 ---
 
+**[Reiner Hähnle](https://www.informatik.tu-darmstadt.de/se/gruppenmitglieder/groupmembers_detailseite_30784.en.jsp) will present work on Context-aware Trace Contracts.
+
+**Time and Date:** 10 July, 15.00 CEST
+
+<!--more-->
+
+
 As a follow-up to the March 2024 [Lorentz Center workshop on Contract
 Languages](https://www.lorentzcenter.nl/contract-languages.html), we
 will host a series of online presentations and discussions around
 formal methods with contract languages, aligning with the LTC goal of
 enabling information exchange between different formal systems.
 
-**Time and Date:** 10 July, 15.00 CEST
-
 [Ask for the **Zoom link**](mailto:ulbrich@kit.edu)
 
 <details>
   <summary>Abstract</summary>
   
-**Title:**<br>
-Context-aware Trace Contracts<br>
+**Title:**
+*Context-aware Trace Contracts*,
 Joint work with Eduard Kamburjan (U Oslo), Marco Scaletta (TU Darmstadt)
 
 **Abstract:**<br>
