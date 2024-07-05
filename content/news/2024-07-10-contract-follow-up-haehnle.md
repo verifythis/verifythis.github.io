@@ -4,9 +4,9 @@ author: ulbrich
 date: 2024-07-03
 ---
 
-**[Reiner Hähnle](https://www.informatik.tu-darmstadt.de/se/gruppenmitglieder/groupmembers_detailseite_30784.en.jsp) will present work on Context-aware Trace Contracts.
+[Reiner Hähnle](https://www.informatik.tu-darmstadt.de/se/gruppenmitglieder/groupmembers_detailseite_30784.en.jsp) will present work on Context-aware Trace Contracts.
 
-**Time and Date:** 10 July, 15.00 CEST
+**Time and Date:** *10 July, 15.00 CEST*, for Link see below.
 
 <!--more-->
 
