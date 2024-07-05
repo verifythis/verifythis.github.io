@@ -10,6 +10,10 @@ will host a series of online presentations and discussions around
 formal methods with contract languages, aligning with the LTC goal of
 enabling information exchange between different formal systems.
 
+**Time and Date:** 10 July, 15.00 CEST
+
+[Ask for the **Zoom link**](mailto:ulbrich@kit.edu)
+
 <details>
   <summary>Abstract</summary>
   
