@@ -3,29 +3,24 @@ menus:
   main:
     parent: Archive
     weight: 2022
-title: 2022
+    name: 2022
+title: VerifyThis 2022
 ---
 
 verifyThis 2022 was organized by Marie Farrell and Peter Lammich.
 
-The competition report can be found [here
-(PDF, 285
-KB)](../../../../ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/publications/FarrellLammichHuismannMonahanM%C3%BCllerUllbrich.pdf)
+The competition report can be found [here (PDF, 285 KB)](FarrellLammichHuismannMonahanM%C3%BCllerUllbrich.pdf)
 
-## **Challenges** 
+## Challenges
 
 **Challenge 1**
-[Downsampling a Point Cloud (PDF, 131
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges2022/verifyThis2022-challenge1.pdf)
+[Downsampling a Point Cloud (PDF, 131 KB)](challenges/verifyThis2022-challenge1.pdf)
 
 **Challenge 2**
-[Mergesort with Runs (PDF, 121
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges2022/verifyThis2022-challenge2.pdf)
+[Mergesort with Runs (PDF, 121 KB)](challenges/verifyThis2022-challenge2.pdf)
 
 **Challenge 3**
-[The World's Simplest Lock-Free Hash Set
-(PDF, 125
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges2022/verifyThis2022-challenge3.pdf)
+[The World's Simplest Lock-Free Hash Set (PDF, 125 KB)](challenges/verifyThis2022-challenge3.pdf)
 
 ## **Prizes**
 

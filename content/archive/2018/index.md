@@ -3,13 +3,13 @@ menus:
   main:
     parent: Archive
     weight: 2018
-title: 2018
+    name: 2018 
+title: VerifyThis 2018
 ---
-verifyThis 2018 was organized by Andrei Paskevich, Gidon Ernst
 
-The competition report can be found [here
-(PDF, 512
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Solutions%202018/sttt-summary.pdf)
+verifyThis 2018 was organized by Andrei Paskevich, Gidon Ernst.
+
+The competition report can be found [here (PDF, 512 KB)](solutions//sttt-summary.pdf)
 
 ## Winners
 
@@ -31,49 +31,33 @@ Jean-Christophe Filliâtre, Colored Tiles
 
 ## Tutorial Information (software)
 
-VerifyThis 2018 includes an interactive tutorial using the [Viper
-verification
-tools](http://www.pm.inf.ethz.ch/research/viper/). If you
-would like to follow the tutorial using your own copy of the tools,
+VerifyThis 2018 includes an interactive tutorial using the [Viper verification tools](http://www.pm.inf.ethz.ch/research/viper/). If you would like to follow the tutorial using your own copy of the tools,
 please see the installation instructions here.
 
-A (slower) [online
-version](http://viper.ethz.ch/examples/blank-example.html) of
-the tools is also available.
+A (slower) [online version](http://viper.ethz.ch/examples/blank-example.html) of the tools is also available.
 
 The short exercises for you to try during the tutorial can be found
 here:
 
-[Exercise
-1](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise1.vpr)
+[Exercise 1](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise1.vpr)
 
-[Exercise
-2](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise2.vpr)
+[Exercise 2](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise2.vpr)
 
-[Exercise
-3](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise3.vpr)
+[Exercise 3](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise3.vpr)
 
 ## Challenges
 
-[Array Based Queuing Lock (PDF, 56
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges%202018/abql.pdf)  
+[Array Based Queuing Lock (PDF, 56 challenges//abql.pdf)  
 
-[Colored tiles (PDF, 42
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges%202018/tiles.pdf)  
+[Colored tiles (PDF, 42 challenges//tiles.pdf)  
 
-[Gap buffer (PDF, 72
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges%202018/gap-buffer.pdf)
+[Gap buffer (PDF, 72 challenges//gap-buffer.pdf)
 
-[Register allocation (PDF, 70
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges%202018/regalloc.pdf)
-
- 
-
+[Register allocation (PDF, 70 challenges//regalloc.pdf)
  
 ## Solutions
 
-Raphael Rieu (Why 3) [solutions (GZ, 49
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/solutions%202018/solutions.tar.gz)
+Raphael Rieu (Why 3) [solutions (GZ, 49 KB)](solutions//solutions.tar.gz)
 
 Wytse Oortwijn and Mohsen Safari (VerCors), [Gap Buffer](https://github.com/utwente-fmt/vercors/blob/master/examples/verifythis2018/challenge1.pvl), 
 [Colored Tiles](https://github.com/utwente-fmt/vercors/blob/master/examples/verifythis2018/challenge2.pvl)
@@ -82,11 +66,8 @@ Wytse Oortwijn and Mohsen Safari (VerCors), [Gap Buffer](https://github.com/utwe
 
 Solutions are to be submitted per email to
 
-
-
 Submissions must state the version of the verification system used (for
-development versions, internal revision, timestamp, or similar unique
-id).
+development versions, internal revision, timestamp, or similar unique id).
 The main rule of the competition is no cheating is allowed. The judges
 may penalize or disqualify entrants in case of unfair competition
 behavior and may adjust the competition rules to prevent future abuse.

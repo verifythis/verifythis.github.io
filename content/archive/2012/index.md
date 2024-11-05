@@ -3,16 +3,12 @@ menus:
   main:
     parent: Archive
     weight: 2012
-title: 2012
+    name: 2012    
+title: VerifyThis 2012
 ---
 
-# 2012
-
-VerifyThis 2012 was organized by Marieke Huisman, Vladimir Klebanov,
-Rosemary Monahan
-The competition report can be found [[Download ]here
-(PDF, 496
-KB)](../../../../ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/publications/HuismanKlebanov,Monahan.pdf)
+VerifyThis 2012 was organized by Marieke Huisman, Vladimir Klebanov, Rosemary Monahan.
+The competition report can be found [here (PDF, 496 KB)](HuismanKlebanov_Monahan.pdf)
 
 ## Winners
 
@@ -32,14 +28,13 @@ The main results of the competition are as follows:
 Competition challenges will be posted here. Tentative schedule for
 August 30th:
 
--   [[Download ]Problem 1 (ZIP, 2
-    KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges%202012/LCP.zip)
+-   [Problem 1 (ZIP, 2 KB)](challenges//LCP.zip)
     announced at 14:15 (45 minutes)
--   [[Download ]Problem 2 (ZIP, 67
-    KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges%202012/PrefixSum.zip)
+
+-   [Problem 2 (ZIP, 67 KB)](challenges//PrefixSum.zip)
     announced at 15:15 (90 minutes)
--   [[Download ]Problem 3 (ZIP, 731
-    Bytes)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges%202012/TreeDel.zip)
+
+-   [Problem 3 (ZIP, 731 Bytes)](challenges//TreeDel.zip)
     announced at 17:00 (90 minutes)
 
  
@@ -53,10 +48,10 @@ approximate.
 
  
 
--   [team VeriFast (ZIP, 12 KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Solutions%202012/verifythis2012_team_verifast.zip)
+-   [team VeriFast (ZIP, 12 KB)](solutions//verifythis2012_team_verifast.zip)
     (competition solutions, 2012-08-30)
 -   [team KIV](http://www.informatik.uni-augsburg.de/swt/projects/verifythis-competition-2012/) (2012-09-06)
--   [[Download ]team GNATprove (GZ, 4 KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Solutions%202012/gnatprove_final.tar.gz),
+-   [team GNATprove (GZ, 4 KB)](solutions//gnatprove_final.tar.gz),
     challenges 1 and 2 (2012-12-07)
 -   [team KeY](http://formal.iti.kit.edu/%7Ebruns/VerifyThis/) (2013-07-11)
 

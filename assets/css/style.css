@@ -1,0 +1,21 @@
+div.header {
+    background-color: #ccc;
+}
+
+section.main {
+    padding-top:2em;
+    width:70em;
+    margin:auto;
+}
+
+section.footer {
+    background-color: #444;
+    color:white;    
+}
+
+.foot-content {
+    padding-top:2em;padding-bottom:2em;
+
+    width:70em;
+    margin:auto;
+}

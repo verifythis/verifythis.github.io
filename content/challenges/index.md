@@ -5,32 +5,23 @@ menus:
     weight: 300
 ---
 
-# Challenges
+## Challenge 0
 
-**Challenge 0\
-**[[Download ]{.eth-link__label}The Rope Data Structure (PDF, 131
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges2024/verifyThis2024-Challenge-0.pdf "Challenge 0"){.eth-link--icon
-.eth-link--icon-vertical_align_bottom .eth-link target="_blank"}
+[The Rope Data Structure (PDF, 131 KB)](verifyThis2024-Challenge-0.pdf)
 
-**Challenge 1\
-**[[Download ]{.eth-link__label}Smart Array Copy by Shuffled Subsegments
-(PDF, 137
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges2024/verifyThis2024-Challenge-1.pdf){.eth-link--icon
-.eth-link--icon-vertical_align_bottom .eth-link target="_blank"}
+## Challenge 1
 
-**Challenge 2+3**\
-[[Download ]{.eth-link__label}Work-Stealing for Task Trees (PDF, 145
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges2024/verifyThis2024-Challenge-2and3.pdf){.eth-link--icon
-.eth-link--icon-vertical_align_bottom .eth-link target="_blank"}
+[Smart Array Copy by Shuffled Subsegments (PDF, 137 KB)](verifyThis2024-Challenge-1.pdf)
 
-** **
+## Challenge 2+3
+
+[Work-Stealing for Task Trees (PDF, 145 KB)](verifyThis2024-Challenge-2and3.pdf)
 
 The challenges of previous competitions are available in the
-[archive](Archive.html){.eth-link}.
-
+[archive](archive).
  
 
-RULES
+## RULES
 
 1.  Solutions are to be submitted per email to
      at the end of the challenge slot.
@@ -52,13 +43,5 @@ RULES
     implementations supplied with problem descriptions, the organizers
     do not guarantee that they are indeed correct.
 
-(We acknowledge Geoff Sutcliffe for inspiring/suggesting some of these
-rules.)[[Download ]{.eth-link__label} (PDF, 123
-KB)](https://www.pm.inf.ethz.ch/ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Challenges2021/challenge3.pdf){.eth-link--icon
-.eth-link--icon-vertical_align_bottom .eth-link target="_blank"}
-:::
-:::
-:::
-:::
-:::
-:::
+(We acknowledge Geoff Sutcliffe for inspiring/suggesting some of theserules.) 
+[(PDF, 123 KB)](challenge3.pdf)

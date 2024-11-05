@@ -2,37 +2,18 @@
 menus: 
   main:
     weight: 300
-title: Participation	
+    name: Call for Participation
+title: Call for Participation and Application for Travel Grants	
 ---
-::: {#contentMain .section .content-main}
-# Participation
 
-[]{#mainContent}
+### Important Dates
 
-::: {.childrenNav .children .basecomponent}
-:::
-
-::: {.par .parsys .basecomponent}
-::: {.par .parsys .basecomponent .contains-textimage}
-[]{#par_textimage style="visibility:hidden"}
-
-::: {.textimage .basecomponent}
-::: {.textimage__wrapper .is-first .is-last}
-::: {.text-image .cq-dd-image}
-## Call for Participation and Application for Travel Grants
-
- 
-
-**Important Dates**
-
-**Grant application deadline**: March 7th, 2024\
-(applications considered up to March 15th subject to availability)
+**Grant application deadline**: March 7th, 2024 (applications considered up to March 15th subject to availability)
 
 **Competition:** April 6th and 7th, 2024
 
- 
 
-**Participation**
+### Participation
 
 Participation is open for anybody interested. Teams of up to two people
 are allowed. VerifyThis will be held as a physical workshop as part of
@@ -40,15 +21,15 @@ ETAPS 2024 in Luxembourg. Registration for ETAPS workshops and physical
 presence on site is required. The actual competition will happen on the
 first day, whereas the second day will be used to discuss and evaluate
 the solutions. More details and a full program will be announced here on
-the website.\
-\
+the website.
+
 We particularly encourage participation of:
 
 -   student teams (this includes PhD students)
 -   non-developer teams / using a tool someone else developed
 -   several teams using the same tool
 
-#### Travel Grants
+### Travel Grants
 
 The competition has funds for a limited number of travel grants. A grant
 covers the incurred travel and accommodation costs up to a certain
@@ -60,9 +41,7 @@ competition, and may take this into account if needing to prioritise
 travel grants; regardless, we strongly encourage you to apply if you
 have a need.
 
-To apply for a travel grant, send an email to
-
-by March 7th, 2024 (or at the latest March 15th). The application should
+To apply for a travel grant, send an email **XXX** to **XXX** by March 7th, 2024 (or at the latest March 15th). The application should
 include:
 
 -   your name
@@ -74,13 +53,3 @@ include:
     verification so far and/or interest in attending the competition
 -   if you are a student, please state the academic degree you are
     seeking and have your supervisor send a brief letter of support to
-
- 
-
- 
-:::
-:::
-:::
-:::
-:::
-:::

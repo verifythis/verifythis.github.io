@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ with resources.Get "css/pure-min.css" }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+
+    {{ with resources.Get "css/style.css" }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+  </head>
+  <body>
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}    
+    <section class="main">
+      {{ block "main" . }}{{ end }}
+    </section>
+    <section class="footer">
+      <div class="foot-content">
+      {{ block "footer" . }}  
+      VerifyThis -- (c) 2024
+      {{ partial "menu.html" (dict "menuID" "footer" "page" .) }}
+      {{ end }}
+      </div>
+    </section>
+  </body>
+</html>
