@@ -1,0 +1,296 @@
+I verified both the sequential and the parallel codes.
+In both cases I have verified for up to N=5 (N=size of array = number of procs).
+I have checked termination, the resulting array is sorted and is a permutation of the original.
+
+
+First, the simple sequential algorithm:
+
+/* Challenge 3: part 1: the simple sequential algorithm
+ * is verified.
+ */
+
+#include <stdbool.h>
+
+typedef double T;
+
+$input int N = 4; // upper bound on n
+$input int n; // size of array
+$assume(1<=n && n<=N);
+$input T A[n]; // input: constant, fixed forever
+
+/* Counts the number of occurences of val in the array
+ * starting at p consisting of n ints */ int count(int n, T *p, T val) {
+  int result = 0;
+  for (int i=0; i<n; i++)
+    if (p[i]==val) result++;
+  return result;
+}
+
+void oddEvenSort(int n, T *list) {
+  void swap(T *p, int i, int j) {
+    T temp = p[i];
+    p[i] = p[j];
+    p[j] = temp;
+  }
+  
+  _Bool sorted = false;
+  
+  while (!sorted) {
+    sorted = true;
+    for (int i = 1; i < n-1; i += 2) {
+      if (list[i] > list[i+1]) {
+        swap(list, i, i+1);
+        sorted = false;
+      }
+    }
+    for (int i = 0; i < n-1; i += 2) {
+      if (list[i] > list[i+1]) {
+        swap(list, i, i+1);
+        sorted = false;
+      }
+    }
+  }
+}
+
+int main() {
+  T a[n];
+  for (int i=0; i<n; i++) a[i] = A[i];
+  oddEvenSort(n, a);
+
+  // array a is sorted...
+  $assert($forall (int i : 0..n-2) a[i]<=a[i+1]);
+
+  // first attempt at permutation.  This does not quite
+  // prove permutation, but it does show all elements
+  // occuring in a also occur in A, and vice versa...
+
+  $assert($forall (int i : 0..n-1)
+	  ($exists (int j : 0..n-1) a[i]==A[j]));
+  $assert($forall (int i : 0..n-1)
+	  ($exists (int j : 0..n-1) A[i]==a[j]));
+
+  // this gets it exactly right...
+  for (int i=0; i<n; i++)
+    $assert(count(n, a, a[i]) == count(n, A, a[i])); }
+
+
+/*
+civl verify challenge3a.cvl
+CIVL v1.8+ of 2017-04-18 -- http://vsl.cis.udel.edu/civl
+17s: mem=220Mb trans=5883 traceSteps=4228 explored=5883 saved=4229 prove=729
+
+=== Command ===
+civl verify challenge3a.cvl 
+
+=== Stats ===
+   time (s)            : 28.98
+   memory (bytes)      : 233308160
+   max process count   : 1
+   states              : 11850
+   states saved        : 8363
+   state matches       : 0
+   transitions         : 11849
+   trace steps         : 8362
+   valid calls         : 36004
+   provers             : cvc4, z3, cvc3
+   prover calls        : 1491
+
+=== Result ===
+The standard properties hold for all executions.
+192:VerifyThis2017 siegel$ 
+
+*/
+
+That could scale further but I am more interested in the parallel algorithm..
+
+
+/* VerifyThis 2017, Challenge 3: part 2: the concurrent algorithm.
+ * I have implemented the algorithm using MPI, the standard message-passing interface.
+ * It follows the pseudo-code almost exactly.
+ * Verification succeeds for up to N=5 (N=number of procs=length of array).
+ * Author: Stephen Siegel.
+ */
+
+#include <mpi.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <civlc.cvh>
+
+// change to whatever type you like.  The MPI datatype and the C type must match...
+#define T double
+#define MPI_T MPI_DOUBLE
+
+$input int N = 4; // size of array: can be specified on command line with -inputN=...
+$input T A[N]; // input array : constant, fixed forever
+
+T myvalue; // this is a local variable for each process in MPI
+
+/* Counts the number of occurrences of val in the array
+ * starting at p consisting of n elements of T. */ int count(int n, T *p, T val) {
+  int result = 0;
+  for (int i=0; i<n; i++)
+    if (p[i]==val) result++;
+  return result;
+}
+
+void oddEvenPar(int n, int id) {
+  T othervalue;
+
+  //printf("n=%d\n", n);
+  
+  for (int i=0; i<n; i++) {
+    if ((i+id)%2 == 0) {
+      if (id<n-1) {
+	MPI_Send(&myvalue, 1, MPI_T, id+1, 0, MPI_COMM_WORLD);
+	MPI_Recv(&othervalue, 1, MPI_T, id+1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+	if (othervalue < myvalue)
+	  myvalue = othervalue;
+      }
+    } else { // odd
+      if (id>0) {
+	MPI_Send(&myvalue, 1, MPI_T, id-1, 0, MPI_COMM_WORLD);
+	MPI_Recv(&othervalue, 1, MPI_T, id-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+	if (othervalue > myvalue)
+	  myvalue = othervalue;
+      }
+    }
+  }
+}
+
+int main() {
+  int nprocs, rank;
+  
+  MPI_Init(NULL, NULL); // initialize MPI
+  MPI_Comm_size(MPI_COMM_WORLD, &nprocs); // get the number of procs
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank); // get my "rank" (id)
+  $assert(nprocs == N); // number of procs must equal N
+
+  myvalue = A[rank]; // get my value from the global input array A
+  //printf("Before: rank=%d, myvalue=%f\n", rank, myvalue);
+  oddEvenPar(nprocs, rank); // call the function that does the work
+  //printf("After:  rank=%d, myvalue=%f\n", rank, myvalue);
+
+  if (rank == 0) { // proc 0 will gather all data and check it is correct
+    T a[N]; // used for verification---gather all elements into one array on proc 0
+
+    MPI_Gather(&myvalue, 1, MPI_T, a, 1, MPI_T, 0, MPI_COMM_WORLD);
+    $assert($forall (int i : 0..N-2) a[i]<=a[i+1]);
+    $assert($forall (int i : 0..N-1)
+	    ($exists (int j : 0..N-1) a[i]==A[j]));
+    $assert($forall (int i : 0..N-1)
+	    ($exists (int j : 0..N-1) A[i]==a[j]));
+    for (int i=0; i<N; i++)
+      $assert(count(N, a, a[i]) == count(N, A, a[i]));
+  } else {
+    MPI_Gather(&myvalue, 1, MPI_T, NULL, 0, MPI_T, 0, MPI_COMM_WORLD);
+  }
+  MPI_Finalize();
+}
+
+/* 
+   Result for N=4:
+
+VerifyThis2017 siegel$ civl verify -input_mpi_nprocs=4 challenge3b.c CIVL v1.8+ of 2017-04-18 -- http://vsl.cis.udel.edu/civl
+21s: mem=675Mb trans=12412 traceSteps=5411 explored=12520 saved=5412 prove=274
+36s: mem=774Mb trans=31900 traceSteps=13916 explored=32133 saved=13917 prove=758
+
+=== Command ===
+civl verify -input_mpi_nprocs=4 challenge3b.c 
+
+=== Stats ===
+   time (s)            : 50.03
+   memory (bytes)      : 810024960
+   max process count   : 5
+   states              : 50466
+   states saved        : 21770
+   state matches       : 0
+   transitions         : 50137
+   trace steps         : 21769
+   valid calls         : 110822
+   provers             : cvc4, z3, cvc3
+   prover calls        : 1295
+
+=== Result ===
+The standard properties hold for all executions.
+ */
+
+
+/*
+  Output for N=5:
+
+VerifyThis2017 siegel$ civl verify -input_mpi_nprocs=5 -inputN=5 challenge3b.c CIVL v1.8+ of 2017-04-18 -- http://vsl.cis.udel.edu/civl
+21s: mem=783Mb trans=14263 traceSteps=6252 explored=14366 saved=6253 prove=274
+36s: mem=782Mb trans=34552 traceSteps=15219 explored=34791 saved=15220 prove=721
+51s: mem=763Mb trans=55212 traceSteps=24184 explored=55558 saved=24185 prove=1193
+66s: mem=775Mb trans=74647 traceSteps=32598 explored=75117 saved=32599 prove=1715
+81s: mem=763Mb trans=94146 traceSteps=41244 explored=94761 saved=41245 prove=2193
+96s: mem=735Mb trans=113994 traceSteps=50015 explored=114706 saved=50016 prove=2684
+111s: mem=710Mb trans=134395 traceSteps=58798 explored=135229 saved=58799 prove=3164
+126s: mem=705Mb trans=152332 traceSteps=66654 explored=153240 saved=66655 prove=3716
+141s: mem=704Mb trans=172753 traceSteps=75229 explored=173765 saved=75230 prove=4223
+156s: mem=781Mb trans=190171 traceSteps=82662 explored=191291 saved=82663 prove=4699
+171s: mem=785Mb trans=210070 traceSteps=91266 explored=211282 saved=91267 prove=5178
+186s: mem=795Mb trans=229820 traceSteps=99706 explored=231147 saved=99707 prove=5675
+201s: mem=799Mb trans=248147 traceSteps=107776 explored=249564 saved=107777 prove=6179
+216s: mem=909Mb trans=262493 traceSteps=113891 explored=263990 saved=113892 prove=6609
+231s: mem=915Mb trans=278441 traceSteps=120973 explored=280027 saved=120974 prove=7158
+246s: mem=916Mb trans=297508 traceSteps=129225 explored=299187 saved=129226 prove=7683
+261s: mem=894Mb trans=316506 traceSteps=137387 explored=318266 saved=137388 prove=8201
+276s: mem=896Mb trans=335414 traceSteps=145421 explored=337268 saved=145422 prove=8731
+291s: mem=870Mb trans=352379 traceSteps=152829 explored=354298 saved=152830 prove=9266
+306s: mem=889Mb trans=370030 traceSteps=160432 explored=372024 saved=160433 prove=9843
+321s: mem=889Mb trans=389268 traceSteps=168528 explored=391361 saved=168529 prove=10393
+
+=== Command ===
+civl verify -input_mpi_nprocs=5 -inputN=5 challenge3b.c 
+
+=== Stats ===
+   time (s)            : 332.78
+   memory (bytes)      : 932708352
+   max process count   : 6
+   states              : 404664
+   states saved        : 174150
+   state matches       : 0
+   transitions         : 402547
+   trace steps         : 174149
+   valid calls         : 875133
+   provers             : cvc4, z3, cvc3
+   prover calls        : 10927
+
+=== Result ===
+The standard properties hold for all executions.
+
+ */
+
+
+Termination can be checked by looking at the output from CIVL above.
+State matches = 0 implies there are no cycles in the state space.
+Since absence of deadlock is checked automatically, this implies every execution (with specified N) must terminate.
+
+Another approach is to turn state matching off, result is same ...
+
+VerifyThis2017 siegel$ civl verify -input_mpi_nprocs=3 -inputN=3 -saveStates=false challenge3b.c CIVL v1.8+ of 2017-04-18 -- http://vsl.cis.udel.edu/civl
+
+=== Command ===
+civl verify -input_mpi_nprocs=3 -inputN=3 -saveStates=false challenge3b.c 
+
+=== Stats ===
+   time (s)            : 18.13
+   memory (bytes)      : 698351616
+   max process count   : 4
+   states              : 4483
+   states saved        : 1
+   state matches       : 0
+   transitions         : 7825
+   trace steps         : 3399
+   valid calls         : 15894
+   provers             : cvc4, z3, cvc3
+   prover calls        : 196
+
+=== Result ===
+The standard properties hold for all executions.
+
+
+Can do same for more values of N...
+
+

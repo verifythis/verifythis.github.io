@@ -1,0 +1,1 @@
+This is our solution for challenge 2: we almost proven the sortedness of the algorithm and informally wrote the decreasing measure.

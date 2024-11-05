@@ -1,0 +1,101 @@
+Partial solution not working:
+http://rise4fun.com/Dafny/qrCa7
+
+code:
+
+// Naive implementation
+module naive {
+   datatype buf<T> = Cons(h: int, xs: seq<T>)
+
+   function empty<T>(h: int):buf<T>
+     requires h >= 1
+   {
+     buf<T>.Cons(h, [])
+   }
+
+   function take<T>(n:int, xs:seq<T>):seq<T>
+     requires 0 <= n
+   {
+     if n > |xs| then xs[..|xs|]
+     else xs[..n]
+   }
+
+   function add<T>(x: T, b: buf<T>):buf<T> {
+     Cons(b.h, [x] + b.xs)
+   }
+
+   function get<T>(b: buf<T>):seq<T>
+     requires b.h >= 0
+   {
+     take(b.h, b.xs)
+   }
+}
+
+module caterpillar {
+
+   import naive
+
+   class buf<T> {
+     ghost var rep : naive.buf<T>;
+     var h: int;
+     var xs: array<T>;
+     var xs_len: int;
+     var ys: array<T>;
+   }
+
+   predicate valid<T>(b: buf<T>)
+     reads b, b.xs, b.ys
+   {
+     b != null &&
+     b.xs != null &&
+     b.ys != null &&
+     0 <= b.xs_len < b.h &&
+     b.xs.Length >= b.h &&
+     (b.xs[..]+b.ys[..])[..min(b.h, b.xs.Length + b.ys.Length)] ==  
+naive.get(b.rep)
+   }
+
+   function method min(a: int, b:int):int {
+     if a < b then a else b
+   }
+
+   method get<T>(b:buf<T>) returns (r:seq<T>)
+     requires valid(b)
+     ensures naive.get(b.rep) == r
+   {
+     r := (b.xs[..]+b.ys[..])[..min(b.h, b.xs.Length + b.ys.Length)];
+   }
+
+   method empty<T>(h: int) returns (r:buf<T>)
+     requires h >= 1;
+     ensures valid(r);
+   {
+     r := new buf<T>;
+     r.rep := naive.empty(h);
+     r.h := h;
+     r.xs := new T[h];
+     r.xs_len := 0;
+     r.ys := new T[0];
+   }
+
+   method add<T>(x: T, b: buf<T>)
+     requires valid(b);
+     ensures valid(b) && naive.add(x, old(b.rep)) == b.rep
+     modifies b
+     modifies b.xs
+   {
+     if b.xs_len == b.h - 1 {
+       b.xs[b.xs_len] := x;
+       b.ys := b.xs;
+       b.xs_len := 0;
+       b.xs := new T[b.h];
+       b.rep := naive.add(x, b.rep);
+     } else {
+       b.xs[b.xs_len] := x;
+       b.xs_len := b.xs_len + 1;
+       b.rep := naive.add(x, b.rep);
+     }
+   }
+}
+
+

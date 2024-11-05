@@ -1,0 +1,5 @@
+This is my solution to challenge 1. I proved
+
+1. safety (including termination)
+2. sortedness property (first ensures)
+3. permutation (second ensures)

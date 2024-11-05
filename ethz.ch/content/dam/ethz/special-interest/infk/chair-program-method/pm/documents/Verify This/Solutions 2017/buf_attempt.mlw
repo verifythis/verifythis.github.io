@@ -1,0 +1,66 @@
+theory Buf_spec
+
+  use import int.Int
+  use import list.List
+
+  type buf 'a = { h: int; xs: list 'a; }
+
+   function take (n: int) (xs: list 'a): list 'a
+   axiom take_0: 
+     forall xs: list 'a. take 0 xs = Nil
+   axiom take_S_nil:
+     forall n. take n Nil = (Nil: list 'a)
+   axiom take_S_cons: 
+     forall n, x, xs: list 'a. 0 < n -> take n (Cons x xs) = Cons x (take (n-1) xs)
+
+   function empty (n: int) : buf 'a = { h = n; xs = Nil }
+
+   function add (x: 'a) (b: buf 'a) : buf 'a = { h = b.h; xs = Cons x b.xs }
+
+   function get (b: buf 'a) : list 'a = take b.h b.xs
+
+end
+
+module Buf_Impl
+
+  use import int.Int
+  use import list.List
+  use import list.Length
+  use import list.Append
+  use import Buf_spec as B
+
+  type buf 'a = { h: int; xs: list 'a; xs_len : int;
+                 ys: list 'a;       ghost mdl : B.buf 'a }
+
+  function get (b: buf 'a) : list 'a = B.take b.h (b.xs ++ b.ys)
+
+  predicate inv (b: buf 'a) =
+    0 <= b.h /\ b.xs_len =  b.xs.length /\ b.h = b.mdl.B.h /\ B.get b.mdl = get b
+
+  let empty (n: int)
+  requires { 0 <= n }
+  ensures  { inv result }
+  ensures  { result.mdl = B.empty n }
+  =  { h = n; xs = Nil; xs_len = 0; ys = Nil; mdl = B.empty n }
+
+  lemma take_append:
+    forall xs ys: list 'a, n. 0 <= n <= length xs -> take n (xs++ys) = take n xs
+
+  let add (x: 'a) (b: buf 'a) : buf 'a
+  requires { inv b }
+  ensures  { inv result }
+  ensures  { result.mdl = B.add x b.mdl }
+=  
+    if b.xs_len = b.h - 1
+    then { h = b.h;
+           xs = Nil;
+           xs_len = 0;
+           ys = Cons x b.xs;
+           mdl = B.add x b.mdl }
+    else { h = b.h;
+           xs = Cons x b.xs;
+           xs_len = b.xs_len+1;
+           ys = b.ys;
+           mdl = B.add x b.mdl }
+
+end

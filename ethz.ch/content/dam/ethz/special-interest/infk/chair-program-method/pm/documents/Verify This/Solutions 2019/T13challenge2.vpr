@@ -1,0 +1,135 @@
+// Viper solution to VerifyThis Challenge 2 Part A
+// Alexander J. Summers (ETH Zurich)
+// Viper Team (viper.ethz.ch)
+
+// This solution was verified using Viper's Boogie-based verifier (Carbon)
+
+// It uses a mathematical stack (encoded as an algebraic data type, using a Viper domain) to model the stack in the algorithm;
+// The input and output data are modelled as (heap-based) arrays, using their standard encoding in Viper.
+
+// Definition of a mathematical stack
+domain Stack 
+{
+  // empty stack
+  function empty() : Stack 
+
+  // stack with one more entry pushed
+  function pushed(i:Int, s:Stack) : Stack
+
+  // peek at top of stack
+  function peek(s:Stack) : Int // underspecified for empty stack
+  
+  // stack with one entry popped
+  function popped(s:Stack) : Stack // underspecified for empty stack
+  
+  axiom pushed_injective {
+      forall i: Int, s:Stack :: {pushed(i,s)} pushed(i,s) != empty() && peek(pushed(i,s)) == i && popped(pushed(i,s)) == s
+  }
+
+  axiom pushed_surjective { // The condition here means popping from an empty stack is underspecified
+      forall s:Stack :: {popped(s)} s != empty() ==> pushed(peek(s),popped(s)) == s
+  }
+}
+
+
+define is_empty(s) s == empty()
+
+// handy macros for array permissions
+// ARRAYS indexed from 1 in this task:
+define ARRAY(a) ARRAYPERM(a,write)
+define ARRAYPERM(a,p) forall i : Int :: 0 < i && i <= len(a) ==> acc(loc(a,i).val,p)
+
+define SLOT(a,i) loc(a,i).val // shorthand for array access (think a[i])
+// values unchanged since pre-state
+define UNCHANGED(s) forall i: Int :: 0 < i && i <= len(s) ==> SLOT(s,i) == old(SLOT(s,i))
+
+
+// The stack invariant for tasks 1,2 and 3:
+// must be positive, increasing, and satisfy property that the value in s at each stored 
+// index is <= values stored in s at all indices down to the next element on the stack
+function validStack(st:Stack, s:Array) : Bool 
+  requires ARRAY(s)
+{
+  st == empty() // trivial case
+  || // stack is of size 1:
+  popped(st) == empty() 
+   && peek(st) > 0 && peek(st) <= len(s) && 
+  (forall i: Int :: 1 <= i && i <= peek(st) ==> SLOT(s,peek(st)) <= SLOT(s,i))  
+  || // stack is of size >= 2:
+  popped(st) != empty() 
+   && 0 < peek(popped(st)) && peek(popped(st)) < peek(st) && peek(st) <= len(s)
+   && (forall i: Int :: peek(popped(st)) < i && i <= peek(st) ==> 
+         SLOT(s,peek(st)) <= SLOT(s,i)) && validStack(popped(st),s)
+}
+
+// Translation of the code from the problem
+method givenCode(s:Array, left:Array) 
+  requires ARRAY(s) && ARRAY(left) && len(left) == len(s) // array lengths are the same
+  ensures ARRAY(s) && ARRAY(left) && UNCHANGED(s) // input array is unchanged
+  ensures forall i : Int :: 0 < i && i <= len(s) ==> SLOT(left,i) <= i // TASK 1
+  ensures forall i : Int :: 0 < i && i <= len(s) ==> SLOT(left,i) > 0 ==> 
+    SLOT(s,SLOT(left,i)) < SLOT(s,i) // TASK 2
+  ensures forall i : Int :: 0 < i && i <= len(s) ==> SLOT(left,i) > 0 ==> 
+    forall j: Int :: SLOT(left,i) < j && j < i ==> SLOT(s,j) >= SLOT(s,i) // TASK 3
+{
+  var x : Int := 1
+  var my_stack : Stack := empty() // Stacks are ADTs here - we construct and destruct them
+  
+  while(x <= len(s)) // for each position x in s do:
+    invariant 1 <= x && x <= len(s) + 1
+    invariant ARRAY(s) && ARRAY(left) && UNCHANGED(s)
+    invariant validStack(my_stack,s) && (!is_empty(my_stack) ==> peek(my_stack) < x)
+    invariant forall i : Int :: 0 < i && i < x ==> SLOT(left,i) <= i // TASK 1
+    invariant forall i : Int :: 0 < i && i < x ==> SLOT(left,i) > 0 
+      ==> SLOT(s,SLOT(left,i)) < SLOT(s,i) // TASK 2
+    invariant forall i : Int :: 0 < i && i < x && i <= len(s) ==> (SLOT(left,i) > 0 ==> 
+      forall j: Int :: SLOT(left,i) < j && j < i ==> SLOT(s,j) >= SLOT(s,i)) // TASK 3
+    invariant !is_empty(my_stack) ==> peek(my_stack) == x - 1
+    invariant is_empty(my_stack) ==> x == 1
+  {    
+    label l
+    assert forall i : Int :: 0 < i && i < x ==> SLOT(left,i) <= i 
+    while(!is_empty(my_stack) && SLOT(s,peek(my_stack)) >= SLOT(s,x)) // typo in code: I assume y should be x 
+      invariant ARRAY(s) && UNCHANGED(s)
+      invariant validStack(my_stack,s) && (!is_empty(my_stack) ==> peek(my_stack) < x)
+      // everything between the head of the stack and x is smaller in the input array
+      invariant !is_empty(my_stack) ==> 
+        forall i : Int :: peek(my_stack) < i && i <= x ==> SLOT(s,x) <= SLOT(s,i)
+      invariant is_empty(my_stack) ==> 
+        forall i : Int :: 1 <= i && i <= x ==> SLOT(s,x) <= SLOT(s,i)
+    {
+      var st: Stack := my_stack
+
+      my_stack := popped(my_stack)
+    } 
+
+    if(is_empty(my_stack)) {
+      SLOT(left,x) := 0
+    } else {
+      SLOT(left,x) := peek(my_stack) 
+    }
+    my_stack := pushed(x,my_stack)
+    x := x + 1 // next iteration of for each loop
+  }
+}
+
+
+
+// standard array encoding for Viper
+domain Array {
+  function loc(a: Array, i: Int): Ref
+  function len(a: Array): Int
+  function inverse_first(r: Ref): Array // array this slot belongs to
+  function inverse_second(r: Ref): Int // index of this array slot
+
+  axiom all_diff {
+    forall a: Array, i: Int :: {loc(a, i)}
+      inverse_first(loc(a, i)) == a && inverse_second(loc(a, i)) == i
+  }
+
+  axiom length_pos {
+    forall a: Array :: len(a) >= 0
+  }
+}
+field val: Int // store array slot values
+

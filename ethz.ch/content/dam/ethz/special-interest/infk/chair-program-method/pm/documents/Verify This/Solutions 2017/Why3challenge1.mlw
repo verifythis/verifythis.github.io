@@ -1,0 +1,68 @@
+module Sort
+
+use import int.Int
+use import ref.Refint
+use import array.Array
+use import array.IntArraySorted
+
+let swap (a b: ref int): unit
+  ensures { !a = old !b /\ !b = old !a }
+= let tmp = !a in
+  a := !b;
+  b := tmp
+
+let sort (a: array int)
+  requires { 1 < length a }
+  ensures { sorted a }
+  = let i = ref 0 in
+    let x = ref (any int) in
+    let y = ref (any int) in
+    let j = ref (any int) in
+    while !i < length a-1 do
+      invariant { 0 <= !i <= length a }
+      invariant { sorted_sub a 0 !i }
+      x := a[!i];
+      y := a[!i+1];
+
+      if !x < !y then	
+        swap x y;
+
+      j := (!i - 1);
+      while !j >= 0 && a[!j] > !x do
+      invariant { -1 <= !j < !i }
+      invariant { forall k. !j < k < !i -> !x <= a[k] }
+      invariant { sorted_sub a 0 (!j+1) }
+      invariant { sorted_sub a (!j+3) !i }
+      invariant { forall n m. 0 <= n <= !j <= m < !i -> a[n] <= a[m] }
+
+        a[!j+2] <- a[!j]	;
+        j -= 1
+      done;
+      a[!j+2] <- !x;
+
+      while !j >= 0 && a[!j] > !y do
+      invariant { -1 <= !j < !i }
+      invariant { forall k. !j < k < !i -> !y <= a[k] }
+      invariant { sorted_sub a 0 (!j) }
+      invariant { sorted_sub a (!j+2) !i }
+      invariant { forall n m. 0 <= n <= !j <= m < !i -> a[n] <= a[m] }
+        a[!j+1] <- a[!j];
+        j -= 1
+      done;
+      a[!j+1] <- !y;
+
+      i += 2;
+    done;
+
+    if !i = length a -1	then begin
+      y := a[!i]	;
+      j := !i - 1	;
+      while !j >= 0 && a[!j] > !y do
+        invariant { 0 <= !j < !i }
+        a[!j+1] = a[!j];
+        j -= 1
+      done;
+      a[!j+1] <- !y
+    end 
+
+end

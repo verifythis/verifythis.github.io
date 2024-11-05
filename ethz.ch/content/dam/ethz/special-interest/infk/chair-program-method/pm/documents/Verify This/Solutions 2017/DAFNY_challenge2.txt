@@ -1,0 +1,78 @@
+Link: http://rise4fun.com/Dafny/KVOtK
+Code:
+
+predicate isSorted(s: seq<int>) {
+   forall i :: forall j :: 0 <= i <= j < |s| ==> s[i] <= s[j] }
+
+predicate oddSorted(s: seq<int>) {
+     forall i :: 0 <= i < |s|-1 && i % 2 == 1 ==> s[i] <= s[i+1] }
+
+predicate evenSorted(s: seq<int>) {
+     forall i :: 0 <= i < |s|-1 && i % 2 == 0 ==> s[i] <= s[i+1] }
+
+lemma lemma_sorted(s: seq<int>)
+   requires oddSorted(s)
+   requires evenSorted(s)
+   ensures isSorted(s)
+{
+    if |s| <= 2 {
+
+    } else {
+      assert s[0] <= s[1] <= s[2];
+      lemma_sorted(s[2..]);
+    }
+}
+
+method oddEvenSort(list: array<int>)
+   requires list != null;
+   modifies list;
+   ensures isSorted(list[..])
+   decreases *
+{
+   var sorted := false;
+   while(!sorted)
+     invariant sorted ==> isSorted(list[..])
+     decreases *
+   {
+     sorted := true;
+     var i := 1;
+
+     while (i < list.Length-1)
+     {
+       if (list[i] > list[i+1]) {
+         list[i], list[i+1] := list[i+1], list[i];
+         sorted := false;
+       }
+       i := i + 2;
+     }
+     assume oddSorted(list[..]);
+
+     i := 0;
+     ghost var previous := list[..];
+     while (i < list.Length-1)
+       invariant sorted ==> list[..] == previous
+     {
+       if (list[i] > list[i+1]) {
+         list[i], list[i+1] := list[i+1], list[i];
+         sorted := false;
+       }
+       i := i + 2;
+     }
+     assume evenSorted(list[..]);
+     //assert oddSorted(previous);
+     //assert sorted ==> list[..] == previous ==> oddSorted(list[..]);
+     assert sorted ==> oddSorted(list[..]) && evenSorted(list[..]);
+     calc {
+       oddSorted(list[..]) && evenSorted(list[..]);
+       ==> {lemma_sorted(list[..]);}
+       isSorted(list[..]);
+     }
+     assert sorted ==> isSorted(list[..]);
+   }
+}
+
+
+Only partial correctness of the secuential algorithm has been proved.  
+In order to finish it remains to remove the two assumes in the code.
+
+

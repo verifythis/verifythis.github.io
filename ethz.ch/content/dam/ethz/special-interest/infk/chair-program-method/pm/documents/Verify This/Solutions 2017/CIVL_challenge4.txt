@@ -1,0 +1,260 @@
+I did part 1 only.
+CIVL has the ability to “compare” two programs for functional equivalence.
+The first program (a) is the “specification”.
+The second program (b) is the “implementation”.
+The two programs and result of using CIVL are shown.
+Verified for up to N=8 but could go higher with no problem.
+N = number of elements added.
+M = the number to take.
+Note impl also checks non-interference.
+-s
+
+
+
+/* VerifyThis 2017 Challenge 4, part 1(a).
+ * This is the "naive" implementation, or the "specification".
+ * Author: Stephen Siegel
+ */
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef double T;
+
+// add N elements and take M
+$input int NB=8; // or specify on command line $input int N; $assume(0<N && N<=NB); $input int M; $assume(0<M && M<=N); $input double A[N]; $output double B[M];
+
+// Nodes for lists  of T ...
+
+typedef struct _node {
+  T val;
+  struct _node *nxt;
+  //int rc = 0; // reference count
+} * Node;
+
+// copies first n nodes in list headed at u Node copy(Node u, int n) {
+  if (n==0)
+    return NULL;
+  Node v = (Node)malloc(sizeof(struct _node));
+  v->val = u->val;
+  Node rest = copy(u->nxt, n-1);
+  v->nxt = rest;
+  return v;
+}
+
+void printNode(Node u) {
+  if (u==NULL)
+    return;
+  printf("%f ", u->val);
+  printNode(u->nxt);
+}
+    
+// Tree buffers ...
+
+typedef struct _buf {
+  int h;
+  Node list;
+} * Buf;
+
+Buf empty(int h) {
+  Buf result = (Buf)malloc(sizeof(struct _buf));
+  result->h = h;
+  result->list = NULL;
+  return result;
+}
+
+Buf add(T x, Buf b) {
+  Buf result = (Buf)malloc(sizeof(struct _buf));
+  result->h = b->h;
+  Node u = (Node)malloc(sizeof(struct _node));
+  u->val = x;
+  u->nxt = b->list;
+  result->list = u;
+  return result;
+}
+
+Node get(Buf b) {
+  return copy(b->list, b->h);
+}
+
+
+void test1() {
+  Buf b = empty(2);
+  Buf b1 = add(1, b);
+  Buf b2 = add(2, b1);
+  Buf b3 = add(3, b2);
+  Buf b4 = add(4, b3);
+  Node u1 = get(b4);
+  printNode(u1);
+}  
+
+int main() {
+  Buf b = empty(M);
+  for (int i=0; i<N; i++) {
+    b = add(A[i], b);
+  }
+  Node r = get(b);
+  printNode(r);
+  printf("\n");
+  for (int i=0; i<M; i++) {
+    B[i] = r->val;
+    r=r->nxt;
+  }
+}
+
+
+
+————————————————————————————————————
+
+
+/* VerifyThis 2017 Challenge 4, part 1(b).
+ * This is the "caterpillar" implementation.
+ * It is shown to be functionally equivalent to the naive one.
+ * Author: Stephen Siegel
+ */
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef double T;
+
+// add N elements and take M
+$input int NB=8;
+$input int N;
+$assume(0<N && N<=NB);
+$input int M;
+$assume(0<M && M<=N);
+$input double A[N];
+$output double B[M];
+
+// Nodes for lists  of T ...
+
+typedef struct _node {
+  T val;
+  struct _node *nxt;
+  //int rc = 0; // reference count
+} * Node;
+
+// copies first n nodes in list headed at u Node copy(Node u, int n) {
+  if (n==0)
+    return NULL;
+  Node v = (Node)malloc(sizeof(struct _node));
+  v->val = u->val;
+  Node rest = copy(u->nxt, n-1);
+  v->nxt = rest;
+  return v;
+}
+
+// copy n nodes from concatenation of u1 and u2 Node copy2(Node u1, Node u2, int n) {
+  if (n==0)
+    return NULL;
+  Node v = (Node)malloc(sizeof(struct _node));
+  Node rest;
+  if (u1 == NULL) {
+    v->val = u2->val;
+    rest = copy(u2->nxt, n-1);
+  } else {
+    v->val = u1->val;
+    rest = copy2(u1->nxt, u2, n-1);
+  }
+  v->nxt = rest;
+  return v;
+}
+
+void printNode(Node u) {
+  if (u==NULL)
+    return;
+  printf("%f ", u->val);
+  printNode(u->nxt);
+}
+    
+// Tree buffers ...
+
+typedef struct _buf {
+  int h;
+  Node xs;
+  int xs_len;
+  Node ys;
+} * Buf;
+
+Buf empty(int h) {
+  Buf result = (Buf)malloc(sizeof(struct _buf));
+  result->h = h;
+  result->xs = NULL;
+  result->xs_len = 0;
+  result->ys = NULL;
+  return result;
+}
+
+Buf add(T x, Buf b) {
+  Buf result = (Buf)malloc(sizeof(struct _buf));
+  result->h = b->h;
+  Node u = (Node)malloc(sizeof(struct _node));
+  u->val = x;
+  u->nxt = b->xs;
+  if (b->xs_len == b->h - 1) {
+    result->xs = NULL;
+    result->xs_len = 0;
+    result->ys = u;
+  } else {
+    result->xs = u;
+    result->xs_len = b->xs_len+1;
+    result->ys = b->ys;
+  }
+  return result;
+}
+
+Node get(Buf b) {
+  return copy2(b->xs, b->ys, b->h);
+}
+
+
+void test1() {
+  Buf b = empty(2);
+  Buf b1 = add(1, b);
+  Buf b2 = add(2, b1);
+  Buf b3 = add(3, b2);
+  Buf b4 = add(4, b3);
+  Node u1 = get(b4);
+  printNode(u1);
+}  
+
+int main() {
+  Buf b = empty(M);
+  for (int i=0; i<N; i++) {
+    b = add(A[i], b);
+  }
+
+  // This should not interfere...
+  Buf c = b;
+  c = add(3.14, c);
+  c = add(2.718, c);
+  
+  Node r = get(b);
+  printNode(r);
+  for (int i=0; i<M; i++) {
+    B[i] = r->val;
+    r=r->nxt;
+  }
+}
+
+
+/*
+  Output:
+civl compare -checkMemoryLeak=false -spec challenge4a.cvl -impl challenge4b.cvl CIVL v1.8+ of 2017-04-18 -- http://vsl.cis.udel.edu/civl X_A[7] X_A[7] X_A[7] X_A[6] X_A[7] X_A[6] X_A[7] X_A[6] X_A[5] X_A[7] X_A[6] X_A[5] X_A[7] X_A[6] X_A[5] X_A[4] X_A[7] X_A[6] X_A[5] X_A[4] X_A[7] X_A[6] X_A[5] X_A[4] X_A[3] X_A[7] X_A[6] X_A[5] X_A[4] X_A[3] X_A[7] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[7] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[7] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[7] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[7] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[0] X_A[7] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[0] X_A[6] X_A[6] X_A[6] X_A[5] X_A[6] X_A[5] X_A[6] X_A[5] X_A[4] X_A[6] X_A[5] X_A[4] X_A[6] X_A[5] X_A[4] X_A[3] X_A[6] X_A[5] X_A[4] X_A[3] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[0] X_A[6] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[0] X_A[5] X_A[5] X_A[5] X_A[4] X_A[5] X_A[4] X_A[5] X_A[4] X_A[3] X_A[5] X_A[4] X_A[3] X_A[5] X_A[4] X_A[3] X_A[2] X_A[5] X_A[4] X_A[3] X_A[2] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[0] X_A[5] X_A[4] X_A[3] X_A[2] X_A[1] X_A[0] X_A[4] X_A[4] X_A[4] X_A[3] X_A[4] X_A[3] X_A[4] X_A[3] X_A[2] X_A[4] X_A[3] X_A[2] X_A[4] X_A[3] X_A[2] X_A[1] X_A[4] X_A[3] X_A[2] X_A[1] X_A[4] X_A[3] X_A[2] X_A[1] X_A[0] X_A[4] X_A[3] X_A[2] X_A[1] X_A[0] X_A[3] X_A[3] X_A[3] X_A[2] X_A[3] X_A[2] X_A[3] X_A[2] X_A[1] X_A[3] X_A[2] X_A[1] X_A[3] X_A[2] X_A[1] X_A[0] X_A[3] X_A[2] X_A[1] X_A[0] X_A[2] X_A[2] X_A[2] X_A[1] X_A[2] X_A[1] X_A[2] X_A[1] X_A[0] X_A[2] X_A[1] X_A[0] X_A[1] X_A[1] X_A[1] X_A[0] X_A[1] X_A[0] X_A[0] X_A[0] === Command === civl compare -checkMemoryLeak=false -spec challenge4a.cvl -impl challenge4b.cvl 
+
+=== Stats ===
+   time (s)            : 8.44
+   memory (bytes)      : 239599616
+   max process count   : 1
+   states              : 7158
+   states saved        : 5780
+   state matches       : 0
+   transitions         : 7157
+   trace steps         : 5779
+   valid calls         : 9049
+   provers             : cvc4, z3, cvc3
+   prover calls        : 119
+
+=== Result ===
+The standard properties hold for all executions.
+
+*/

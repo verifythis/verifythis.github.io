@@ -1,0 +1,108 @@
+module OddEvenSort
+
+  use import map.Map as M
+  use import array.Array
+  use import array.IntArraySorted
+  use import array.ArrayPermut
+  use import array.ArraySwap
+  use import int.Int
+  use import int.Sum
+  use import ref.Refint
+  use import number.Parity
+
+  type matrix 'a = private {
+    ghost mutable elts: int -> int -> 'a;
+                  rows: int;
+               columns: int
+  } invariant { 0 <= rows /\ 0 <= columns }
+
+  predicate valid_index (a: matrix 'a) (r c: int) =
+    0 <= r < a.rows /\ 0 <= c < a.columns
+
+  val function m_get (a: matrix 'a) (r c: int) : 'a
+    requires { valid_index a r c }
+    ensures  { result = a.elts r c }
+
+  val function m_init (a: array int) : matrix bool
+    ensures { forall i j. 0 <= i < rows result -> 0 <= j < columns result ->
+                (m_get result i j) <-> a[i] > a[j] && i < j }
+    ensures { columns result = length a }
+    ensures { rows result = length a }
+
+  function f (m: matrix bool) (i: int) (j: int) : int =
+    if m_get m i j then 1 else 0
+
+  val function sum_cols (m: matrix bool) (i: int) : int
+    ensures { result = sum (f m i) 0 (columns m) }
+
+  val function sum_matrix (m: matrix bool) : int
+    ensures { result = sum (sum_cols m) 0 (rows m) }
+
+  let function count_desord (a: array int)
+    ensures { result >= 0 }
+    ensures { result = 0 <-> sorted a }
+    ensures { result = sum_matrix (m_init a) }
+  = let c = ref 0 in
+    let ghost m = m_init a in
+    for i = 0 to length a - 1 do
+      invariant { !c = sum (sum_cols m) 0 i }
+      for j = 0 to length a - 1 do
+        invariant { !c = sum (sum_cols m) 0 i + sum (f m i) 0 j }
+        if (a[i] > a[j] && i < j) then incr c
+      done;
+      assert { !c = sum (sum_cols m) 0 (i+1)
+                    by sum (sum_cols m) 0 (i+1)
+                     = sum (sum_cols m) 0 i + sum_cols m i
+                    so sum_cols m i = sum (f m i) 0 (length a) }
+    done;
+    !c
+
+  let my_swap (a:array int) (i j: int)
+    requires { a[i] > a[j] }
+    ensures { count_desord a < count_desord (old a) }
+    requires { 0 <= i < length a /\ 0 <= j < length a }
+    writes   { a }
+    ensures  { exchange (old a) a i j }
+  = swap a i j
+
+  let function is_false b =
+    ensures { 0 <= result <= 1 }
+    if b then 0 else 1
+
+  let odd_even_sort (a: array int)
+    requires { length a > 0 }
+    ensures  { sorted a }
+    ensures  { permut_all (old a) a }
+  = let ok = ref false in
+    while not !ok do
+      variant { count_desord a + is_false !ok }
+      invariant { !ok -> sorted a }
+      invariant { permut_all (old a) a }
+      label L in
+      assert { is_false !ok = 1 };
+      ok := true;
+      let i = ref 1 in
+      while !i < length a - 1 do
+        variant { length a - !i }
+        invariant { !ok \/ count_desord a < count_desord (a at L) }
+        invariant { count_desord a <= count_desord (a at L) }
+        invariant { 0 <= !i <= length a }
+        invariant { !ok -> forall j. odd j /\ j < !i -> a[j] <= a[j+1] }
+        invariant { permut_all (old a) a }
+        if a[!i] > a[!i+1] then begin my_swap a !i (!i+1); ok := false end;
+        i := !i + 2
+      done;
+      let i = ref 0 in
+      while !i < length a - 1 do
+        variant { length a - !i }
+        invariant { !ok \/ count_desord a < count_desord (a at L) }
+        invariant { 0 <= !i <= length a }
+        invariant { count_desord a <= count_desord (a at L) }
+        invariant { !ok -> forall j. even j /\ j < !i -> a[j] <= a[j+1] }
+        invariant { permut_all (old a) a }
+        if a[!i] > a[!i+1] then begin my_swap a !i (!i+1); ok := false end;
+        i := !i + 2
+      done;
+    done;
+
+end

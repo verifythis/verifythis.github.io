@@ -1,0 +1,126 @@
+module TreeBufferNaive
+
+  use import list.List
+  use import list.Length
+  use import list.Append
+  use import int.Int
+
+  type buf 'a = {
+    h: int;
+    xs: list 'a
+  } invariant { 0 < h }
+
+  let function empty (h: int)
+    requires { 0 < h }
+  = { h = h; xs = Nil }
+
+  let function add (x: 'a) (b: buf 'a) = { h = b.h; xs = Cons x b.xs }
+
+  predicate prefix (xs ys: list 'a) = match xs, ys with
+    | Nil, _ -> true
+    | Cons x xs, Cons y ys -> x = y && prefix xs ys
+    | _ -> false
+    end
+
+  let rec function take (n: int) (xs: list 'a) : list 'a
+    requires { 0 <= n }
+    variant  { n }
+    ensures  { length xs >= n -> length result = n }
+    ensures  { prefix result xs }
+  = match n, xs with
+    | _, Nil -> Nil
+    | n, Cons x xs -> if n = 0 then Nil else Cons x (take (n-1) xs)
+    end
+
+  let rec lemma take_append (n: int) (xs ys: list 'a)
+    requires { 0 <= n }
+    requires { n = length xs }
+    ensures  { take n (xs ++ ys) = xs }
+    variant  { n }
+  = if n > 0 then match xs with
+      | Nil -> absurd
+      | Cons _ xs -> take_append (n-1) xs ys
+    end
+
+  let rec lemma take_less (n:int) (xs ys:list 'a)
+    variant  { n }
+    requires { n >= 1 }
+    requires { take n xs = take n ys }
+    ensures { take (n-1) xs = take (n-1) ys }
+  = if n = 1 then ()
+    else match xs, ys with
+      | Nil, Nil -> ()
+      | Nil, _ -> absurd
+      | _, Nil -> absurd
+      | Cons _ xs, Cons _ ys -> take_less (n-1) xs ys end
+
+  let lemma take_cons (n:int) (xs ys: list 'a) (x:'a)
+    requires { 0 < n }
+    requires { take n xs = take n ys }
+    ensures { take n (Cons x xs) = take n (Cons x ys) }
+  = let l = take (n-1) xs in
+    assert { take (n-1) ys = l }
+
+  let function get (b: buf 'a) = take b.h b.xs
+
+end
+
+module TreeBufferCaterpillar
+
+  use import TreeBufferNaive as Naive
+  use import list.List
+  use import list.Append
+  use import list.Length
+  use import int.Int
+
+  type t 'a = {
+    h: int;
+    xs: list 'a;
+    xs_len: int;
+    ys: list 'a;
+    ghost sem: buf 'a;
+    ghost del: list 'a;
+  } invariant { 0 <= xs_len < h && length xs = xs_len &&
+                sem.xs = xs ++ ys ++ del && sem.h = h }
+
+  let function get (t: t 'a) : list 'a =
+    take t.h (t.xs ++ t.ys)
+
+  predicate valid (t: t 'a) =
+    get t = Naive.get t.sem
+
+  let rec lemma take_nil (n: int) (l:list 'a)
+    requires { 0 <= n }
+    requires { l = Nil }
+    variant  { n }
+    ensures  { take n l = Nil }
+  = if n > 0 then take_nil (n-1) l
+
+  let empty (h: int)
+    requires { 0 < h }
+    ensures  { valid result }
+    ensures { sem result = Naive.empty h }
+  = { h = h; xs = Nil; xs_len = 0; ys = Nil; sem = Naive.empty h; del = Nil }
+
+  let add (x: 'a) (t: t 'a) : t 'a
+    requires { valid t }
+    ensures  { valid result }
+    ensures { sem result = Naive.add x (sem t) }
+  = if t.xs_len = t.h - 1 then begin
+      let res = {
+        h = t.h; xs = Nil;
+        xs_len = 0; ys = Cons x t.xs;
+        sem = Naive.add x t.sem; del = t.ys ++ t.del } in
+      assert { res.sem.Naive.h = t.h };
+      take_append res.sem.Naive.h res.ys (t.ys ++ t.del);
+      assert { valid res
+               by res.sem.Naive.xs = res.ys ++ (t.ys ++ t.del)
+               so Naive.get res.sem = res.ys
+               so get res = res.xs ++ res.ys = Cons x t.xs };
+      res end
+    else {
+      h = t.h; xs = Cons x t.xs;
+      xs_len = t.xs_len + 1;
+      ys = t.ys; sem = Naive.add x t.sem; del = t.del }
+
+end

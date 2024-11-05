@@ -1,0 +1,1 @@
+Attached our solution for challenge 2. We managed to get the permissions right, but not the global invariant (which is included as a comment).

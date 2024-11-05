@@ -1,0 +1,5 @@
+I completed my proof of termination for challenge 3. The Why3 source file is attached. The lemma function "exchange_inversion" has the statement I showed to you this morning (unchanged) but its body is now
+45 lines long, which is almost as long as the sorting routine itself!
+Not that nice.
+
+I also did a proof of 2D-Kadane algorithm tonight. The Why3 source file is attached. It proved relatively easy. I think it took me less than 90 minutes, though I'm not sure.

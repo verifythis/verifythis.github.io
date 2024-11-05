@@ -1,0 +1,79 @@
+/* VerifyThis 2016, Challenge 2: Tree traversal
+ * Stephen Siegel */
+#include <civlc.cvh>
+#include <stdbool.h>
+#include <stdlib.h>
+
+$input int DB = 5;  // depth bound.  Default is 5.
+
+typedef struct _tree { struct _tree *left, *right, *parent;  _Bool mark; } *Tree;
+
+void markTree(Tree root) {
+  Tree x=root, y;
+  do {
+    x->mark = $true;
+    if (x->left == NULL && x->right == NULL) { y = x->parent; }
+    else { y = x->left; x->left = x->right; x->right = x->parent; x->parent = y; }
+    x = y;
+  } while (x != NULL);
+}
+
+Tree makeTree(Tree left, Tree right, _Bool mark) {
+  Tree result = (Tree)malloc(sizeof(struct _tree));
+  result->left = left; result->right = right; result->mark = mark; result->parent = NULL;
+  if (left != NULL) left->parent = result;
+  if (right != NULL) right->parent = result;
+  return result;
+}
+
+Tree makeArbitrary(int depth) {
+  if (depth == 0) return NULL;
+  if ($choose_int(2) == 0) return makeTree(NULL, NULL, false);
+  return makeTree(makeArbitrary(depth - 1), makeArbitrary(depth - 1), false);
+}
+
+Tree copyTree(Tree root) {
+  if (root == NULL) return NULL;
+  return makeTree(copyTree(root->left), copyTree(root->right), false);
+}
+
+void freeTree(Tree root) {
+  if (root != NULL) { freeTree(root->left); freeTree(root->right); free(root); }
+}
+
+_Bool allMarked(Tree t) {
+  if (t != NULL) {
+    if (!(t->mark)) return false;
+    if (!allMarked(t->left)) return false;
+    if (!allMarked(t->right)) return false;
+  }
+  return true;
+}
+
+_Bool wellFormed(Tree t) { //  all non-leaf nodes u: u==u->left->parent==u->right->parent
+  if (t->left != NULL) {
+    if (t->left->parent != t || !wellFormed(t->left)) return false;
+  }
+  if (t->right != NULL) {
+    if (t->right->parent != t || !wellFormed(t->right)) return false;
+  }
+  return true;
+}
+
+_Bool isomorphic(Tree t1, Tree t2) {// given two well-formed trees, are they isomorphic?
+  if (t1 == NULL) return t2 == NULL;
+  if (t2 == NULL) return false;
+  if (!isomorphic(t1->left, t2->left)) return false;
+  return isomorphic(t1->right, t2->right);
+}
+
+int main() {
+  $atomic {
+    Tree t1 = makeArbitrary(DB), t2 = copyTree(t1);
+    $assume(t1 != NULL);
+    markTree(t1);
+    $assert(allMarked(t1)); $assert(t1->parent == NULL); $assert(wellFormed(t1));
+    $assert(isomorphic(t1, t2));
+    freeTree(t1); freeTree(t2);
+  }
+}

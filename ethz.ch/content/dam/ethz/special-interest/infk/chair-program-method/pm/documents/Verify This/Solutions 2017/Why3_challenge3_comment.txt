@@ -1,0 +1,1 @@
+Here is our attempt for challenge 3. We did not attempt resource analysis (memory allocation etc.
