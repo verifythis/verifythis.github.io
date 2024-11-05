@@ -1,0 +1,208 @@
+// Viper solution to VerifyThis Challenge 3 (Tasks 1 + 2)
+// Alexander J. Summers (ETH Zurich)
+// Viper Team (viper.ethz.ch)
+//
+// BACKGROUND DEFINITIONS
+
+// Viper encoding ADT-style of a Point as a 3-tuple (row,col,value)
+domain Point {
+    function point(x:Int, y:Int, z:Int) : Point // constructor
+    function row(t:Point) : Int   // destructor
+    function col(t:Point) : Int   // destructor
+    function value(t:Point) : Int // destructor
+
+    // injectivity/surjectivity relating constructors to destructors (standard for ADTs)
+    axiom inverse {
+        forall t : Point :: {row(t)}{col(t)}{value(t)} point(row(t),col(t),value(t)) == t 
+    }
+    axiom other_inverse {
+        forall x:Int, y:Int, z:Int :: {point(x,y,z)} row(point(x,y,z)) == x && col(point(x,y,z)) == y && value(point(x,y,z)) == z
+    }
+}
+
+// returns an index into the sequence at which the point is stored, or -1 otherwise
+// Note that result >= 0 means that the point is contained in the sequence
+function find(s:Seq[Point], p:Point) : Int
+  ensures -1 <= result && result < |s|
+  ensures 0 <= result ==> s[result] == p
+
+// Sequence to Set
+
+// limited function trick, used to avoid unrolling the contract of asSet for the recursive calls in its own postcondition
+// This function conceptually has the same meaning as asSet, just with a weaker specification (none, here)
+function asSetLimited(s:Seq[Point]) : Set[Point]
+
+// This represents the comprehension converting a sequence to its corresponding set of elements.
+// This kind of "fold" isn't natively supported by Viper, but we can axiomatise its properties with an unimplemented function:
+function asSet(s:Seq[Point]) : Set[Point]
+  ensures forall i : Int :: {s[i]} 0 <= i && i < |s| ==> s[i] in result // if in the sequence, then in the set
+  ensures forall t : Point :: {t in result} t in result ==> 0 <= find(s,t) // if in the set, then in the sequence
+  ensures result == asSetLimited(s) // result is identical to that of the limited function above
+  ensures |s| > 0 ==> result == asSetLimited(s[1..]) union Set(s[0]) // 
+  ensures forall s1:Seq[Point], s2:Seq[Point] :: s1 ++ s2 == s ==> result == asSetLimited(s1) union asSetLimited(s2)
+
+
+
+function vectorSumSet(x: Seq[Int], column:Int, s:Set[Point]) : Int // operator to represent sum_k { x_k * v | (k,col,v) \in s} 
+  requires forall p:Point :: {p in s} 
+    p in s ==> 0 <= row(p) && row(p) < |x|
+  ensures |s| == 0 ==> result == 0 // empty case
+  ensures result == vectorSumSetLimited(x,column,s)
+  ensures forall ss:Set[Point], p:Point :: 
+  {vectorSumSet(x,column,ss union Set(p))} 
+  !(p in ss) && (ss union Set(p)) == s ==>
+      result == 
+      (col(p) == column ? vectorSumSetLimited(x,column,ss) + x[row(p)] * value(p) : vectorSumSetLimited(x,column,ss))
+  ensures forall ss1:Set[Point], ss2:Set[Point] :: 
+    {vectorSumSet(x,column,ss1 union ss2)}
+    ss1 union ss2 == s && ss1 intersection ss2 == Set() ==>
+      result == vectorSumSetLimited(x,column,ss1) + vectorSumSetLimited(x,column,ss2)
+
+
+function vectorSumSetLimited(x: Seq[Int], column:Int, s:Set[Point]) : Int // operator to represent sum_k { x_k * (k,col,v) | (k,col,v) \in s} 
+
+// definition of the ordering of points in the sparse matrix representation
+// (the code doesn't seem to rely on this ordering as such, but the ordering implies that
+// no more than one value is assigned to each point, which makes the set reasoning
+// used in this solution simpler; in any case, this restriction is given in the challenge)
+define strictlySorted(s) forall i:Int, j:Int :: {s[i],s[j]} 0 <= i && i < j && j < |s| ==> (row(s[i]) < row(s[j]) || row(s[i]) == row(s[j]) && col(s[i]) < col(s[j]))
+
+method givenCode(x:Seq[Int], sparse : Seq[Point], rows:Int, cols:Int) returns (y:Array)
+  requires rows > 0 && rows == cols && |x| == rows
+  requires strictlySorted(sparse) && forall i : Int :: 0 <= i && i < |sparse| ==> 0 <= row(sparse[i]) && row(sparse[i]) < rows && 0 <= col(sparse[i]) && col(sparse[i]) < cols
+  ensures ARRAY(y) && len(y) == cols && forall c: Int :: 0 <= c && c < cols ==>
+    vectorSumSet(x, c, asSet(sparse)) == SLOT(y,c)
+{
+  // y <- {0, ..., 0} // simulate allocating an array; Viper doesn't have arrays (or general allocation):
+  // We gain permission to a new set of heap locations (represented by the ARRAY macro, below)
+  // along with the knowledge that the length is what we want, and all values are zero-initialised
+  inhale ARRAY(y) && len(y) == cols && forall i : Int :: 0 <= i && i < len(y) ==> SLOT(y,i) == 0// new locations on the heap
+
+  var j : Int := 0 
+
+  var pointsSeen : Set[Point] := Set() // ghost set used to track which points have been processed
+
+  while(j < |sparse|) // step through the input matrix, one point at a time
+    invariant ARRAY(y) // we have full access to the result array
+    invariant 0 <= j && j <= |sparse| // j stays (almost) within bounds
+    // all elements of sparse have valid row/column entries
+    invariant forall i : Int :: 0 <= i && i < |sparse| ==> 
+      0 <= row(sparse[i]) && row(sparse[i]) < rows && 0 <= col(sparse[i]) && col(sparse[i]) < cols
+    // these two imply that asSet(sparse) is the disjoint union of pointsSeen and asSet(sparse[j..]):
+    invariant pointsSeen union asSet(sparse[j..]) == asSet(sparse)
+    invariant pointsSeen intersection asSet(sparse[j..]) == Set()
+    // all columns of points in the set are within bounds
+    invariant (forall p:Point :: p in pointsSeen ==> 0 <= col(p) && col(p) < cols)
+    // the y array stores the column sums for the points seen so far   
+    invariant forall c: Int :: 0 <= c && c < cols ==>
+    vectorSumSet(x, c, pointsSeen) == SLOT(y,c) 
+  { 
+    var t : Point := sparse[j]
+    pointsSeen := pointsSeen union Set(t)
+    SLOT(y,col(t)) := SLOT(y,col(t)) + x[row(t)] * value(t)
+    j := j + 1 
+  }
+}
+
+// This is a simple variant (leading up to the first concurrent version) in which the original code (givenCode)
+// is called twice; once processing the first half of the the points, and once for the second; the pointwise-sum
+// of the results gives the desired result
+method disjoint_splitting(x:Seq[Int], sparse : Seq[Point], rows:Int, cols:Int) returns (y:Array)
+  requires rows > 0 && rows == cols && |x| == rows
+  requires strictlySorted(sparse) && forall i : Int :: 0 <= i && i < |sparse| ==> 0 <= row(sparse[i]) && row(sparse[i]) < rows && 0 <= col(sparse[i]) && col(sparse[i]) < cols
+  ensures ARRAY(y) && len(y) == cols && forall c: Int :: 
+  {SLOT(y,c)} 0 <= c && c < cols ==>
+    vectorSumSet(x, c, asSet(sparse)) == SLOT(y,c)
+{
+  var sparse1 : Seq[Point] := sparse[..(|sparse|/2)]
+  var sparse2 : Seq[Point] := sparse[(|sparse|/2)..]
+  assert sparse1 ++ sparse2 == sparse // Currently necessary due to sequence axioms
+  var results1 : Array
+  var results2 : Array 
+
+  results1 := givenCode(x,sparse1,rows,cols)
+  results2 := givenCode(x,sparse2,rows,cols)
+
+  // abstracts over allocating an array y and assigning the pointwise sum of results1 and result2:
+  inhale ARRAY(y) && len(y) == cols && forall i : Int :: 0 <= i && i < len(y) ==> 
+    SLOT(y,i) == SLOT(results1,i) + SLOT(results2,i)
+}
+
+// This version perform the analogous split to the previous one, but models the verification as if two threads
+// were forked in parallel, subsequently joined and their reuslts merged (note that the two threads generate
+// separate output arrays, which is why there's no race this way)
+// Note that race-safety is implied by the permission-verification built-in to Viper
+// Other splittings into subsequences could also be easily encoded; the definitions
+// are set up to support this (in particular, parameterising vectorSumSet by a set of points)
+method disjoint_parallelism(x:Seq[Int], sparse : Seq[Point], rows:Int, cols:Int) returns (y:Array)
+  requires rows > 0 && rows == cols && |x| == rows
+  requires strictlySorted(sparse) && forall i : Int :: 0 <= i && i < |sparse| ==> 0 <= row(sparse[i]) && row(sparse[i]) < rows && 0 <= col(sparse[i]) && col(sparse[i]) < cols
+  ensures ARRAY(y) && len(y) == cols && forall c: Int :: 
+  {SLOT(y,c)} 0 <= c && c < cols ==>
+    vectorSumSet(x, c, asSet(sparse)) == SLOT(y,c)
+{
+  var sparse1 : Seq[Point] := sparse[..(|sparse|/2)]
+  var sparse2 : Seq[Point] := sparse[(|sparse|/2)..]
+  assert sparse1 ++ sparse2 == sparse // Currently necessary due to sequence axioms
+  var results1 : Array
+  var results2 : Array 
+
+  // simulate fork thread1 := givenCode(x,sparse1,rows,cols)
+  // using Viper's exhale statement to give away its precondition
+  // (this would usually be done by a Viper front-end for a language with a fork statement)
+  exhale rows > 0 && rows == cols && |x| == rows && strictlySorted(sparse1) && 
+    forall i : Int :: 0 <= i && i < |sparse1| ==> 
+      0 <= row(sparse1[i]) && row(sparse1[i]) < rows && 
+      0 <= col(sparse1[i]) && col(sparse1[i]) < cols
+
+  // simulate fork thread2 := givenCode(x,sparse2,rows,cols)
+  exhale rows > 0 && rows == cols && |x| == rows && strictlySorted(sparse2) && 
+    forall i : Int :: 0 <= i && i < |sparse2| ==> 
+      0 <= row(sparse2[i]) && row(sparse2[i]) < rows && 
+      0 <= col(sparse2[i]) && col(sparse2[i]) < cols
+
+  // both threads are running...
+
+  // simulate results1 := join thread1 using Viper's dual inhale statement for the postcondition
+  inhale ARRAY(results1) && len(results1) == cols && 
+  forall c: Int :: 0 <= c && c < cols ==>
+    vectorSumSet(x, c, asSet(sparse1)) == SLOT(results1,c)
+
+  // simulate results2 := join thread2 using Viper's dual inhale statement for the postcondition
+  inhale ARRAY(results2) && len(results2) == cols && 
+  forall c: Int :: 0 <= c && c < cols ==>
+    vectorSumSet(x, c, asSet(sparse2)) == SLOT(results2,c)
+
+  // abstracts over allocating an array y and assigning the pointwise sum of results1 and result2:
+  // This could also be done in a (sequential) loop
+  inhale ARRAY(y) && len(y) == cols && forall i : Int :: 0 <= i && i < len(y) ==> 
+    SLOT(y,i) == SLOT(results1,i) + SLOT(results2,i)
+}
+
+
+
+// standard array encoding in Viper
+
+domain Array {
+  function loc(a: Array, i: Int): Ref
+  function len(a: Array): Int
+  function inverse_first(r: Ref): Array // array this slot belongs to
+  function inverse_second(r: Ref): Int // index of this array slot
+
+  axiom all_diff {
+    forall a: Array, i: Int :: {loc(a, i)}
+      inverse_first(loc(a, i)) == a && inverse_second(loc(a, i)) == i
+  }
+
+  axiom length_pos {
+    forall a: Array :: len(a) >= 0
+  }
+}
+field val: Int // store array slot values
+
+// Macros for readability/convenience:
+// ARRAYS indexed from 0 in this task:
+define ARRAY(a) ARRAYPERM(a,write)
+define ARRAYPERM(a,p) forall i : Int :: 0 <= i && i < len(a) ==> acc(loc(a,i).val,p)
+
+define SLOT(a,i) loc(a,i).val

@@ -1,0 +1,60 @@
+/* VerifyThis 2016: Challenge 1: Matrix Multiplication
+ * Part 1: A naive matrix multiplication algorithm
+ * Checks that a matrix multiplication procedure is "correct", where
+ * correct is defined using the dot product and column extraction
+ * functions.  The (i,j)-th entry of the product of A and B should
+ * be the dot product of the i-th row of A and the j-th column of B.
+ * Stephen Siegel
+ */
+#include <civlc.cvh>
+
+// upper bound on N, the size of the matrices
+$input int BOUND = 3; // can go up to 16 if you have a few minutes
+$input int N; // the size of the matrices
+$assume(1<=N && N<=BOUND);
+// some arbitrary input matrices...
+$input float A0[N][N], B0[N][N], C0[N][N];
+
+// impl: C is "out" variable
+void matrixMultiply(int n, float C[][], float A[][], float B[][]) {
+  for (int i=0; i<n; i++)
+    for (int j=0; j<n; j++)
+      C[i][j] = 0.0;
+  for (int i = 0; i < n; i++)
+    for (int k = 0; k < n; k++)
+      for (int j = 0; j < n; j++)
+	C[i][j] += A[i][k] * B[k][j];
+}
+
+// Unfortunately no easy way to specify the sum...
+// Some "helpers" for verification...
+
+// Computes dot product of two vectors of length n...
+float dot(int n, float u[], float v[]) {
+  float sum = 0;
+
+  for (int i=0; i<n; i++)
+    sum += u[i]*v[i];
+  return sum;
+}
+
+// gets the index-th column of matrix mat, putting it in
+// contiguous memory starting from result.  Returns
+// pointer to element 0 of result.
+float * column(int n, float result[], float mat[][], int index) {
+  for (int i=0; i<n; i++)
+    result[i] = mat[i][index];
+  return &result[0];
+}
+
+// checks multiplication is correct: entry i,j should
+// be the dot product of i-th row of A and j-th column of B...
+int main() {
+  float actual[N][N];
+  float tmp[N];
+
+  matrixMultiply(N, actual, A0, B0);
+  for (int i=0; i<N; i++)
+    for (int j=0; j<N; j++)
+      $assert(dot(N, A0[i], column(N, tmp, B0, j)) == actual[i][j]);
+}

@@ -1,0 +1,7 @@
+This is my solution to challenge 2. I verified the single processor solution only. I proved
+
+1. safety
+2. sortedness property (first ensures)
+3. permutation (second ensures)
+
+I could not complete the proof of termination. I'm using the total number of inversions as the key ingredient for the loop variants, but I still need to prove the "exchange_inversion" lemma. Apart from this lemma, all VCs regarding termination are proved.

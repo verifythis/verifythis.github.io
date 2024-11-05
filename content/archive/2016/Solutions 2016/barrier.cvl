@@ -1,0 +1,83 @@
+/* VerifyThis 2016 Challenge 3: Tree Barrier
+ * Stephen Siegel */
+#include <civlc.cvh>
+#include <stdlib.h>
+#include <stdbool.h>
+
+$input int N = 4; // the number of nodes (tried with N=1,2,3,4,5)
+
+typedef struct _node {
+  $proc p; // the process to which this node is associated
+  struct _node *left, *right; // left and right children, can be NULL
+  struct _node *parent; // parent (NULL for the root)
+  _Bool sense;
+  int version;
+} *Node;
+
+Node theNodes[N]; // array storing all nodes created so far
+int count = 0; // number of nodes created so far
+
+void checkDescendantsSensesTrue(Node u) {// check all senses in u and descendants are true
+  if (u != NULL) {
+    $assert(u->sense);
+    checkDescendantsSensesTrue(u->left);
+    checkDescendantsSensesTrue(u->right);
+  }
+}
+
+void checkAncestorSensesFalse(Node u) { // checks all senses in u and ancestors are false
+  while (u != NULL) { $assert(!u->sense); u = u->parent; }
+}
+
+void thread(Node myNode) { // the function each thread will run
+  void barrier() { // the barrier function
+    if (myNode->left != NULL) $when (myNode->left->sense);
+    if (myNode->right != NULL) $when (myNode->right->sense);
+    $atom {
+      myNode->sense = true;
+      checkDescendantsSensesTrue(myNode); // check invariant
+      myNode->version++;
+      if (myNode->parent == NULL) // root: check everyone has same version
+	for (int i=0; i<N; i++) $assert(theNodes[i]->version == myNode->version);
+    }
+    if (myNode->parent == NULL) myNode->sense = false;
+    $when (!myNode->sense); // wait until my sense is false
+    $atom { checkAncestorSensesFalse(myNode); } // check invariant
+    if (myNode->left != NULL) myNode->left->sense = false;
+    if (myNode->right != NULL) myNode->right->sense = false;
+  }
+  // driver: run around the barrier 3 times...
+  for (int i=0; i<3; i++) barrier();
+}
+
+Node makeTree(Node left, Node right) { // make a tree from given children
+  Node result = (Node)malloc(sizeof(struct _node));
+  result->left = left; result->right = right; result->sense = false; result->version = 0;
+  if (left != NULL) left->parent = result;
+  if (right != NULL) right->parent = result;
+  result->parent = NULL;
+  return result;
+}
+
+Node makeArbitraryTree(int numNodes) { //  create an arbitrary tree with numNodes nodes
+  if (numNodes == 0) return NULL;
+  int leftSize = $choose_int(numNodes);
+  Node leftTree = makeArbitraryTree(leftSize);
+  Node rightTree = makeArbitraryTree(numNodes - leftSize - 1);
+  Node result = makeTree(leftTree, rightTree);
+  theNodes[count] = result;
+  count++;
+  return result;
+}
+
+void freeTree(Node tree) { // free all nodes in the tree
+  if (tree != NULL) { freeTree(tree->left); freeTree(tree->right); free(tree); }
+}
+
+int main() {
+  Node theTree = makeArbitraryTree(N);
+
+  $atomic { for (int i=0; i<N; i++) theNodes[i]->p = $spawn thread(theNodes[i]); }
+  for (int i=0; i<N; i++) $wait(theNodes[i]->p);
+  freeTree(theTree);
+}

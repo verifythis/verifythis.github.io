@@ -1,0 +1,35 @@
+/* VerifyThis 2016: Challenge 1: Matrix Multiplication
+ * Task 2: Checks that a naive matrix multiplication is associative.
+ * Stephen Siegel
+ */
+#include <civlc.cvh>
+#include <pointer.cvh>
+
+// upper bound on N, the size of the matrices
+$input int BOUND = 8;
+$input int N; // the size of the matrices
+$assume(1<=N && N<=BOUND);
+// some arbitrary input matrices...
+$input float A0[N][N], B0[N][N], C0[N][N];
+
+void matrixMultiply(int n, float C[][], float A[][], float B[][]) {
+  for (int i=0; i<n; i++)
+    for (int j=0; j<n; j++)
+      C[i][j] = 0.0;
+  for (int i = 0; i < n; i++)
+    for (int k = 0; k < n; k++)
+      for (int j = 0; j < n; j++)
+	C[i][j] += A[i][k] * B[k][j];
+}
+
+int main() {
+  $atomic {
+    float T1[N][N], T2[N][N], R1[N][N], R2[N][N];
+
+    matrixMultiply(N, T1, A0, B0);
+    matrixMultiply(N, R1, T1, C0);
+    matrixMultiply(N, T2, B0, C0);
+    matrixMultiply(N, R2, A0, T2);
+    $assert($equals(&R1, &R2));
+  }
+}

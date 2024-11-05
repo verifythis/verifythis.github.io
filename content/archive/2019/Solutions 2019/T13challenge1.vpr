@@ -1,0 +1,96 @@
+// Viper solution to VerifyThis Challenge 1 Part A.
+// Alexander J. Summers (ETH Zurich)
+// Viper Team (viper.ethz.ch)
+
+// Credit and thanks to Alexandre Binninger for this solution, 
+// which improves on mine from the competition itself.
+
+// Here, we use mathematical sequences (built-in Seq type in Viper)
+
+// Properties from the challenge description:
+define nonEmpty(cut) |cut| > 0
+
+define beginToEnd(cut, n) cut[0] == 0 && cut[|cut|-1]==n
+
+define withinBounds(cut, n) 
+  forall i:Int :: {cut[i]} 0 <= i && i < |cut| ==> 0 <= cut[i] && cut[i] <= n
+
+define increasingSubsequence(seq, min, max) 
+  forall i: Int, j: Int :: {seq[i], seq[j]} 
+     0 <= min && min<=i && i<j && j<max && max<=|seq| ==> seq[i]<seq[j]
+
+define maximalIncreasing(seq, min, max) 
+  forall i: Int, j: Int :: {seq[i], seq[j]} 
+    (0 <= min && min<=i && i<j && j<max && max<=|seq| ==> seq[i]<seq[j]) 
+      && (max>=1 && max<|seq| ==> seq[max-1] >= seq[max]) // maximal
+
+define decreasingSubsequence(seq, min, max) 
+  forall i: Int, j: Int :: {seq[i], seq[j]} 
+     (0 <= min && min<=i && i<j && j<max && max<=|seq|) ==> seq[i]>=seq[j]
+
+define maximalDecreasing(seq, min, max) 
+  forall i: Int, j: Int :: {seq[i], seq[j]} 
+    (0 <= min && min<=i && i<j && j<max && max<=|seq| ==> seq[i]>=seq[j]) 
+      && (max>=1 && max<|seq| ==> seq[max-1] < seq[max])  // maximal
+
+// the subsequence between min and max (excluding max) is monotonic (in either direction)
+define maximalMonotonic(seq, min, max) 
+  maximalIncreasing(seq, min, max) || maximalDecreasing(seq, min, max) 
+
+// all cutpoints defined by cut are monotonic
+define monotonicMax(cut, seq) // defined with two quantifiers just for triggering reasons: logically, j is redundant
+  forall i: Int, j:Int :: {cut[i], cut[j]} 
+    j==i-1 ==> (1<=i && i<|cut| ==> maximalMonotonic(seq, cut[j], cut[i]))
+
+
+// the challenge code:
+method monotonicCutpoints(s: Seq[Int]) returns (cut: Seq[Int])
+  ensures nonEmpty(cut)
+  ensures beginToEnd(cut, |s|)
+  ensures withinBounds(cut, |s|)
+  ensures monotonicMax(cut, s)
+{
+  // Handle trivial cases separately, to avoid e.g. case-splits in loop invariants
+  if (|s|==0) {
+    cut := Seq(0)
+  } elseif (|s|==1) {
+    cut := Seq(0, 1)
+  } else {
+    var x: Int
+    var y: Int
+    var oldx: Int // used to track previous values in e.g. loop invariants
+    var oldy: Int
+    var increasing: Bool // used to flag in which direction we're tracking monotonicity
+
+    x:=0
+    y:=1
+    increasing := s[x] < s[y]
+    cut := Seq(0)
+
+    while (y < |s|)
+      invariant y == x+1 // always true for the outer loop head
+      invariant nonEmpty(cut)
+      invariant withinBounds(cut, |s|)
+      invariant cut[0]==0 && cut[|cut|-1]==x // start and end of cuts
+      invariant |cut|>=2 ==> monotonicMax(cut, s) // maximal monotonic subsequences
+    {
+      oldx := x
+      oldy := y
+      increasing := s[x] < s[y]
+      while (y < |s| && (s[y-1] < s[y] == increasing))
+        invariant oldy <= y && y <= |s|
+        invariant increasing ==> increasingSubsequence(s, oldx, y)
+        invariant !increasing ==> decreasingSubsequence(s, oldx, y)
+      {
+        y := y+1
+      }
+      cut := cut ++ Seq(y)
+      x:= y
+      y:= x+1
+    }
+
+    if (x < |s|) {
+      cut := cut ++ Seq(|s|)
+    }
+  }
+}

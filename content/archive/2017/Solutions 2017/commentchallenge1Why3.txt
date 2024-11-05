@@ -1,0 +1,6 @@
+Here's a partial solution in Why3 of challenge 1.
+
+We verified safety (i.e. all array indices are in range), and were on our way to verify the invariant of the first big loop (i.e. to show that all even array would have been sorted). We have not attempted showing that the array is a permutation or that the algorithm terminates.
+
+Regards,
+Marc & Leon

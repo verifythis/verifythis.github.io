@@ -1,0 +1,83 @@
+module PairInsertion
+
+  use import array.Array
+  use import array.IntArraySorted
+  use import array.ArrayPermut
+  use import int.Int
+  use import ref.Refint
+  use import map.Occ
+
+  let pair_sort (a: array int)
+    requires { length a > 1 }
+    ensures  { sorted a }
+    ensures  { permut_all (old a) a }
+  = let i = ref 0 in
+    while !i < length a - 1 do
+      invariant { 0 <= !i <= length a }
+      invariant { permut_sub (old a) a 0 (!i+2) }
+      invariant { sorted_sub a 0 !i }
+      variant   { length a - !i }
+      let x = ref a[!i] in
+      let y = ref a[!i+1] in
+      begin
+        ensures { !x >= !y }
+      if !x < !y then begin
+        let aux = !x in
+        x := !y; y := aux
+      end;
+      end;
+
+      assert { !x >= !y };
+
+      label L1 in
+      let j = ref (!i - 1) in
+      while !j >= 0 && a[!j] > !x do
+        invariant { -1 <= !j < !i }
+        invariant { sorted_sub a 0 (!j+1) }
+        invariant { !j < !i - 1 -> sorted_sub a 0 (!j+2) }
+        invariant { sorted_sub a (!j+3) (!i+2) }
+        invariant { forall l. !j+3 <= l < !i+2 -> a[l] > !x }
+        invariant { !j < !i - 1 -> a[!j+1] = a[!j+3] }
+        variant   { !j }
+        a[!j+2] <- a[!j];
+        decr j
+      done;
+      a[!j+2] <- !x;
+      let ghost j0 = !j in
+
+      label L2 in
+      while !j >= 0 && a[!j] > !y do
+        invariant { -1 <= !j < !i }
+        invariant { sorted_sub a 0 (!j+1) }
+        invariant { !j < j0 -> sorted_sub a 0 (!j+2) }
+        invariant { sorted_sub a (!j+2) (!i+2 ) }
+        invariant { forall l. !j+2 <= l < !i+2 -> a[l] >= !y }
+        invariant { !j < j0 -> a[!j+1] = a[!j+2] }
+        invariant { !j >= 0 -> a[!j] <= a[!j+2] }
+        variant   { !j }
+        a[!j+1] <- a[!j];
+        decr j
+      done;
+      a[!j+1] <- !y;
+      i := !i + 2;
+
+    done;
+
+    if !i = length a - 1 then begin
+      let y = a[!i] in
+      let j = ref (!i - 1) in
+      while !j >= 0 && a[!j] > y do
+        invariant { -1 <= !j <= length a - 2 }
+        invariant { sorted_sub a 0 !i }
+        invariant { !j < !i - 1 -> sorted_sub a 0 (!j+2) }
+        invariant { sorted_sub a (!j+1) (length a) }
+        invariant { forall l. !j < l < length a -> a[l] >= y }
+        invariant { !j < !i - 1 -> a[!j+1] = a[!j+2] }
+        variant   { !j }
+        a[!j+1] <- a[!j];
+        decr j
+      done;
+      a[!j+1] <- y
+    end
+
+end

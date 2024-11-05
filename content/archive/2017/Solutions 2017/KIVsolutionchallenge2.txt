@@ -1,0 +1,3 @@
+The project is at https://megastore.uni-augsburg.de/get/DaEJhNxucg/
+We specified the sequential algorithm, specified sortedness and that the algorithm ensures sortedness, however, we could not prove one lemma
+(challenge-2/specs/sort/proofs/sequents.utf8 the one named sorted-next-1-swap-other, which proves that the second loop does not destroy the sortedness the first one established

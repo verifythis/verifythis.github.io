@@ -1,0 +1,61 @@
+module OddEvenSort
+
+  use import int.Int
+  use import int.EuclideanDivision
+  use import ref.Refint
+  use import array.Array
+  use import array.ArrayEq
+  use import array.ArraySwap
+  use import array.ArrayPermut
+  use import array.IntArraySorted as A
+
+  (* as a measure, we propose:
+     the lexicographical ordering given by (N,d), where
+      n = the length of the prefix of a that is yet unsorted
+      d = n - the index of the maximal element in the unsorted prefix
+  *)
+
+  let oddevensort (a: array int): unit
+  ensures { sorted a }
+  ensures { permut_all (old a) a }
+  = 'Start:
+  let sorted = ref false in
+  while not !sorted do
+    invariant { permut_all (at a 'Start) a }
+    invariant { !sorted -> A.sorted a }
+'B:
+    sorted := true; 
+    let i = ref 1 in
+    while !i < length a - 1 do
+      invariant { 1 <= !i }
+      invariant { exists k. !i = 2*k+1 }
+      invariant { permut_all (at a 'Start) a }
+      invariant { !sorted -> forall n. 0 <= n < div !i 2 -> a[2*n+1] <= a[2*n+2] }
+      variant { length a - !i }
+      if a[!i] > a[!i+1] then begin
+        swap a !i (!i+1);
+        sorted := false;
+      end;
+      i += 2
+    done;
+
+    let i = ref 0 in
+    while !i < length a - 1 do
+      invariant { 0 <= !i }
+      invariant { exists k. !i = 2*k }
+      invariant { permut_all (at a 'Start) a }
+      invariant { !sorted -> forall n. 0 <= n < div (length a-1) 2 -> a[2*n+1] <= a[2*n+2] }
+      invariant { !sorted -> forall n. 0 <= n < div !i 2 -> a[2*n] <= a[2*n+1] }
+      invariant { !sorted -> !i < length a -> forall n m. 0 <= n <= m <= !i -> a[n] <= a[m] }
+      invariant { !sorted -> !i = length a -> forall n m. 0 <= n <= m < !i -> a[n] <= a[m] }
+      variant { length a - !i }
+      if a[!i] > a[!i+1] then begin
+        swap a !i (!i+1);
+        sorted := false;
+      end;
+      i += 2;
+      if !i < length a then assert { !sorted -> A.sorted a } else assert { !sorted -> A.sorted a } (* this last else is unproven *)
+    done
+  done
+  
+end

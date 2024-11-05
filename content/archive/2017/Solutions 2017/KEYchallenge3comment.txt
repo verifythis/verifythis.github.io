@@ -1,0 +1,8 @@
+hi,
+
+here is the solution of jonas schiffl and michael kirsten. We think we fully specified the algorithm but got stopped by a bug in KeY.
+We measured the "sortedness" by the the two integers unsortedEven and unsortedOdd.
+We also verified the swap method (and our used model methods), but symbolic execution of the model methods was stopped by a bug (exception in KeY system).
+
+best regards,
+Michael

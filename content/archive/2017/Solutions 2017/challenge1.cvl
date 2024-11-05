@@ -1,0 +1,86 @@
+/* VerifyThis 2017: CIVL Solution to Challenge 1 : Pair Insertion Sort
+ * Stephen Siegel
+ */
+#include <stdio.h>
+$input int N = 6; // upper bound on n.  N=6: ~35s
+$input int n; // size of array
+$assume(1<=n && n<=N);
+$input int A[n];
+$input int LEFT;
+$input int RIGHT;
+$assume(1<=LEFT && LEFT < RIGHT && RIGHT<n-1);
+
+int main() {
+  // this is the "sentinel" assumption...
+  for (int i=LEFT; i<=RIGHT; i++)
+    $assume(A[LEFT-1]<=A[i]);
+  int a[n];
+  for (int i=0; i<n; i++) a[i]=A[i];
+  printf("n=%d\n", n);
+  int left = LEFT, right = RIGHT;
+  for (int k = left; ++left <= right; k = ++left) {
+    int a1 = a[k], a2 = a[left];
+    if (a1 < a2) {
+      a2 = a1; a1 = a[left];
+    }
+    while (a1 < a[--k]) {
+      a[k + 2] = a[k];
+    }
+    a[++k + 1] = a1;
+    while (a2 < a[--k]) {
+      printf("k=%d, LEFT=%d\n", k, LEFT);
+      a[k + 1] = a[k];
+    }
+    a[k + 1] = a2;
+  }
+  int last = a[right];
+  while (last < a[--right]) {
+    a[right + 1] = a[right];
+  }
+  a[right + 1] = last;
+}
+
+/*
+VerifyThis2017 siegel$ civl-1.11 verify -inputN=6 challenge1d.cvl 
+CIVL v1.11 of 2017-07-07 -- http://vsl.cis.udel.edu/civl
+n=6
+k=X_LEFT+1, LEFT=X_LEFT
+k=X_LEFT, LEFT=X_LEFT
+k=X_LEFT, LEFT=X_LEFT
+k=X_LEFT+1, LEFT=X_LEFT
+k=X_LEFT, LEFT=X_LEFT
+k=X_LEFT, LEFT=X_LEFT
+k=X_LEFT+1, LEFT=X_LEFT
+k=X_LEFT, LEFT=X_LEFT
+17s: mem=281Mb trans=452 traceSteps=241 explored=452 saved=304 prove=540
+k=X_LEFT, LEFT=X_LEFT
+k=X_LEFT+1, LEFT=X_LEFT
+k=X_LEFT, LEFT=X_LEFT
+k=X_LEFT, LEFT=X_LEFT
+n=6
+n=5
+n=6
+n=5
+32s: mem=382Mb trans=991 traceSteps=533 explored=991 saved=676 prove=1153
+n=4
+
+=== Command ===
+civl verify -inputN=6 challenge1d.cvl 
+
+=== Stats ===
+   time (s)            : 33.3
+   memory (bytes)      : 401080320
+   max process count   : 1
+   states              : 1072
+   states saved        : 729
+   state matches       : 0
+   transitions         : 1071
+   trace steps         : 574
+   valid calls         : 1950
+   provers             : cvc4, z3
+   prover calls        : 1237
+
+=== Result ===
+The standard properties hold for all executions.
+ */
+

@@ -1,0 +1,225 @@
+Two parts: part (a) is the simplified code, part (b) is the complicated Java code…
+
+(a):
+
+/* VerifyThis 2017, Challenge 1, using CIVL
+ * Based on simplified version of code.
+ * N is upper bound on n (the length of the array).
+ * Verified for N=5 (i.e., all arrays up to length 5).
+ * Verification time: N=4 (upper bound): ~30 seconds.
+ * Verified all array indexes are within bounds, and at termination
+ * array a is sorted and is a premutation of original array A.
+ * Stephen Siegel
+ */
+$input int N = 5; // upper bound on n
+$input int n; // size of array
+$assume(1<=n && n<=N);
+$input int A[n]; // input: constant, fixed forever
+
+/* Counts the number of occurences of val in the array
+ * starting at p consisting of n ints */ int count(int n, int *p, int val) {
+  int result = 0;
+  for (int i=0; i<n; i++)
+    if (p[i]==val) result++;
+  return result;
+}
+
+int main() {
+  int a[n];
+  for (int i=0; i<n; i++) a[i]=A[i];
+  int i= 0, j, x, y;
+  while (i < n-1) {
+    x = a[i];
+    y = a[i+1];
+    if (x < y) {
+      int t=x; x=y; y=t;
+    }
+    j = i - 1;
+    while (j >= 0 && a[j] > x) {
+      a[j+2] = a[j];
+      j = j-1;
+    }
+    a[j+2] = x;
+    while (j >=0 && a[j]>y) {
+      a[j+1] = a[j];
+      j = j-1;
+    }
+    a[j+1] = y;
+    i = i+2;
+  }
+  if (i==n-1) {
+    y=a[i];
+    j=i-1;
+    while (j>=0 && a[j]>y) {
+      a[j+1] = a[j];
+      j = j-1;
+    }
+    a[j+1] = y;
+  }
+  // array a is sorted...
+  $assert($forall (int i : 0..n-2) a[i]<=a[i+1]);
+
+  // first attempt at permutation.  This does not quite
+  // prove permutation, but it does show all elements
+  // occuring in a also occur in A, and vice versa...
+
+  $assert($forall (int i : 0..n-1)
+	  ($exists (int j : 0..n-1) a[i]==A[j]));
+  $assert($forall (int i : 0..n-1)
+	  ($exists (int j : 0..n-1) A[i]==a[j]));
+
+  // this gets it exactly right...
+  for (i=0; i<n; i++)
+    $assert(count(n, a, a[i]) == count(n, A, a[i])); }
+
+/*
+Output for N=5...
+
+VerifyThis2017 siegel$ civl-1.8 verify challenge1a.cvl CIVL v1.8 of 2017-04-18 -- http://vsl.cis.udel.edu/civl
+17s: mem=230Mb trans=6283 traceSteps=4716 explored=6283 saved=4717 prove=761
+32s: mem=220Mb trans=13911 traceSteps=10424 explored=13911 saved=10425 prove=1599
+47s: mem=200Mb trans=20577 traceSteps=15426 explored=20577 saved=15427 prove=2458
+62s: mem=265Mb trans=26881 traceSteps=20159 explored=26881 saved=20160 prove=3269
+77s: mem=282Mb trans=33808 traceSteps=25333 explored=33808 saved=25334 prove=4116
+92s: mem=303Mb trans=41089 traceSteps=30723 explored=41089 saved=30724 prove=4962
+107s: mem=326Mb trans=47431 traceSteps=35492 explored=47431 saved=35493 prove=5797
+122s: mem=352Mb trans=54605 traceSteps=40812 explored=54605 saved=40813 prove=6629
+137s: mem=387Mb trans=60532 traceSteps=45234 explored=60532 saved=45235 prove=7476
+152s: mem=410Mb trans=67337 traceSteps=50322 explored=67337 saved=50323 prove=8310
+170s: mem=560Mb trans=72902 traceSteps=54484 explored=72902 saved=54485 prove=9129
+185s: mem=569Mb trans=79517 traceSteps=59378 explored=79517 saved=59379 prove=9943
+200s: mem=587Mb trans=85671 traceSteps=63928 explored=85671 saved=63929 prove=10775
+215s: mem=601Mb trans=91737 traceSteps=68286 explored=91737 saved=68287 prove=11604
+230s: mem=623Mb trans=98057 traceSteps=72727 explored=98057 saved=72728 prove=12452
+
+=== Command ===
+civl verify challenge1a.cvl 
+
+=== Stats ===
+   time (s)            : 234.3
+   memory (bytes)      : 672661504
+   max process count   : 1
+   states              : 100411
+   states saved        : 74285
+   state matches       : 0
+   transitions         : 100410
+   trace steps         : 74284
+   valid calls         : 325249
+   provers             : cvc4, z3, cvc3
+   prover calls        : 12737
+
+=== Result ===
+The standard properties hold for all executions.
+192:VerifyThis2017 siegel$
+ */
+
+—————————————————
+
+(b) 
+
+
+/* Challenge 1: original Java code.
+ * CIVL says there is array index out of bounds, as indicated below.
+ * Not sure if this is correct….
+ */
+
+#include <stdio.cvl>
+$input int N = 5; // upper bound on n
+$input int n; // size of array
+$assume(1<=n && n<=N);
+$input int A[n];
+$input int LEFT;
+$input int RIGHT;
+$assume(2<=LEFT && LEFT < RIGHT && RIGHT<n-1);
+
+int main() {
+  printf("n=%d\n", n);
+  int a[n];
+  for (int i=0; i<n; i++) a[i]=A[i];
+  int left = LEFT, right = RIGHT;
+  for (int k = left; ++left <= right; k = ++left) {
+    int a1 = a[k], a2 = a[left];
+    if (a1 < a2) {
+      a2 = a1; a1 = a[left];
+    }
+    while (a1 < a[--k]) {
+      a[k + 2] = a[k];
+    }
+    a[++k + 1] = a1;
+    while (a2 < a[--k]) {
+      printf("k=%d, LEFT=%d\n", k, LEFT);
+      a[k + 1] = a[k]; // violated? CIVL says k can be LEFT-2, LEFT-3, ...
+    }
+    a[k + 1] = a2;
+  }
+  int last = a[right];
+  while (last < a[--right]) {
+    a[right + 1] = a[right];
+  }
+  a[right + 1] = last;
+}
+
+/* Output:
+192:VerifyThis2017 siegel$ civl-1.8 verify challenge1b.cvl CIVL v1.8 of 2017-04-18 -- http://vsl.cis.udel.edu/civl n=X_n k=X_LEFT-1, LEFT=X_LEFT k=X_LEFT-2, LEFT=X_LEFT k=X_LEFT-3, LEFT=X_LEFT
+
+Violation 0 encountered at depth 34:
+CIVL execution violation in p0 (kind: OUT_OF_BOUNDS, certainty: PROVEABLE) at challenge1b.cvl:31.17-20 "a[k]":
+possible negative array index: X_LEFT - 3
+
+*/
+
+
+
+For the record, here is CIVL’s translation of the above code to a side-effect-free form:
+
+int main() {
+  printf("n=%d\n", n);
+  int  a[n];
+  {
+    int i = 0;
+    for (; i < n; i = i + 1)
+      a[i] = A[i];
+  }
+  int left = LEFT;
+  int right = RIGHT;
+  {
+    int k = left;
+    for (; 1; ) {
+      left = left + 1;
+      if (!(left <= right))
+        break;
+      int a1 = a[k];
+      int a2 = a[left];
+      if (a1 < a2) {
+        a2 = a1;
+        a1 = a[left];
+      }
+      while (1) {
+        k = k - 1;
+        if (!(a1 < (a[k])))
+          break;
+        a[k + 2] = a[k];
+      }
+      k = k + 1;
+      a[k + 1] = a1;
+      while (1) {
+        k = k - 1;
+        if (!(a2 < (a[k])))
+          break;
+        a[k + 1] = a[k];
+      }
+      a[k + 1] = a2;
+      left = left + 1;
+      k = left;
+    }
+  }
+  int last = a[right];
+  while (1) {
+    right = right - 1;
+    if (!(last < (a[right])))
+      break;
+    a[right + 1] = a[right];
+  }
+  a[right + 1] = last;
+}
+

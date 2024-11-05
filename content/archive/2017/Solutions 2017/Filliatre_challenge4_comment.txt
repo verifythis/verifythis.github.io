@@ -1,0 +1,5 @@
+This is my solution to challenge 4. It contains a default implementation, the Caterpillar implementation, and the RealTime implementation.
+
+Regarding the latter, however, it makes little sense to implement it in Why3, which assumes a garbage collector. I tried to stay close to the
+C++ code. There are slightly more comments in this solution than in the
+previous ones.
