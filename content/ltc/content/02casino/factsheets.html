@@ -1,0 +1,305 @@
+---
+layout: landing
+title: FactSheets
+subtitle: Collaborative Long-term Verification Challenge
+---
+
+<style>
+ .grid {
+   display: flex;
+   flex-wrap: wrap;
+ }
+
+ .sheet {
+   border-radius: .5em;
+   border: 1px solid white;
+   padding: 1em;
+   margin: 1em;
+ }
+ .sheet h2 {
+   font-size: 120%;
+   margin-top: 0px;
+   margin-bottom: 20px;
+ }
+ .sheet ul {
+   padding: 1em;
+ }
+</style>
+
+On this page, we have listed all available contributions to
+the <a href="/02casino">Soldity Casino</a> case study.
+
+<div style="border-left: 5px solid DarkRed; padding-left: 1em; margin-left: -1em;">
+  <span style="font-weight:bold; color: DarkRed;">Tasks:</span>
+  <ol>
+    <li>Check and refine the fact sheet of your approach.</li>
+    <li>Have a look at other sheets.</li>
+    <li>Identify properties/guarantees/traits/... that you might
+      export to other formal approaches.</li>
+    <li>Identify properties/guarantees/traits/... that you'd like to
+      import from other formal approaches.</li>
+  </ol>
+</div>
+
+
+<div class="grid">
+  <div class="sheet">
+    <h2>Casino with <em>Solidity</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li>solidity code</ul></dd>
+        <dt>Investigated Properties</dt>
+        <dd><ul><li>defines the implemented behaviour</ul></dd>
+          <dt>Verification Techniques</dt>
+          <dd><ul><li>none</ul></dd>
+            <dt>Can offer:</dt>
+            <dd> ? ? ? </dd>
+            <dt>Looking for:</dt>
+            <dd> ? ? ? <br>&nbsp;</dd>
+            <dt>Author(s)</dt>
+            <dd>Wolfgang Ahrendt et al.</dd>
+    </dl>
+    <ul>
+      <li><a href="https://verifythis.github.io/casino/spec/../SimpleCasino.sol">Solidity Implementation</a>
+    </ul>
+
+  </div>
+
+
+  <div class="sheet">
+    <h2>Casino with <em>solcverify</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li>solidity code <li>Method contracts <li>framing conditions <li>invariants</ul></dd>
+        <dt>Investigated Properties</dt>
+        <dd><ul><li>safety property <li>correctness of individual operations <li>framing</ul></dd>
+          <dt>Verification Techniques</dt>
+          <dd><ul><li>Verification Condition Generation <li>Boogie <li>SMT solving</ul></dd>
+            <dt>Can offer:</dt>
+            <dd> ? ? ? </dd>
+            <dt>Looking for:</dt>
+            <dd> ? ? ? <br>&nbsp;</dd>
+            <dt>Author(s)</dt>
+            <dd>Jonas Schiffl</dd>
+    </dl>
+    <ul>
+      <li><a href="https://verifythis.github.io/casino/spec/Casino.sol">Annotated Solidity implementation</a></li>
+      <li><a href="https://verifythis.github.io/casino/spec/slcverify-out.txt">Verifier output</a></li>
+    </ul>
+  </div>
+
+
+  <div class="sheet">
+    <h2>Casino with <em>VersCors</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li>multi threaded model <li>lock invariant</ul></dd>
+        <dt>Investigated Properties</dt>
+        <dd><ul><li>safety property <li>correctness of individual operations <li>framing</ul></dd>
+          <dt>Verification Techniques</dt>
+          <dd><ul><li>VCG <li>Viper <li>SMT solving</ul></dd>
+            <dt>Can offer:</dt>
+            <dd> ? ? ? </dd>
+            <dt>Looking for:</dt>
+            <dd> ? ? ? <br>&nbsp;</dd>
+            <dt>Author(s)</dt>
+            <dd>Ra´ul Monti</dd>
+    </dl>
+    <ul>
+      <li><a href="https://verifythis.github.io/casino/spec/vercors">More information …</a>
+    </ul>
+
+  </div>
+
+
+  <div class="sheet">
+    <h2>Casino with <em>Uppaal</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li><i>environment model</i> producing method calls <li><i>contract model</i> reacting to calls (automaton with single central place)</ul></dd>
+        <dt>Investigated Properties</dt>
+        <dd><ul><li>safety property <li>lifeness possible, but not modelled <li>timed properties possible, but not yet modelled</ul></dd>
+          <dt>Verification Techniques</dt>
+          <dd><ul><li>CTL model checking</ul></dd>
+            <dt>Can offer:</dt>
+            <dd>fully-automated verification of small instances (e.g. only two players) with tightly bounded variable domains (e.g. maximum pot 8)</dd>
+            <dt>Looking for:</dt>
+            <dd>
+              <ul>
+                <li>a generalization of the proofs for larger variable domains and arbitrary numbers of components</li>
+                <li>abstractions that can be used by the model checker / symbolic representations of the state space</li>
+              </ul>
+            </dd>
+            <dt>Author(s)</dt>
+            <dd>Jonas Becker, Paula Herber</dd>
+    </dl>
+    <ul>
+      <li><a href="https://verifythis.github.io/casino/spec/index.html#timed">More information</a>
+    </ul>
+
+  </div>
+
+
+  <div class="sheet">
+    <h2>Casino with <em>TLA+</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li>declarative model (Kripke structure) <li>close to actual implementation</ul></dd>
+        <dt>Investigated Properties</dt>
+        <dd><ul><li>safety property (LTL)</ul></dd>
+          <dt>Verification Techniques</dt>
+          <dd><ul><li>LTL model checking</ul></dd>
+            <dt>Can offer:</dt>
+            <dd> ? ? ? </dd>
+            <dt>Looking for:</dt>
+            <dd> ? ? ? <br>&nbsp;</dd>
+            <dt>Author(s)</dt>
+            <dd>Alexander Weigl</dd>
+    </dl>
+    <ul>
+      <li><a href="https://verifythis.github.io/casino/spec/Casino.tla">TLA model</a>
+    </ul>
+
+  </div>
+
+
+  <div class="sheet">
+    <h2>Casino with <em>Event-B</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li>Single state model with events that correspond to method calls <li>events are abstract operation descriptions</ul></dd>
+        <dt>Investigated Properties</dt>
+        <dd><ul><li>safety property if events are implemented to satisfy the machine</ul></dd>
+          <dt>Verification Techniques</dt>
+          <dd><ul><li>SMT solving <li>deductive verification</ul></dd>
+            <dt>Can offer:</dt>
+            <dd> ? ? ? </dd>
+            <dt>Looking for:</dt>
+            <dd> ? ? ? <br>&nbsp;</dd>
+            <dt>Author(s)</dt>
+            <dd>Mattias Uibrich</dd>
+    </dl>
+    <ul>
+      <li><a href="https://verifythis.github.io/casino/spec/Casino.eventb.pdf">Event-B Machine</a>
+    </ul>
+
+  </div>
+
+
+  <div class="sheet">
+    <h2>Casino with <em>JML</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li>State diagram turned into a JML specification</ul></dd>
+        <dt>Investigated Properties</dt>
+        <dd><ul><li>adherence to a protocol by enforcing preconditions</ul></dd>
+          <dt>Verification Techniques</dt>
+          <dd><ul><li>model only <li>for verification, evironment (client) needed</ul></dd>
+            <dt>Can offer:</dt>
+            <dd> ? ? ? </dd>
+            <dt>Looking for:</dt>
+            <dd> ? ? ? <br>&nbsp;</dd>
+            <dt>Author(s)</dt>
+            <dd>Mattias Uibrich</dd>
+    </dl>
+    <ul>
+      <li><a href="https://verifythis.github.io/casino/spec/casino.jml">JML-annotated code</a>
+    </ul>
+
+  </div>
+
+
+  <div class="sheet">
+    <h2>Casino with SecC</h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd>
+        <ul>
+          <li>C code</li>
+          <li>function contracts</li>
+          <li>automata-like specification</li>
+        </ul>
+      </dd>
+      <dt>Investigated Properties</dt>
+      <dd>
+        <ul>
+          <li>safety property</li>
+          <li>correctness of individual operations</li>
+          <li>framing</li>
+          <li>security</li>
+          <li>adherence to protocol steps</li>
+        </ul>
+      </dd>
+      <dt>Verification Techniques</dt>
+      <ul>
+        <li>Separation Logic (symbolic execution)</li>
+        <li>SMT solving</li>
+        <li>regular languages</li>
+      </ul>
+      <dt>Can offer:</dt>
+      <dd>
+        <ul>
+          <li>bridge between automata and code</li>
+        </ul>
+      </dd>
+      <dt>Looking for:</dt>
+      <dd>
+        <ul>
+          <li>extend the trace-based specs with more details</li>
+        </ul>
+      </dd>
+      <dt>Author(s)</dt>
+      <dd>Gidon Ernst, Toby Murray</dd>
+      <a href="https://bitbucket.org/covern/secc/src/master/examples/case-studies/casino-statemachine.c">State machine verification</a>
+      <a href="https://bitbucket.org/covern/secc/src/master/examples/case-studies/casino.c">Full version</a>
+    </dl>
+  </div>
+
+
+
+  <div class="sheet">
+    <h2>Casino with <em>C</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li>C code</ul></dd>
+        <dt>Investigated Properties</dt>
+        <dd><ul><li>no properties, yet</ul></dd>
+          <dt>Verification Techniques</dt>
+          <dd><ul><li>can be used for BMC e.g.</ul></dd>
+            <dt>Can offer:</dt>
+            <dd> ? ? ? </dd>
+            <dt>Looking for:</dt>
+            <dd> ? ? ? <br>&nbsp;</dd>
+            <dt>Author(s)</dt>
+            <dd>Alexander Weigl</dd>
+    </dl>
+    <ul>
+      <li><a href="https://verifythis.github.io/casino/spec/Casino.c">C code</a>
+    </ul>
+  </div>
+
+  <div class="sheet">
+    <h2>Casino with <em>JavaBIP</em></h2>
+    <dl>
+      <dt>Artifacts</dt>
+      <dd><ul><li>Java code <li>JavaBIP executable specification</ul></dd>
+        <dt>Investigated properties</dt>
+        <dd><ul><li>no properties yet
+          <li>adherence to the protocol by coordinating interactions</li>
+        </ul></dd>
+        <dt>Verification Techniques</dt>
+        <dd><ul><li>verification possible by model transformation into other input formalisms</li></ul></dd>
+
+        <dt>Looking for:</dt>
+        <dd>validation of abstraction hypotheses, identification of modelling bugs</dd>
+
+        <dt>Authors</dt>
+        <dd>Simon Bliudze (simon.bliudze@inria.fr),
+          Larisa Safina (larisa.safina@inria.fr)</dd>
+    </dl>
+    <ul>
+      <li><a href="https://gitlab.inria.fr/lsafina/verifythis2020/-/tree/main/src/main/java/casino">repository</a>
+      </li>
+    </ul>
+  </div>
+</div>

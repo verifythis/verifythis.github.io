@@ -1,0 +1,11 @@
+$ slcverify Casino.sol
+  solc-verify warning: Balance modifications due to gas consumption or miner rewards are not modeled
+  Casino::[constructor]: OK
+  Casino::addToPot: OK
+  Casino::removeFromPot: ERROR
+   - Casino.sol:60:5: Postcondition 'operator.balance == __verifier_old_uint(operator.balance) + amount' might not hold at end of function.
+  Casino::createGame: OK
+  Casino::placeBet: OK
+  Casino::decideBet: ERROR
+   - Casino.sol:106:5: Postcondition '(pot == __verifier_old_uint(pot) - bet && player.balance == __verifier_old_uint(player.balance) + 2*bet) || pot == __verifier_old_uint(pot) + bet' might not hold at end of function.
+  Errors were found by the verifier.

@@ -1,0 +1,135 @@
+{{ define "main" }}
+
+<style>
+ .grid{
+   display: grid;
+   grid-column: auto;
+   grid-auto-columns: auto;
+   grid-template-columns: 1fr 1fr;
+ }
+
+ .grid .column {
+   padding:1em;
+ }
+
+ .grid .column:first-of-type {
+   border-right:1px solid #ccc;
+ }
+
+ /* 	Responsive video iframe.
+    From: https://blog.theodo.com/2018/01/responsive-iframes-css-trick/
+  */
+
+ .resp-container {
+   position: relative;
+   overflow: hidden;
+   padding-top: 56.25%;
+ }
+
+ .resp-iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   border: 0;
+ }
+</style>
+
+<div class="grid">
+  <div class="column">
+    <div class="entry">
+      <h2><i class="fas fa-question-circle"></i> What is VerifyThis?</h2>
+      <p>
+        The VerifyThis verification competition is a regular event run
+        as an onsite meeting with workshop character in which three
+        challenges are proposed that participants have to verify in 90
+        minutes each using their favourite program verification tool.
+      </p>
+      <p>
+	<div class="resp-container">
+	  <iframe class="resp-iframe" src="https://player.vimeo.com/video/357544904" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+	</div>
+      </p>
+      <p>
+        We have experienced that the state of the art of program
+        verification allows the participants to specify and verify
+        impressively complex algorithms in this short a time span. If
+        such sophisticated, realistic but not real, problems can be
+        solved in real-time, what would be achievable if (a) we as the
+        program verification community collaborated and (b) the time
+        constraints were removed?
+      </p>
+    </div>
+
+    <div class="entry">
+      <h2><i class="fas fa-bullseye"></i> The Challenge</h2>
+      <p>
+        This <strong>VerifyThis Collaborative Large Scale Challenge</strong>
+        aims at proving that deductive program verification can produce
+        relevant results for real systems with acceptable effort.
+      </p>
+      <p>
+        For this year, we selected <a href="https://gitlab.com/hagrid-keyserver/hagrid">HAGRID</a>,
+        a PGP-keyserver, for the challenge.
+
+        HAGRID is a fresh development, which became necessary as the old
+        keyserver (SKS) is vulnerable against DoS attacks
+        <a href="https://access.redhat.com/articles/4264021">CVE-2019-13050</a>,
+        does not conform to GDPR, and had performance issues.
+        More background information are available in the
+        <a href="https://sequoia-pgp.org/blog/2019/06/14/20190614-hagrid">blog
+          post of the developers</a> HAGRID is already in <a href="https://keys.openpgp.org">production</a>.
+      </p>
+      <p><ul><li><a href="/01hagrid/VerifyThisLongTerm.pdf">Here is the complete description of the challenge.</a>
+	<li><a href="/01hagrid/VerifyThisLongTermSlides.pdf">Here is a slide presentation of the challenge.</a>
+      </ul></p>
+    </div>
+
+    <div class="entry">
+      <h2><i class="fas fa-user-friends"></i> How to participate?</h2>
+      <p>
+        Participation on the challenge is easy. You should pick your favourite
+        tool for the formal software assessment, and try whether you
+        find a bug or prove adhering of the specification in HAGRID (or
+        a suitable abstraction).
+        Of course you can participate in groups. Moreover, we would like to foster
+        collaboration between participating groups. Therefor we would
+        appreciate if you <a href="/registration/">register your group</a>.
+
+	Do not forget to also subscribe to our
+	<a href="https://www.lists.kit.edu/sympa/info/verifythis-ltc"> mailing list </a>
+	(verifythis-ltc@lists.kit.edu) to be able to share your questions and
+	your work and to keep up to date with the work of the rest of the teams.
+
+      </p>
+      <p>
+        We plan to publish on the VerifyThis workshop at the
+        <a href="https://www.etaps.org/2020">ETAPS2020</a>,
+        where we kindly invite each participant to present their results
+        of this challenge.
+      </p>
+    </div>
+  </div>
+
+  <div class="column">
+    <h2> <i class="fas fa-newspaper"></i> News</h2>
+    <div class="posts-list">
+      {{ with .Site.GetPage "/news"}}
+      {{ range .Pages.ByDate.Reverse | first 5 }}
+      {{ partial "post_preview.html" .}}
+      <!-- <li>
+           <a href="{{ .Permalink }}">{{ .Date.Format "Jan 2, 2006" }} | {{ .Title }}</a>
+           </li> -->
+      {{ end }}
+      {{end}}
+      <ul class="pager main-pager">
+        <li class="/next">
+          <a href="news">All posts</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+{{end}}
