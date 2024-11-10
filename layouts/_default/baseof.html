@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Domine:wght@400..700&family=Playwrite+US+Trad:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
     {{ with resources.Get "css/pure-min.css" }}
         <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{ end }}
@@ -14,7 +20,9 @@
     {{ end }}
   </head>
   <body>
-    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}    
+    {{ block "menu" . }}
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    {{ end }}
     <section class="main">
       {{ block "main" . }}{{ end }}
     </section>
@@ -22,7 +30,6 @@
       <div class="foot-content">
       {{ block "footer" . }}  
       VerifyThis -- (c) 2024
-      {{ partial "menu.html" (dict "menuID" "footer" "page" .) }}
       {{ end }}
       </div>
     </section>

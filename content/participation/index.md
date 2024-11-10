@@ -1,6 +1,6 @@
 ---
 menus: 
-  main:
+  onsite:
     weight: 300
     name: Call for Participation
 title: Call for Participation and Application for Travel Grants	

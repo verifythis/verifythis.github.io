@@ -1,0 +1,70 @@
+{{ define "title" }} VerifyThis Long-Term Challenge {{ end }}
+
+{{ define "main" }}
+<style>
+  /* color ALL links, including news */
+  .post-entry a {
+  /* text-decoration: underline */
+  color: #008AFF;
+  }
+
+ .grid{
+   display: grid;
+   grid-column: auto;
+   grid-auto-columns: auto;
+   grid-template-columns: 1fr 1fr;
+ }
+
+ .grid .column {
+   padding:1em;
+ }
+
+ .grid .column:first-of-type {
+   border-right:1px solid #ccc;
+ }
+
+ /* 	Responsive video iframe.
+    From: https://blog.theodo.com/2018/01/responsive-iframes-css-trick/
+  */
+
+ .resp-container {
+   position: relative;
+   overflow: hidden;
+   padding-top: 56.25%;
+ }
+
+ .resp-iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   border: 0;
+ }
+</style>
+
+<div class="grid">
+  <div class="column">
+    <div class="entry">
+      {{.Content}}
+    </div>
+  </div>
+
+  <div class="column">
+    <h2> <i class="fas fa-newspaper"></i> News</h2>
+    
+    <div class="posts-list">
+      {{ with .Site.GetPage "news"}}
+        {{ range .Pages.ByDate.Reverse | first 5 }}
+          {{ partial "post_preview.html" .}}
+        {{ end }}
+      {{ end }}
+      <ul class="pager main-pager">
+        <li class="/next">
+          <a href="news">All posts</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{{end}}

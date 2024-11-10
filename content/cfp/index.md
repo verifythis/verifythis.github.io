@@ -1,7 +1,7 @@
 ---
 title: Call for Problems
 menus: 
-  main:
+  onsite:
     weight: 300		
 ---
 

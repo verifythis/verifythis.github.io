@@ -1,6 +1,6 @@
 ---
 menus: 
-  main:
+  onsite:
     weight: 200
 title: Program
 ---

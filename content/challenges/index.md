@@ -1,7 +1,7 @@
 ---
 title: Challenges
 menus: 
-  main:
+  onsite:
     weight: 300
 ---
 

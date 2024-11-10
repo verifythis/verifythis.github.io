@@ -1,6 +1,9 @@
 ---
 aliases:
   - /casino/
+menus: 
+  ltc:
+    weight: 400
 ---
 
 ![](LasBlockchainSign.svg)

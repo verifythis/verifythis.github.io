@@ -1,17 +1,14 @@
 {{- $page := .page }}
 {{- $menuID := .menuID }}
 
+{{- $path := .page.Path }}
+{{- $submenu := "onsite" }}
+{{- if (strings.Contains $path "/ltc")}}
+  {{- $submenu = "ltc" }}
+{{- else}}
+  {{- $submenu = "onsite" }}
+{{- end}}
 
-{{- with index site.Menus $menuID }}
-<div class="header">
-    <div class="pure-menu pure-menu-horizontal">
-        <a class="pure-menu-heading" href="">VerifyThis</a>
-            <ul class="pure-menu-list">
-                {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-            </ul>
-    </div>
-</div>
-{{- end }}
 
 {{- define "partials/inline/menu/walk.html" }}
   {{- $page := .page }} 
@@ -45,3 +42,38 @@
     </li>
   {{- end }}
 {{- end }}
+
+
+
+<div class="header">
+ <!-- "Submenu: {{ $submenu }}" -->
+
+ <div class="mainmenu pure-g">
+   <div class="pure-u-1-2">
+     <a href="/">VerifyThis@ETAPS</a>
+   </div>
+   <div class="pure-u-1-2">
+     <a href="/ltc">VerifyThis LTC</a>
+   </div>
+ </div>
+ 
+  <!--
+ {{- with index site.Menus $menuID }}
+    <div class="pure-menu pure-menu-horizontal mainmenu">
+            <ul class="pure-menu-list">
+                {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+            </ul>
+    </div>
+    {{- end }}
+    -->
+
+    {{- with $submenu }}
+      {{- with index site.Menus . }}
+    <div class="pure-menu pure-menu-horizontal submenu {{$submenu}}">
+      <ul class="pure-menu-list">
+        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      </ul>
+    </div>
+    {{- end }}
+    {{- end }}
+</div>

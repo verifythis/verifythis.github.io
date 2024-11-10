@@ -1,9 +1,0 @@
-Formalism;Author;Artifacts;Properties;Verification;Links
-Solidity;Wolfgang Ahrendt et al.;* solidity code;* defines the implemented behaviour;* none;../SimpleCasino.sol Solidity Implementation
-solcverify;Jonas Schiffl;* solidity code * Method contracts * framing conditions * invariants;* safety property * correctness of individual operations * framing;* Verification Condition Generation * Boogie * SMT solving;Casino.sol Annotated Solidity implementation, slcverify-out.txt Verifier output
-VersCors;Ra´ul Monti;* multi threaded model * lock invariant;* safety property * correctness of individual operations * framing;* VCG * Viper * SMT solving;vercors More information …
-Uppaal;Jonas Becker, Paula Herber;* <i>environment model</i> producing method calls * <i>contract model</i> reacting to calls (automaton with single central place);* safety property * lifeness possible, but not modelled * timed properties possible, but not yet modelled;* CTL model checking;index.html#timed More information
-TLA+;Alexander Weigl;* declarative model (Kripke structure) * close to actual implementation;* safety property (LTL);* LTL model checking;Casino.tla TLA model
-Event-B;Mattias Uibrich;* Single state model with events that correspond to method calls * events are abstract operation descriptions;* safety property if events are implemented to satisfy the machine;* SMT solving * deductive verification;Casino.eventb.pdf Event-B Machine
-JML;Mattias Uibrich;* State diagram turned into a JML specification;* adherence to a protocol by enforcing preconditions;* model only * for verification, evironment (client) needed;casino.jml JML-annotated code
-C;Alexander Weigl;* C code;* no properties, yet;* can be used for BMC e.g.;Casino.c C code

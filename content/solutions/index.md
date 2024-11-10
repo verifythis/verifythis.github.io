@@ -1,6 +1,6 @@
 ---
 menus: 
-  main:
+  onsite:
     weight: 300
 title: Solutions
 ---

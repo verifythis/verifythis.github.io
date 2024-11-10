@@ -1,6 +1,6 @@
 ---
 menus: 
-  main:
+  onsite:
     parent: Archive
     weight: 2011
     name: 2011
