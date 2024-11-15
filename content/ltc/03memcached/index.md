@@ -20,8 +20,8 @@ compatible subset of the protocol requires a reasonably low effort only.
 The overarching goals and research directions of this long-term
 challenge are as follows:
 
-{{< columns >}}
-{{< column >}}
+{{% columns %}}
+{{% column %}}
 * Develop high-level behavioral models and contract specifications
 that abstractly capture the core functionality of a remote cache
 server, the protocol, and the client library
@@ -30,7 +30,8 @@ server, the protocol, and the client library
 liveness and safety properties related to the lifecycle of cache
 entries
 
-{{< column >}}
+{{% /column %}}
+{{% column %}}
 * Design and verify an implementation that realizes these requirements
 and that may serve as a drop-in replacement for `memcached` with
 support of a significant subset of its features
@@ -38,8 +39,8 @@ support of a significant subset of its features
 * Verify parts of the actual `memcached` implementation (written in
 C), using e.g. scalable software model checking methods or focused
 deductive techniques on critical routines
-
-{{< endcolumns >}}
+{{% /column %}}
+{{% /columns %}}
 
 We emphasize that the challenges associated with these respective
 goals can be scaled in many dimensions (realistic interfaces,

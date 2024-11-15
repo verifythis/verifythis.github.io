@@ -1,4 +1,4 @@
-baseURL = 'https://verifythis.github.io/'
+baseURL = 'https://verifythis.github.io/verifythis_copy_ethz'
 languageCode = 'en-us'
 title = 'VerifyThis'
 
@@ -31,7 +31,7 @@ pygmentsCodeFences = true
         image = true
     [markup.goldmark.renderer]
       hardWraps = false
-      unsafe = false
+      unsafe = true
       xhtml = false
   [markup.highlight]
     anchorLineNos = false
