@@ -25,20 +25,20 @@
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li class="pure-menu-item {{- if $page.IsMenuCurrent .Menu .}} active {{- end}}
-	   {{- with .Children }} pure-menu-has-children pure-menu-allow-hover {{- end}}">
-      <a class="pure-menu-link  {{- with .Children }} pure-menu-has-children pure-menu-allow-hover {{- end}}"      
+    <li class="{{- if $page.IsMenuCurrent .Menu .}} active {{- end}}">
+      <a class=""      
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
           {{- end }}
         {{- end -}}
-      >{{ $name }}</a>
+	 >{{ $name }}</a>
       {{- with .Children }}
-        <ul class="pure-menu-children">
+      <!--
+        <ul>
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-        </ul>
-      {{- end }}
+        </ul>-->
+	{{- end }}
     </li>
   {{- end }}
 {{- end }}
@@ -47,15 +47,18 @@
 
 <div class="header">
  <!-- "Submenu: {{ $submenu }}" -->
-
-
- <div class="mainmenu pure-g">
-   <div class="pure-u-1-2">
-     <a href="{{ .Site.BaseURL }}/onsite">VerifyThis@ETAPS</a>
-   </div>
-   <div class="pure-u-1-2">
-     <a href="{{ .Site.BaseURL }}/ltc">VerifyThis LTC</a>
-   </div>
+ <div class="mainmenu">
+   <ul>
+     <li>
+       <a class="onsite" href="{{ "onsite" | relURL }}">VerifyThis@ETAPS</a>
+     </li>
+     <li style="color:white">
+       &ndash; or &ndash;
+     </li>
+     <li>
+       <a class="ltc" href="{{ "ltc" | relURL }}">VerifyThis LTC</a>
+       </li>
+   </ul>
  </div>
  
   <!--
@@ -70,28 +73,12 @@
 
     {{- with $submenu }}    
       {{- with index site.Menus . }}
-        <div class="custom-menu-wrapper">
-	  <div class="pure-menu custom-menu custom-menu-top">
-	    <a href="#" class="pure-menu-heading custom-menu-brand">Brand</a>
-	    <a href="#" class="custom-menu-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
-	  </div>
-	  <div class="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
-	    <div class="custom-menu-screen"></div>
+        <div class="submenu {{$submenu}}">
 	    <ul class="pure-menu-list">
 	      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
 	    </ul>
-	  </div>
-	</div>
       </div>
     {{- end }}
     {{- end }}
 </div>
 
-<script>
-  (function (window, document) {
-      document.getElementById('toggle').addEventListener('click', function (e) {
-          document.getElementById('tuckedMenu').classList.toggle('custom-menu-tucked');
-          document.getElementById('toggle').classList.toggle('x');
-      });
-  })(this, this.document);
-</script>

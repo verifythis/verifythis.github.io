@@ -1,0 +1,138 @@
+// TREES
+field val : Int
+field left : Ref
+field right : Ref
+
+predicate Tree(t:Ref) {
+  t != null ==> acc(t.val) && acc(t.left) && acc(t.right) &&
+  Tree(t.left) && Tree(t.right)
+}
+
+function size(t:Ref) : Int
+  requires Tree(t)
+  ensures result >= 0
+{
+  unfolding Tree(t) in 
+    (t == null ? 0 : 1 + size(t.left) + size(t.right))
+}
+
+function lookup(t:Ref, i:Int) : Int
+  requires Tree(t) && 0 <= i && i < size(t)
+{
+  unfolding Tree(t) in
+    (i < size(t.left) ? lookup(t.left,i) : 
+      (i == size(t.left) ? t.val : lookup(t.right,i - size(t.left) - 1)))
+}
+    
+
+method insertLeft(t:Ref, v:Int) returns (res: Ref)
+  requires Tree(t)
+  ensures Tree(res) 
+  ensures size(res) == old(size(t)) + 1
+  ensures lookup(res,0) == v
+  ensures forall i:Int :: 0 < i && i < size(res) ==> lookup(res,i) == old(lookup(t,i-1))
+{
+  if(t != null) {
+    var tmp : Ref
+    unfold Tree(t)
+    tmp := insertLeft(t.left,v)
+    t.left := tmp
+    fold Tree(t)
+    res := t
+  } else {
+    res := new(left,val,right)
+    res.left := null
+    res.right := null
+    res.val := v
+    fold Tree(res.left)
+    fold Tree(res.right)
+    fold Tree(res)
+  }
+}
+
+method insert(t:Ref, v:Int) returns (res: Ref, pos: Int)
+  requires Tree(t)
+  ensures Tree(res) 
+  ensures size(res) == old(size(t)) + 1
+  ensures 0 <= pos && pos < size(res)
+  ensures lookup(res,pos) == v
+  ensures forall i:Int :: 0 <= i && i < pos ==> lookup(res,i) == old(lookup(t,i))
+  ensures forall i:Int :: pos < i && i < size(res) ==> lookup(res,i) == old(lookup(t,i-1))
+{
+  if(t != null) {
+    var tmp : Ref
+    unfold Tree(t)
+    if(size(t.left) <= size(t.right)) {
+      tmp, pos := insert(t.left,v)
+      t.left := tmp
+    } else {
+      tmp, pos := insert(t.right,v)
+      t.right := tmp
+      pos := pos + size(t.left) + 1
+    }
+    fold Tree(t)
+    res := t
+  } else {
+    res := new(left,val,right)
+    res.left := null
+    res.right := null
+    res.val := v
+    fold Tree(res.left)
+    fold Tree(res.right)
+    fold Tree(res)
+    pos := 0
+  }
+}
+
+
+
+// ARRAYS
+
+domain Array {
+  function len(a:Array) : Int
+  function slot(a:Array, i:Int) : Ref // map to a ghost object with a "val" field
+  function slotToArray(r: Ref) : Array
+  function slotToIndex(r: Ref) : Int
+
+  axiom injectivity {
+    forall a: Array, i:Int ::
+      0 <= i && i < len(a) ==> slotToArray(slot(a,i)) == a && slotToIndex(slot(a,i)) == i
+  }
+
+  axiom lenPositive {
+    forall a: Array :: len(a) >= 0
+  }
+}
+
+
+method zeros(a:Array, offset:Int, n:Int)
+  requires forall i:Int :: offset <= i && i < offset + n ==> acc(slot(a,i).val)
+  requires 0 <= offset && 0 < n && offset + n < len(a)
+  ensures forall i:Int :: offset <= i && i < offset + n ==> acc(slot(a,i).val)
+  ensures forall i:Int :: offset <= i && i < offset + n ==> slot(a,i).val == 0
+{
+  slot(a,offset).val := 0
+  if(n > 1) {
+    zeros(a, offset + 1, n-1)
+  }
+} 
+
+
+
+method treeToArray(t:Ref, offset: Int, a:Array)
+  requires Tree(t) && offset >= 0 && offset + size(t) <= len(a)
+  requires forall i : Int :: offset <= i && i < offset + size(t) ==> acc(slot(a,i).val)
+  ensures Tree(t) && size(t) == old(size(t))
+  ensures  forall i : Int :: offset <= i && i < offset + size(t) ==> acc(slot(a,i).val) && 
+    slot(a,i).val == old(lookup(t,i - offset))
+  {
+    if(t != null) { 
+      // <-- write your code here to read off the tree values into the array, starting at slot "offset"
+      // remember, an array access a[j] is represented by slot(a,j).val
+    }
+  }
+
+
+
+
+

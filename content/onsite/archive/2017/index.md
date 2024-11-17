@@ -3,14 +3,14 @@ menus:
   onsite:
     parent: Archive
     weight: 2017
-title: 2017
+title: VerifyThis 2017
+weight: 2017
 ---
 
 verifyThis 2017 was organized by Wojciech Mostowski, Mattias Ulbrich
+<!--more-->
 
-The competition report can be found [here
-(PDF, 478
-KB)](solutions/CompetitionReportVerifyThis2017.pdf)
+The competition report can be found [here (PDF, 478 KB)](solutions/CompetitionReportVerifyThis2017.pdf).
 
 ## Winners
 

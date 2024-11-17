@@ -5,10 +5,13 @@ menus:
     weight: 2012
     name: 2012    
 title: VerifyThis 2012
+weight: 2012
 ---
 
 VerifyThis 2012 was organized by Marieke Huisman, Vladimir Klebanov, Rosemary Monahan.
-The competition report can be found [here (PDF, 496 KB)](HuismanKlebanov_Monahan.pdf)
+<!--more-->
+
+The competition report can be found [here (PDF, 496 KB)](HuismanKlebanov_Monahan.pdf).
 
 ## Winners
 
@@ -48,7 +51,7 @@ approximate.
 
  
 
--   [team VeriFast (ZIP, 12 KB)](solutions//verifythis2012_team_verifast.zip)
+-   [team VeriFast (ZIP, 12 KB)](solutions/verifythis2012_team_verifast.zip)
     (competition solutions, 2012-08-30)
 -   [team KIV](http://www.informatik.uni-augsburg.de/swt/projects/verifythis-competition-2012/) (2012-09-06)
 -   [team GNATprove (GZ, 4 KB)](solutions//gnatprove_final.tar.gz),

@@ -5,12 +5,13 @@ menus:
     weight: 2015
     name: 2015
 title: Verify This 2015
+weight: 2015
 ---
 
-verifyThis 2015 was organized by Marieke Huisman, Vladimir Klebanov,
-Rosemary Monahan  
+verifyThis 2015 was organized by Marieke Huisman, Vladimir Klebanov, Rosemary Monahan.
+<!--more-->
 
-The competition report can be found [here (PDF, 452 KB)](HuismannKlebanovMonahanTautschnig.pdf)
+The competition report can be found [here (PDF, 452 KB)](HuismannKlebanovMonahanTautschnig.pdf).
 
 ## Winners
 

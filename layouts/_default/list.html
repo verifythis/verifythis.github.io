@@ -1,9 +1,11 @@
 {{ define "main" }}
-  <h1>Posts</h1>
-  {{ range .Pages }}
+  <h1>{{.Title}}</h1>
+  <div class="grid">
+  {{ range .Pages.ByWeight.Reverse }}
     <article>
-      <h2>{{ .Title }}</h2>
-      {{ .Content }}
+      <h2><a href="{{.RelPermalink}}">{{ .Title }}</a></h2>
+      <p>{{ .Summary }}</p>
     </article>
   {{ end }}
+  </div>
 {{ end }}

@@ -5,11 +5,13 @@ menus:
     weight: 2021
     name: 2021
 title: VerifyThis 2021
+weight: 2021
 ---
 
-verifyThis 2021 was organized by Siddharth Krishna and Wytse Oortwijn.
+verifyThis 2021 was organized by Siddharth Krishna and Wytse Oortwijn.
+<!--more-->
 
-The competition report can be found [here (PDF, 433 KB)](ComptetionReportVerifyThis2019.pdf)
+The competition report can be found [here (PDF, 433 KB)](ComptetionReportVerifyThis2019.pdf).
 
 ## Challenges
 
@@ -26,13 +28,10 @@ The competition report can be found [here (PDF, 433 KB)](ComptetionReportVerifyT
 
 Click on the team name to get to their solutions:
 
-[KIV](https://kiv.isse.de/projects/v9/VerifyThis2021/index.html)
-
-[SecC](https://bitbucket.org/covern/secc/src/master/examples/case-studies/bst.c)
-
-[VerCors Team Blue](https://github.com/utwente-fmt/vercors/tree/dev/examples/verifythis/2021/TeamBlue)
-
-[YYY (ZIP, 8 KB)](https://ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/verifyThis2021-YYY.zip)
+* [KIV](https://kiv.isse.de/projects/v9/VerifyThis2021/index.html)
+* [SecC](https://bitbucket.org/covern/secc/src/master/examples/case-studies/bst.c)
+* [VerCors Team Blue](https://github.com/utwente-fmt/vercors/tree/dev/examples/verifythis/2021/TeamBlue)
+* [YYY (ZIP, 8 KB)](verifyThis2021-YYY.zip)
 
 ### Prizes
 

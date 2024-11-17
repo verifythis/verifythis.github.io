@@ -5,12 +5,14 @@ menus:
     weight: 2014
     name: 2014
 title: VerifyThis 2014
+weight: 2014
 ---
 
-verifyThis 2014 was organized by Dirk Beyer, Marieke Huisman, Vladimir
-Klebanov, Rosemary Monahan  
+verifyThis 2014 was organized by Dirk Beyer, Marieke Huisman, Vladimir Klebanov, Rosemary Monahan.
 
-The competition report can be found [here (PDF, 1.1 MB)](BeyerHuismanKlebanovMonahan.pdf)
+<!--more-->
+
+The competition report can be found [here (PDF, 1.1 MB)](BeyerHuismanKlebanovMonahan.pdf).
 
 ## Challenge
 

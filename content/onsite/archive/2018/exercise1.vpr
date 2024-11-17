@@ -1,0 +1,20 @@
+field val : Int
+
+method swap(x:Ref, y:Ref)
+  requires acc(x.val) && acc(y.val)
+  ensures acc(x.val) && acc(y.val) && x.val == old(y.val) && y.val == old(x.val)
+{
+  var z : Int := x.val
+  x.val := y.val
+  y.val := z
+} 
+
+method shuffle(x:Ref, y:Ref, z:Ref)
+  requires acc(x.val) && acc(y.val) && acc(z.val)
+{
+  swap(x,y)
+  swap(y,z) 
+  swap(z,x) 
+  // <-- add a statement here: how do we get the values back to their original positions?
+  assert true // <-- change this to assert that everything is back to the original positions
+}

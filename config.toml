@@ -2,6 +2,9 @@ baseURL = 'https://verifythis.github.io/verifythis_copy_ethz'
 languageCode = 'en-us'
 title = 'VerifyThis'
 
+# relativeURLs = true
+# canonifyURLs = true
+
 pygmentsStyle = "monokai"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
@@ -15,7 +18,7 @@ pygmentsCodeFences = true
     [markup.goldmark.extensions]
       definitionList = true
       footnote = true
-      linkify = true
+      linkify = false
       linkifyProtocol = 'https'
       strikethrough = true
       table = true
@@ -30,9 +33,11 @@ pygmentsCodeFences = true
         title = true
         image = true
     [markup.goldmark.renderer]
-      hardWraps = false
+      hardWraps = true
       unsafe = true
-      xhtml = false
+      xhtml = true
+      plainIDAnchors=true
+      hrefTargetBlank=true
   [markup.highlight]
     anchorLineNos = false
     codeFences = true

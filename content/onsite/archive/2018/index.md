@@ -5,9 +5,11 @@ menus:
     weight: 2018
     name: 2018 
 title: VerifyThis 2018
+weight: 2018
 ---
 
 verifyThis 2018 was organized by Andrei Paskevich, Gidon Ernst.
+<!--more-->
 
 The competition report can be found [here (PDF, 512 KB)](solutions//sttt-summary.pdf)
 
@@ -39,11 +41,9 @@ A (slower) [online version](http://viper.ethz.ch/examples/blank-example.html) of
 The short exercises for you to try during the tutorial can be found
 here:
 
-[Exercise 1](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise1.vpr)
-
-[Exercise 2](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise2.vpr)
-
-[Exercise 3](https://www.ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/exercise3.vpr)
+* [Exercise 1](exercise1.vpr)
+* [Exercise 2](exercise2.vpr)
+* [Exercise 3](exercise3.vpr)
 
 ## Challenges
 

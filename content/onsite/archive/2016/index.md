@@ -5,12 +5,13 @@ menus:
     weight: 2016
     name: 2016    
 title: VerifyThis 2016
+weight: 2016
 ---
 
-VerifyThis 2016 was organized by Marieke Huisman, Peter Müller, Erik Poll, Radu Grigore
+VerifyThis 2016 was organized by Marieke Huisman, Peter Müller, Erik Poll, Radu Grigore.
+<!--more-->
 
-The competition report can be found [{.eth-link__label}here
-(PDF, 377 KB)](HuismanMonahanMuellerPoll16.pdf)
+The competition report can be found [here (PDF, 377 KB)](HuismanMonahanMuellerPoll16.pdf)
 
 ## Winners
 
