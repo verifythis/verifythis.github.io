@@ -1,12 +1,13 @@
 --- 
 title: "Casino Example #3"
-subtitle: "Online Discussion"
 tags:
   - casino
-aliases:
-  - /online-event-march/
 date: 2022-03-24
 ---
+
+The next discussion meeting will be on <strong>24 March 2022, 14.00 CEST</strong>.
+
+<!--more-->
 
 <center>
 

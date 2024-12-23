@@ -10,23 +10,17 @@ date: 2024-07-03
 
 <!--more-->
 
-
 As a follow-up to the March 2024 [Lorentz Center workshop on Contract
 Languages](https://www.lorentzcenter.nl/contract-languages.html), we
 will host a series of online presentations and discussions around
 formal methods with contract languages, aligning with the LTC goal of
 enabling information exchange between different formal systems.
 
-[Ask for the **Zoom link**](mailto:ulbrich@kit.edu)
-
-<details>
-  <summary>Abstract</summary>
-  
-**Title:**
+#### Title
 *Context-aware Trace Contracts*,
 Joint work with Eduard Kamburjan (U Oslo), Marco Scaletta (TU Darmstadt)
 
-**Abstract:**<br>
+#### Abstract
 The behavior of concurrent, asynchronous procedures depends in general on 
 the call context, because of the global protocols that govern scheduling. 
 This context cannot be specified with the state-based Hoare-style 
@@ -38,5 +32,3 @@ for specifying global behavior of asynchronous programs. We also provide a
 sound proof system. To observe the program state not merely at the end 
 points of a procedure, we introduce the novel concept of an observation 
 binder.
-
-</details>

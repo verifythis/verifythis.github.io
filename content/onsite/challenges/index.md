@@ -5,26 +5,13 @@ menus:
     weight: 300
 ---
 
-## Challenge 0
+**tda for 2025.**
 
-[The Rope Data Structure (PDF, 131 KB)](verifyThis2024-Challenge-0.pdf)
-
-## Challenge 1
-
-[Smart Array Copy by Shuffled Subsegments (PDF, 137 KB)](verifyThis2024-Challenge-1.pdf)
-
-## Challenge 2+3
-
-[Work-Stealing for Task Trees (PDF, 145 KB)](verifyThis2024-Challenge-2and3.pdf)
-
-The challenges of previous competitions are available in the
-[archive](archive).
- 
+The challenges of previous competitions are available in the [archive](archive).
 
 ## RULES
 
-1.  Solutions are to be submitted per email to
-     at the end of the challenge slot.
+1.  Solutions are to be submitted per email to at the end of the challenge slot.
 2.  Submissions must state the version of the verification system used
     (for development versions, internal revision, timestamp, or similar
     unique id).
@@ -43,5 +30,4 @@ The challenges of previous competitions are available in the
     implementations supplied with problem descriptions, the organizers
     do not guarantee that they are indeed correct.
 
-(We acknowledge Geoff Sutcliffe for inspiring/suggesting some of theserules.) 
-[(PDF, 123 KB)](challenge3.pdf)
+We acknowledge Geoff Sutcliffe for inspiring/suggesting some of these rules.

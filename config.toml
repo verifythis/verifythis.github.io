@@ -33,7 +33,7 @@ pygmentsCodeFences = true
         title = true
         image = true
     [markup.goldmark.renderer]
-      hardWraps = true
+      hardWraps = false
       unsafe = true
       xhtml = true
       plainIDAnchors=true
@@ -57,41 +57,12 @@ pygmentsCodeFences = true
     ordered = false
     startLevel = 2
 
-[[menu.main]]
-    name = "VerifyThic LTC"
-    url = "/ltc/"
-    weight = 2
-
-
 [[menu.ltc]]
-    name = "Next Event"
-    url = "/ltc/events/2024-01-23-online-event/"
+    name = "Events & News"
+    url = "/ltc/news/"
     weight = 1
 
 [[menu.ltc]]
-    name = "Current Challenge"
+    name = "Current Challenge: Memcached"
     url = "/ltc/03memcached"
     weight = 2
-
-[[menu.ltc]]
-    identifier = "prev"
-    name = "Previously"
-    weight = 3
-
-[[menu.ltc]]
-    parent = "prev"
-    name = "1st Challenge: Hagrid"
-    url = "/ltc/01hagrid"
-    weight = 1
-
-[[menu.ltc]]
-    parent = "prev"
-    name = "Challenge: Casino"
-    url = "/ltc/02casino"
-    weight = 2
-
-[[menu.ltc]]
-    parent = "prev"
-    name = "Events"
-    url = "/ltc/events"
-    weight = 3

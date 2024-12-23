@@ -1,6 +1,5 @@
 --- 
 title: "Specification Languages"
-subtitle: "Online Discussion"
 date: 2020-11-27 
 tags: 
   - hagrid 

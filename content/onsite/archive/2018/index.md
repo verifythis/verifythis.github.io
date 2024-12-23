@@ -47,13 +47,10 @@ here:
 
 ## Challenges
 
-[Array Based Queuing Lock (PDF, 56 challenges//abql.pdf)  
-
-[Colored tiles (PDF, 42 challenges//tiles.pdf)  
-
-[Gap buffer (PDF, 72 challenges//gap-buffer.pdf)
-
-[Register allocation (PDF, 70 challenges//regalloc.pdf)
+* [Array Based Queuing Lock](challenges//abql.pdf)
+* [Colored tiles](challenges//tiles.pdf)
++ [Gap buffer](challenges//gap-buffer.pdf)
+* [Register allocation](challenges//regalloc.pdf)
  
 ## Solutions
 

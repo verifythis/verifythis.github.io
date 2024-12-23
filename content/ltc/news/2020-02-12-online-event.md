@@ -1,18 +1,19 @@
 --- 
 title: "Hagrid Results #1"
-subtitle: "Online Discussion"
 date: 2020-02-12 
 tags: [ hagrid ] 
 aliases:
   - /online-event-feb/
 ---
 
-# Online Discussion
+### Online Discussion
 
 **12th February, 2020, 14:00 – 16:00 UTC [14:00
 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=2021-02-12T14:00:00)**
 - [16:00
 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=2021-02-12T16:00:00)
+
+<!--more-->
 
 [Information for participating are below.](#participating)
 

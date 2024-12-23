@@ -1,16 +1,14 @@
 --- 
-title: Finalisation of the Casino Example
-subtitle: "Online Discussion" 
+title: "Casino Example #5: Finalisation of the Example"
 date: 2023-02-15
+summary: "Last online discussion on the Casino example."
 tags:
   - casino
 ---
 
 <center>
 
-Online Discussion
-=================
-
+### Online Discussion
 
 **[Feb 15, 2023, 08:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20230215T09&p1=37&ah=2)** - 09:30 UHR UTC<br>
 **[Feb 15, 2023, 09:00 CET](https://www.timeanddate.com/worldclock/fixedtime.html?msg=VerifyThis&iso=20230215T09&p1=37&ah=2)** - 10:30 UHR CET<br>

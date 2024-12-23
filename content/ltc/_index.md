@@ -27,3 +27,6 @@ Participation on the challenge is easy. You should pick your favourite tool for 
 
 We plan to go for a Track on ISoLA 2024. In the intermediate, we plan rather informal meetings on iFM'23 and ETAPS'24.
 
+## Previous Challenges
+* [Hagrid:](01hagrid) Verifying key-server, a replacement for the unsecure SKS.
+* [Casino:](02casino) Smart contract implementing a simple guessing game.

@@ -41,7 +41,8 @@ competition, and may take this into account if needing to prioritise
 travel grants; regardless, we strongly encourage you to apply if you
 have a need.
 
-To apply for a travel grant, send an email **XXX** to **XXX** by March 7th, 2024 (or at the latest March 15th). The application should
+To apply for a travel grant, send an email **XXX** to **XXX** by March
+7th, 2024 (or at the latest March 15th). The application should
 include:
 
 -   your name

@@ -1,4 +1,4 @@
-{{ define "title" }} VerifyThis Long-Term Challenge {{ end }}
+{{ define "title" }} VerifyThis  {{ end }}
 
 {{ define "main" }}
 <style>
@@ -31,7 +31,6 @@
       border-bottom: 1px var(--ltc) solid;
       
   }
-  
 </style>
 
 <div id="start-grid">
@@ -41,7 +40,7 @@
   
   <div id="news">
     <h2> <i class="fas fa-newspaper"></i> Timeline</h2>
-    {{ with .Site.GetPage "ltc/news"}}
+    {{ with .Site.GetPage "onsite/news"}}
       {{ range .Pages.ByDate.Reverse | first 10 }}
         {{ partial "post_preview.html" .}}
       {{ end }}

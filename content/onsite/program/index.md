@@ -5,8 +5,7 @@ menus:
 title: Program
 ---
 
-VerifyThis will be held at Park Hotel Lavisse (the location for all
-ETAPS 2024 events) in room Schengen II.
+<!-- VerifyThis will be held at XXX (the location for all ETAPS 2025 events) in room XXX. -->
 
 ## Saturday (provisional schedule)
 
@@ -25,11 +24,13 @@ organisers know before the competition.
 |16:00 - 16:30|Coffee Break|
 |16:30 - 17:30|Challenge Session 3|
 
-In the evening, we plan to go for a social dinner (probably around 7) with any participants interested.
+In the evening, we plan to go for a social dinner (probably around 7)
+with any participants interested.
 
 Dinner is not included in the registration.
 
-Note: in case you are **not available on Sunday**, please let the organisers know before the competition.
+Note: in case you are **not available on Sunday**, please let the
+organisers know before the competition.
 
 ## Sunday
 

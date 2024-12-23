@@ -45,12 +45,65 @@ The submission deadline is December 15th, 2023. We look forward to
 receiving your ideas!
 
 Submission Criteria:
-• A brief yet precise problem description, specifically identifying
+
+* A brief yet precise problem description, specifically identifying
 verification sub-tasks.
-• A solution to the challenge is strongly encouraged, otherwise please
+* A solution to the challenge is strongly encouraged, otherwise please
 provide a sketch of correctness.
-• The description document can use any reasonable format, including
+* The description document can use any reasonable format, including
 plain text or PDF.
 
 Contributors are encouraged to look at the [Archive of previous
-problems](Archive.html "verifyThis Archive").
+problems](archive).
+
+* 2024:
+  * [The Rope Data Structure (PDF, 131 KB)](../archive/2024/challenges/verifyThis2024-Challenge-0.pdf)
+  * [Smart Array Copy by Shuffled Subsegments (PDF, 137 KB)](../archive/2024/challenges/verifyThis2024-Challenge-1.pdf)
+  * [Work-Stealing for Task Trees (PDF, 145 KB)](../archive/2024/challenges/verifyThis2024-Challenge-2and3.pdf)
+* 2023: 
+  * [List Reversal (PDF, 48 KB)](../archive/2023/challenges/Challenge%201.pdf)
+  * [Binary Decision Diagrams (PDF, 126 KB)](../archive/2023/challenges/Challenge%202.pdf)
+  * [Nonblocking Concurrent Queue using LL/SC Synchronization (PDF, 95 KB)](../archive/2023/challenges/Challenge%203.pdf)
+* 2022:
+  * [Downsampling a Point Cloud (PDF, 131 KB)](../archive/2022/challenges/verifyThis2022-challenge1.pdf)
+  * [Mergesort with Runs (PDF, 121 KB)](../archive/2022/challenges/verifyThis2022-challenge2.pdf)
+  * [The World's Simplest Lock-Free Hash Set (PDF, 125 KB)](../archive/2022/challenges/verifyThis2022-challenge3.pdf)
+* 2021:
+  * [Lexicographic Permutations (PDF, 105 KB)](../archive/2021/challenge1.pdf)
+  * [DLL to BST (PDF, 204 KB)](../archive/2021/challenge2.pdf)
+  * [Shearsort (PDF, 123 KB)](../archive/2021/challenge3.pdf)
+* 2020: no verifythis onsite event
+* 2019:
+  * [Monotonic Segments and GHC sort (PDF, 136 KB)](../archive/2019/challenges/ghc_sort.pdf)
+  * [Cartesian Trees (PDF, 137 KB)](../archive/2019/challenges/cartesian_trees.pdf)
+  * [Sparse Matrix Multiplication (PDF, 116 KB)](../archive/2019/challenges/sparse_matrix_multiplication.pdf)
+* 2018:
+  * [Array Based Queuing Lock](../archive/2018/challenges//abql.pdf)
+  * [Colored tiles](../archive/2018/challenges//tiles.pdf)
+  + [Gap buffer](../archive/2018/challenges//gap-buffer.pdf)
+  * [Register allocation](../archive/2018/challenges//regalloc.pdf)
+* 2017:
+  * [Dual Pivot Quicksort (PDF, 88 KB)](../archive/2017/challenge1.pdf) 
+  * [Maximum-sum subarray (PDF, 87 KB)](../archive/2017/challenge2.pdf) 
+  * [Odd-even Transposition Sort (PDF, 87 KB)](../archive/2017/challenge3.pdf) 
+  * [Tree Buffer (PDF, 92 KB)](../archive/2017/challenge4.pdf)
+* 2016:
+  * [Matrix Multiplication (PDF, 69 KB)](../archive/2016/challenges/Challenge%201%20-%20Matrix%20Multiplication.pdf)
+  * [Binary Tree Traversal (PDF, 96 KB)](../archive/2016/challenges/Challenge%202%20-%20Binary%20Tree%20Traversal%20.pdf)
+  * [Static Tree Barriers (PDF, 108 KB)](../archive/2016/challenges/Challenge%203%20-%20Static%20Tree%20Barriers.pdf)
+* 2015:
+  * [RELAXED PREFIX (PDF, 40 KB)](../archive/2015/challenges/challenge1.txt.pdf)
+  * [Parallel GCD (PDF, 39 KB)](../archive/2015/challenges/challenge2.txt.pdf)
+  * [Dancing Links (PDF, 37 KB)](../archive/2015/challenges/challenge3.txt.pdf)
+* 2014:
+  * The first challenge was part of a Dafny tutorial: Given 2 integer
+    arrays in strictly increasing order, find the number of values
+    occurring in both sequences (Coincidence Count, A Method of
+    Programming, Dijkstra & Feijen)
+  * This challenge is based on a real bug encountered in the Linux kernel source. [Challenge (PDF, 39 KB)](../archive/2014/challenges/Challenges%202014.pdf)
+* 2012:
+  * [LCP (ZIP, 2 KB)](../archive/2012/challenges/LCP.zip)
+  * [Prefix Sum (ZIP, 67 KB)](../archive/2012/challenges/PrefixSum.zip)
+  * [Tree Deletion (ZIP, 731 Bytes)](../archive/2012/challenges/TreeDel.zip)
+* 2011: 
+  - to be done

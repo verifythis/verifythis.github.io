@@ -1,6 +1,6 @@
 --- 
 title: "Specification Language #2" 
-subtitle: "Online Discussion"
+summary: "Online Discussion on Hagrid."
 date: 2021-06-23 
 tags: [hagrid, speclang] 
 ---

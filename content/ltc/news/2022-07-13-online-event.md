@@ -1,7 +1,7 @@
 --- 
 title: "Casino-Example #4"
-subtitle: Online Discussion
 date: 2022-07-13
+summary: "Online-Discussion on the Casino Example."
 tags:
   - casino
 ---

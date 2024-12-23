@@ -1,11 +1,9 @@
 --- 
 title: "Casino Example #2"
 date: 2021-12-15
-subtitle: "Online Discussion"
 tags:
   - casino
-aliases:
-  - /online-event-dec/
+summary: "Online Discussion on the Casino Example."
 ---
 
 <center>

@@ -1,6 +1,6 @@
 --- 
 title: "Casino Example #1"
-subtitle: "Online Discussion"
+summary: "Online Discussion on the Casino Example."
 date: 2021-09-29
 tags:
   - casino
