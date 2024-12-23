@@ -8,6 +8,9 @@ title: VerifyThis 2024
 weight: 2024
 ---
 
+<style>img{width:100%;}</style>
+
+
 verifyThis 2023 was organized by [Paula Herber](https://www.uni-muenster.de/EmbSys/team/herber/) (University of Münster) and [Alexander J. Summers](https://www.cs.ubc.ca/~alexsumm/) (University of British Columbia)  at ETAPS 2024 in Luxembourg.
 
 <!--more-->
