@@ -10,9 +10,24 @@ with workshop character in which three challenges are proposed that
 participants have to verify in 90 minutes each using their favourite
 program verification tool.
 
+<style>
+.pure-g {
+	display:grid; 
+	grid-template-columns: 50% 50%;
+}
+.pure-g div { 
+	padding: 1ex;
+	filter: saturate(.3);
+	
+}
+
+div.onsite{background:var(--onsite);}
+.ltc{background:var(--ltc);}
+</style>
+
 
 {{% columns %}}
-{{% column class="onsite-bg p" %}}
+{{% column class="onsite" %}}
 ## VerifyThis@ETAPS 
 
 VerifyThis is a series of program verification competitions, which has
@@ -38,7 +53,7 @@ problems will have the input-output behavior of programs in focus.
 Solutions will be judged for correctness, completeness, and elegance. 
 {{% /column %}}
 
-{{% column class="ltc-bg p" %}}
+{{% column class="ltc" %}}
 ## VerifyThis LTC 
 
 **VerifyThis Long-Term Challenge** aims at proving that deductive
