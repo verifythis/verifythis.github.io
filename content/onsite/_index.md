@@ -41,10 +41,12 @@ technology used. The correctness properties posed in problems will
 have the input-output behavior of programs in focus. Solutions will be
 judged for correctness, completeness, and elegance.
 
-## 2025 Organizers
+**The use of AI-based tools is allowed; solutions to challenges need to mention which AI tools were used, if any.**
 
--   [Thomas Wies](https://cs.nyu.edu/~wies/), University of New York
--   [Jenna DiVincenzo](https://www.cs.ubc.ca/~alexsumm/), University of British Columbia
+
+## 2025 Organizers
+-   [Jenna DiVincenzo](https://jennalwise.github.io/), Purdue, [jennad@purdue.edu](mailto:jennad@purdue.edu)
+-   [Thomas Wies](https://cs.nyu.edu/~wies/), NYU, [wies@cs.nyu.edu](mailto:wies@cs.nyu.edu)
 
 ## More information
 
@@ -59,12 +61,6 @@ judged for correctness, completeness, and elegance.
 -   [Peter Müller](/people/personal/pmueller-pers.html), ETH Zurich, Switzerland
 -   [Mattias Ulbrich](https://formal.iti.kit.edu/ulbrich/), Karlsruhe Institute of Technology, Germany
 
-## Contact
-
-Email:  [Jenna DeVincenzo](mailto:jennad@purdue.edu) and [Thomas Wies](mailto:wies@cs.nyu.edu)
-
-Web: https://verifythis.github.io/onsite
-
 ## **Sponsors**
 
 If you want to sponsor the VerifyThis 2025 event, feel free to contact us. 
@@ -76,10 +72,7 @@ More-recently, there have also been VerifyThis Long-Term Challenges
 designed for informal comparison and collaborations over several months:
 see [https://verifythis.github.io/](https://verifythis.github.io/) for details.
 
-Related events also include the Verified Software Competition (VSComp:
-[http://sites.google.com/a/vscomp.org/main/](http://sites.google.com/a/vscomp.org/main/),
-[https://sites.google.com/site/vstte2012/compet](https://sites.google.com/site/vstte2012/compet),
-[http://www.vscomp.org](http://www.vscomp.org/)) held online and the
+Related events also include the Verified Software Competition (VSComp: [http://sites.google.com/a/vscomp.org/main/](http://sites.google.com/a/vscomp.org/main/), [https://sites.google.com/site/vstte2012/compet](https://sites.google.com/site/vstte2012/compet), [http://www.vscomp.org](http://www.vscomp.org/)) held online and the
 Competition on Software Verification](http://sv-comp.sosy-lab.org/)
 focusing on evaluating systems in a way that does not require user
 interaction. SV-COMP is associated with TACAS.

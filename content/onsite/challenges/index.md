@@ -5,7 +5,7 @@ menus:
     weight: 300
 ---
 
-**tda for 2025.**
+Challenges are currently being solicited. For more information see the [Call For Problems](../cfp/).
 
 The challenges of previous competitions are available in the [archive](archive).
 

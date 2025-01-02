@@ -15,7 +15,14 @@
 	      integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
    {{ end }}
   </head>
-  <body>
+{{- $path := .Path }}
+{{- $submenu := "onsite" }}
+{{- if (strings.Contains $path "/ltc")}}
+  {{- $submenu = "ltc" }}
+{{- else}}
+  {{- $submenu = "onsite" }}
+{{- end}}  
+  <body class="{{$submenu}}">
     {{ block "menu" . }}
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
     {{ end }}
@@ -24,9 +31,35 @@
     </section>
     <section class="footer">
       <div class="foot-content">
-      {{ block "footer" . }}  
-      VerifyThis -- (c) 2024
-      {{ end }}
+	{{ block "footer" . }}
+	<h3>Contacts</h3>
+	<div class="foot-contacts">
+	  <div>
+	    <h4>2025 Organizers</h4>
+	    <ul>
+	      <li><a href="https://jennalwise.github.io/">Jenna DiVincenzo</a></li>
+	      <li><a href="https://cs.nyu.edu/~wies/">Thomas Wies</a></li>
+	    </ul>
+	  </div>
+	  <div>
+	    <h4>LTC Organizers</h4>
+	    <ul>
+	      <li><a href="https://www.lists.kit.edu/sympa/info/verifythis-ltc">Mailing list</a></li>
+	      <li><a href="https://www.sosy-lab.org/people/ernst/">Gidon Ernst</a>
+	      <li><a href="https://logic.kastel.kit.edu/weigl">Alexander Weigl</a>
+	    </ul>
+	  </div>
+	  <div>
+	    <h4>Steering Committee</h4>
+	    <ul>
+	      <li><a href="http://wwwhome.ewi.utwente.nl/%7Emarieke/">Marieke Huisman</a></li>
+	      <li><a href="http://www.cs.nuim.ie/users/dr-rosemary-monahan">Rosemary Monahan</a></li>
+	      <li><a href="/people/personal/pmueller-pers.html">Peter Müller</a></li>
+	      <li><a href="https://formal.iti.kit.edu/ulbrich/">Mattias Ulbrich</a></li>
+	    </ul>
+	  </div>	  
+	</div>	
+	{{ end }}
       </div>
     </section>
   </body>

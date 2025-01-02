@@ -74,7 +74,7 @@
     {{- with $submenu }}    
       {{- with index site.Menus . }}
         <div class="submenu {{$submenu}}">
-	    <ul class="pure-menu-list">
+	    <ul>
 	      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
 	    </ul>
       </div>

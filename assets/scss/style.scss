@@ -1,7 +1,10 @@
 // https://www.pinterest.com/pin/color-scheme-palette-image--188236459413569141/
 :root  {
     --onsite: #91ac9a;
+    --onsite-dark: #232f27;
+    
     --ltc: #8fb8ca;
+    --ltc-dark: #172830;
 }
 
 body {
@@ -9,6 +12,16 @@ body {
     margin:0pt;
     padding:0pt;
     line-height:1.5;
+
+    &.onsite {
+	--highlight: var(--onsite);
+	--highdark: var(--onsite-dark);
+    }
+    
+    &.ltc {
+	--highlight: var(--ltc);	
+	--highdark: var(--ltc-dark);
+    }
 }
 
 code {
@@ -16,18 +29,30 @@ code {
   font-size: 85%;
 }
 
-.ltc-bg {
-    background:var(--ltc);
-}
+// .ltc-bg {
+//     background:var(--ltc);
+// }
 
-.onsite-bg {
-    background:var(--onsite);
-}
+// .onsite-bg {
+//     background:var(--onsite);
+// }
 
 section.main {
     padding:2em;
     max-width:50em;
     margin:auto;
+    word-wrap: break-word;
+
+    a {
+	word-wrap: break-word;
+	color:var(--highdark);
+    }
+
+    a:hover{
+	color:#000;
+	text-weight:bold;
+	background: var(--highlight); 
+    }
 }
 
 section.footer {
@@ -40,6 +65,15 @@ section.footer {
     padding-bottom:2em;
     width:70em;
     margin:auto;
+    
+    .foot-contacts {
+	display:flex;
+	a { color: white;}
+    }
+
+    div {
+	margin-right:5em;
+    }
 }
 
 div.header {
@@ -68,30 +102,41 @@ div.header {
     a,
     a:focus,
     a:visited {
-	color: white;
+	color: var(--highdark);
 	text-decoration: none;
 	font-size: 120%;
     }
-
     a.ltc { color: var(--ltc); }
     a.onsite { color: var(--onsite); }
     
-    a:hover { olor:yellow; }
+    a:hover {
+	color:yellow;
+	text-decoration: underline;
+    }
 
 }
 
 
-.mainmenu{ background:#333;
-	   a {
-	       font-weight:bold;
-	   }
+.mainmenu{
+    background:#333;
+    
+    a {
+	font-weight:bold;
+    }
+
+    a:hover {
+	color:#333;	
+    }
+    a.ltc:hover    { background: var(--ltc); }
+    a.onsite:hover { background: var(--onsite); }
+
 }
+
 .submenu {
     background: #777;
     li{ padding:.3ex; }
     a { display: inline-block; }    
-    &.onsite {    background-color: var(--onsite); }
-    &.ltc {    background-color: var(--ltc);}
+    background-color: var(--highlight); 
 }
 
 .grid {

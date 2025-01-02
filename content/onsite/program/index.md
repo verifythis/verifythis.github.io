@@ -5,7 +5,13 @@ menus:
 title: Program
 ---
 
-<!-- VerifyThis will be held at XXX (the location for all ETAPS 2025 events) in room XXX. -->
+
+
+The program for VerifyThis will be made available closer to the competition, stay tuned!
+
+
+<!-- VerifyThis will be held at XXX (the location for all ETAPS 2025 events) in room XXX. 
+
 
 ## Saturday (provisional schedule)
 
@@ -40,3 +46,4 @@ breaks and lunch are included). We will arrange a timetable for each
 team to meet with the judges in parallel throughout the day. Please aim
 to be available from 9am to 6pm and let us know of hard constraints
 otherwise.
+-->
