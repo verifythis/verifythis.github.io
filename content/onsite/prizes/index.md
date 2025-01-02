@@ -18,4 +18,4 @@ title: Latest Awards
 ### Best Contributed Problem
 
 The winners of previous competitions are listed in the
-[archive](archive/).
+[archive](../archive/).

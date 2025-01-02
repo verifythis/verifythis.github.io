@@ -58,7 +58,7 @@ judged for correctness, completeness, and elegance.
 
 -   [Marieke Huisman](http://wwwhome.ewi.utwente.nl/%7Emarieke/), University of Twente, the Netherlands
 -   [Rosemary Monahan](http://www.cs.nuim.ie/users/dr-rosemary-monahan), Maynooth University Maynooth, Ireland
--   [Peter Müller](/people/personal/pmueller-pers.html), ETH Zurich, Switzerland
+-   [Peter Müller](https://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html), ETH Zurich, Switzerland
 -   [Mattias Ulbrich](https://formal.iti.kit.edu/ulbrich/), Karlsruhe Institute of Technology, Germany
 
 ## **Sponsors**

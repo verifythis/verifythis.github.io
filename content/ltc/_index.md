@@ -16,14 +16,14 @@ We have experienced that the state of the art of program verification allows the
 
 **VerifyThis Long-Term Challenge** aims at proving that deductive program verification can produce relevant results for real systems with acceptable effort on a large scale in a collaborative manner.
 
-The current challenge is dedicated [memcached](/03memcached), a simple LRU-cache based key-value server. Memcached is the backbone for fast response times in distributed web-application. The goal is not only to provide an investigation on the server alone, but also take the client-side and the protocol into our considerations.
+The current challenge is dedicated [memcached](03memcached), a simple LRU-cache based key-value server. Memcached is the backbone for fast response times in distributed web-application. The goal is not only to provide an investigation on the server alone, but also take the client-side and the protocol into our considerations.
 
-*   [Here is the complete description of the challenge.](/03memcached/challenge.pdf)
-*   [Here are the presentation slides (Talk given at ETAPS'23).](/03memcached/slides_etaps23.pdf)
+*   [Here is the complete description of the challenge.](03memcached/challenge.pdf)
+*   [Here are the presentation slides (Talk given at ETAPS'23).](03memcached/slides_etaps23.pdf)
 
 ## How to participate?
 
-Participation on the challenge is easy. You should pick your favourite tool for the formal software assessment, and try whether you find a bug or prove adhering of the specification in HAGRID (or a suitable abstraction). Of course you can participate in groups. Moreover, we would like to foster collaboration between participating groups. Therefor we would appreciate if you [register your group](/registration/). Do not forget to also subscribe to our [mailing list](https://www.lists.kit.edu/sympa/info/verifythis-ltc) (verifythis-ltc@lists.kit.edu) to be able to share your questions and your work and to keep up to date with the work of the rest of the teams.
+Participation on the challenge is easy. You should pick your favourite tool for the formal software assessment, and try whether you find a bug or prove adhering of the specification in HAGRID (or a suitable abstraction). Of course you can participate in groups. Moreover, we would like to foster collaboration between participating groups. Therefor we would appreciate if you [register your group](registration/). Do not forget to also subscribe to our [mailing list](https://www.lists.kit.edu/sympa/info/verifythis-ltc) (verifythis-ltc@lists.kit.edu) to be able to share your questions and your work and to keep up to date with the work of the rest of the teams.
 
 We plan to go for a Track on ISoLA 2024. In the intermediate, we plan rather informal meetings on iFM'23 and ETAPS'24.
 

@@ -45,7 +45,7 @@ Solutions will be judged for correctness, completeness, and elegance.
 program verification can produce relevant results for real systems
 with acceptable effort on a large scale in a collaborative manner.
 
-The current challenge is dedicated [memcached](/03memcached), a simple
+The current challenge is dedicated [memcached](/ltc/03memcached), a simple
 LRU-cache based key-value server. Memcached is the backbone for fast
 response times in distributed web-application. The goal is not only to
 provide an investigation on the server alone, but also take the

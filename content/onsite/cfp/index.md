@@ -17,7 +17,7 @@ We are currently looking for problem submissions! If you have recently encounter
 
 An award will be given for any submission used in the competition. To avoid spoiling the competition for others, we ask that you keep the subject of your submission private. However, note that problem authors are allowed to participate in the competition!
 
-Submissions should be sent by email to [jennad@purdue.edu](jennad@purdue.edu) and [wies@cs.nyu.edu](wies@cs.nyu.edu). The submission deadline is **February 7th, 2025.** We look forward to receiving your ideas!
+Submissions should be sent by email to [jennad@purdue.edu](mailto:jennad@purdue.edu) and [wies@cs.nyu.edu](mailto:wies@cs.nyu.edu). The submission deadline is **February 7th, 2025.** We look forward to receiving your ideas!
 
  
 #### Submission Criteria:
