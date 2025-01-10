@@ -15,7 +15,6 @@ verifyThis 2023 was organized by [Paula Herber](https://www.uni-muenster.de/EmbS
 
 <!--more-->
 
-
 ### Challenges
 
 0. **Challenge 0**: [The Rope Data Structure (PDF, 131 KB)](challenges/verifyThis2024-Challenge-0.pdf)
@@ -24,7 +23,12 @@ verifyThis 2023 was organized by [Paula Herber](https://www.uni-muenster.de/EmbS
 
 ### Solutions
 
-**missing**
+* Jean-Christophe Filliâtre: [Challenge 0](https://toccata.gitlabpages.inria.fr/toccata/gallery/verifythis_2024_challenge0.en.html)
+  [Challenge 1](https://toccata.gitlabpages.inria.fr/toccata/gallery/verifythis_2024_challenge1.en.html)
+  
+* ... more to follow. 
+
+
 
 ### Prizes
 
