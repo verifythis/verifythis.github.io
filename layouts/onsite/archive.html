@@ -1,0 +1,26 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div style="display:flex; flex-flow:wrap;">
+{{ range .Pages.ByWeight.Reverse }}
+<article class="post-preview" style="width:30%; padding:1ex; border:1px solid var(--onsite);">
+  <a href="{{ .Permalink }}">
+    <h3 class="post-title">{{ .Title }}</h3>
+    {{ if .Params.subtitle }}
+    <h4 class="post-subtitle">{{ .Params.subtitle }}</h4>
+    {{ end }}
+    {{ if .Params.image }}
+    <img src="{{ .Params.image }}" alt="{{ .Title }}" class="img-title" />
+    {{ end }}
+    {{ if .Params.video }}
+    <video loop autoplay muted playsinline class="img-title">
+      <source src="{{ .Params.video }}">
+    </video>
+    {{ end }}
+  </a>
+  <div class="post-entry">
+    {{ .Summary }}
+  </div>
+</article>
+  {{ end }}  
+</div>
+{{ end }}
