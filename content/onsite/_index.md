@@ -68,7 +68,7 @@ We are grateful for funding from
 ![](https://docs.certora.com/en/latest/_static/Certora_Logo_Black.svg)
 Certora
 
-![](archive/2024/aws.jpg)
+![](aws.jpg)
 Amazon Web Services
 
 
