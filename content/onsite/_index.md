@@ -63,7 +63,13 @@ judged for correctness, completeness, and elegance.
 
 ## **Sponsors**
 
-If you want to sponsor the VerifyThis 2025 event, feel free to contact us. 
+We are grateful for funding from 
+
+![](https://docs.certora.com/en/latest/_static/Certora_Logo_Black.svg)
+Certora
+
+![](archive/2024/aws.jpg)
+Amazon Web Services
 
 
 ## Related Events and Activities

@@ -8,14 +8,20 @@ title: Participation
 
 ### Important Dates
 
-**Grant application deadline**: TBA\
-**Competition:** May 3rd and 4th, 2025
-
+* **Travel grant application deadline:** TBA
+* **Early registration deadline (physical attendees):** February 28, 2025
+* **Normal registration deadline (physical attendees):** March 21, 2025
+* **Registration deadline (virtual attendees):** April 18, 2025
+* **Competition:** May 3rd and 4th, 2025
 
 
 ### Participation
 
-Participation is open for anybody interested. Teams of up to two people are allowed. VerifyThis will be held as a physical workshop as part of ETAPS 2025 in Hamilton, Canada. Registration for ETAPS workshops and physical presence on site is required. The actual competition will happen on the first day, whereas the second day will be used to discuss and evaluate the solutions. More details and a full program will be announced here on the website.
+Participation is open for anybody interested. Teams of up to two people are allowed. VerifyThis will be held as a hybrid workshop as part of ETAPS 2025 in Hamilton, Canada. 
+
+Registration for physical attendance of ETAPS workshops is required. To register as a physical attendee, use the [registration page of ETAPS'2025](https://etaps.org/2025/registration/) and register for both Saturday and Sunday. The actual competition will happen on the first day, whereas the second day will be used to discuss and evaluate the solutions. To register as a virtual attendee, please complete the [registration form](https://forms.gle/BRh56QLu34aor8QA7).
+
+More details and a full program will be announced [here on the website](../program/).
 
 We particularly encourage participation of:
 
