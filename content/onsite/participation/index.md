@@ -9,8 +9,8 @@ title: Participation
 ### Important Dates
 
 * **Travel grant application deadline:** TBA
-* **Early registration deadline (physical attendees):** February 28, 2025
-* **Normal registration deadline (physical attendees):** March 21, 2025
+* **Early registration deadline (physical attendees):** April 1, 2025;  ~February 28, 2025~
+* **Normal registration deadline (physical attendees):** April 18, 2025; ~March 21, 2025~
 * **Registration deadline (virtual attendees):** April 18, 2025
 * **Competition:** May 3rd and 4th, 2025
 
