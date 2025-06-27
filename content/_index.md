@@ -2,13 +2,17 @@
 title: VerifyThis Competition 
 ---
 
-# VerifyThis Competition
+# VerifyThis Competitions and Long Term Challenges
 
-The [VerifyThis](https://www.pm.inf.ethz.ch/research/verifythis.html)
-verification competition is a regular event run as an onsite meeting
-with workshop character in which three challenges are proposed that
-participants have to verify in 90 minutes each using their favourite
-program verification tool.
+The *VerifyThis Verification Competition* is a recurring event run as
+an onsite meeting with workshop character in which three challenges
+are proposed that participants have to verify in 90 minutes each using
+their favourite program verification tool.
+
+The *VerifyThis Long Term Challenge* was established as a complement
+to the short-term competitive challgenges. Here, verification tasks
+are addressed collaboratively, without the constraints of time
+pressure.
 
 <style>
 .pure-g {
@@ -17,9 +21,9 @@ program verification tool.
 }
 .pure-g div { 
 	padding: 1ex;
-	filter: saturate(.3);
+	/* filter: saturate(.3); */
 }
-div.onsite {
+.pure-g div.onsite {
     background: var(--onsite);
     padding: 20px;
 }
@@ -27,17 +31,30 @@ div.ltc {
     background: var(--ltc);
     padding: 20px;
 }
+a.button {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background: rgba(255,255,255,.5);
+}
+a:hover.button {
+    background: rgba(255,255,255,.8) !important; 
+}
+.pure-g h2 {
+    text-align: center;
+}
 </style>
 
 
 {{% columns %}}
 {{% column class="onsite" %}}
-## VerifyThis@ETAPS 
+
+## <a href="onsite" class="button">Visit VerifyThis@ETAPS</a>
 
 VerifyThis is a series of program verification competitions, which has
 taken place annually since 2011 (with the exception of 2020). Previous
 competitions in the series have been held at FoVeOOS 2011, FM 2012,
-Dagstuhl (April 2014), and ETAPS 2015---2024.
+Dagstuhl (April 2014), and ETAPS 2015---2025.
 
 The aims of the competition are:
 
@@ -58,9 +75,9 @@ Solutions will be judged for correctness, completeness, and elegance.
 {{% /column %}}
 
 {{% column class="ltc" %}}
-## VerifyThis LTC 
+## <a href="ltc" class="button">Visit VerifyThis LTC</a>
 
-**VerifyThis Long-Term Challenge** aims at proving that deductive
+The **VerifyThis Long-Term Challenge** aims at proving that deductive
 program verification can produce relevant results for real systems
 with acceptable effort on a large scale in a collaborative manner.
 
