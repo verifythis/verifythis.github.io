@@ -18,11 +18,15 @@ program verification tool.
 .pure-g div { 
 	padding: 1ex;
 	filter: saturate(.3);
-	
 }
-
-div.onsite{background:var(--onsite);}
-.ltc{background:var(--ltc);}
+div.onsite {
+    background: var(--onsite);
+    padding: 20px;
+}
+div.ltc {
+    background: var(--ltc);
+    padding: 20px;
+}
 </style>
 
 
