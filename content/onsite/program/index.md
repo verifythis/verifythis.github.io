@@ -6,12 +6,10 @@ title: Program
 ---
 
 
-
-The program for VerifyThis will be made available closer to the competition, stay tuned!
+The program for VerifyThis will be made available closer to the competition in 2026, stay tuned!
 
 
 <!-- VerifyThis will be held at XXX (the location for all ETAPS 2025 events) in room XXX. 
-
 
 ## Saturday (provisional schedule)
 

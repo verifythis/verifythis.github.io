@@ -6,7 +6,7 @@ menus:
 title: Participation	
 ---
 
-### Important Dates
+### Important Dates for VerifyThis 2025
 
 * **Travel grant application deadline:** TBA
 * **Early registration deadline (physical attendees):** April 1, 2025;  ~February 28, 2025~
@@ -14,8 +14,7 @@ title: Participation
 * **Registration deadline (virtual attendees):** April 18, 2025
 * **Competition:** May 3rd and 4th, 2025
 
-
-### Participation
+### Participation at VerifyThis 2025
 
 Participation is open for anybody interested. Teams of up to two people are allowed. VerifyThis will be held as a hybrid workshop as part of ETAPS 2025 in Hamilton, Canada. 
 
