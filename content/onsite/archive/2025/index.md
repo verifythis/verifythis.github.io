@@ -8,9 +8,6 @@ title: VerifyThis 2025
 weight: 2025
 ---
 
-<style>img{width:100%;}</style>
-
-
 VerifyThis 2025 was organized by [Thomas Wies](https://cs.nyu.edu/~wies/) (New York University) and [Jenna DiVincenzo](https://engineering.purdue.edu/ECE/People/ptProfile?resource_id=285942) (Purdue University) and took place at ETAPS 2025 at the McMaster University, Hamilton, Canada.
 
 <!--more-->
@@ -50,11 +47,22 @@ VerifyThis 2025 was organized by [Thomas Wies](https://cs.nyu.edu/~wies/) (New Y
 
 ## **Sponsors**
 
-We gratefully acknowledge generous sponsorship from [Amazon Web Services](https://aws.amazon.com/).
+We gratefully acknowledge generous sponsorship from [Amazon Web Services](https://aws.amazon.com/)
 
 <center>
 {{<figure link="https://aws.amazon.com/" 
-         src="aws.jpg" alt="Link to Amazon Web Services, who gave sponsorship"
-         caption="We are grateful for funding from Amazon Web Services."
+         src="aws.jpg" 
+         alt="Link to Amazon Web Services"
+         caption="Amazon Web Services"
          width="20em"
 >}}
+</center>
+
+and [Certora](https://certora.com/)
+<center>
+{{<figure link="https://certora.com/" 
+         src="https://docs.certora.com/en/latest/_static/Certora_Logo_Black.svg" alt="Link to Certora"
+         width="20em"
+         caption="Certora"
+>}}
+</center>

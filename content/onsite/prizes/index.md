@@ -20,12 +20,21 @@ their solutions to the challenges.
 The winners of previous competitions are listed in the 
 [archive](../archive/).
 
-We gratefully acknowledge generous sponsorship from [Amazon Web
-Services](https://aws.amazon.com/) allowing us to award the prizes.
+We gratefully acknowledge sponsorships allowing us to award the prizes
+from [Amazon Web Services](https://aws.amazon.com/)
 
 <center>
 {{<figure link="https://aws.amazon.com/" 
-         src="aws.jpg" alt="Link to Amazon Web Services, who gave sponsorship"
-         caption="We are grateful for funding from Amazon Web Services."
+         src="aws.jpg" alt="Link to Amazon Web Services"
          width="20em"
 >}}
+</center>
+
+and [Certora](https://certora.com/)
+<center>
+{{<figure link="https://certora.com/" 
+         src="https://docs.certora.com/en/latest/_static/Certora_Logo_Black.svg" alt="Link to Certora"
+         width="20em"
+         caption="Certora"
+>}}
+</center>

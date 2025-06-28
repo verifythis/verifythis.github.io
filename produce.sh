@@ -11,19 +11,19 @@ imagename="verifythis-www"
 case "$1"
 in
 
-  inside)
+    inside*)
 	cd $here
-	hugo -d out
 	owner=`stat -c "%U" $here`
-	chown -R "$owner":"$owner" $here/out
+	if [ $1 == "insideserver" ]
+	then
+		hugo server --bind 0.0.0.0 -d "$here/out"
+	else
+		hugo -d "$here/out"
+	fi
+        chown -R $owner:$owner "$here/out"
 	;;
 
-  insideserver)
-	cd $here
-	hugo server --bind 0.0.0.0
-	;;
-
-  *)
+    *)
 	if docker image ls $imagename | grep $imagename
 	then
 		echo "Image $imagename found!"
@@ -31,7 +31,13 @@ in
 		echo "Docker image not found. Run 'docker build -t $imagename .' in $here"
 		exit 1
 	fi
-	docker run -p 1313:1313 --rm -v "$here:/mnt" $imagename /mnt/produce.sh inside$1
+        mkdir -p "$here/out"
+	if [ $1 == "server" ]
+        then
+		docker run -p 1313:1313 --rm -it -v "$here:/mnt" $imagename /mnt/produce.sh insideserver
+	else
+		docker run --rm -v "$here:/mnt" $imagename /mnt/produce.sh inside
+	fi
 	;;
 esac
 
