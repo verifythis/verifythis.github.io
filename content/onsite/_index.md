@@ -1,6 +1,6 @@
 ---
 title: VerifyThis
-kind: home
+kind: page
 menus: 
   main:
     weight: 100		
@@ -13,14 +13,16 @@ img{width:100%;}
  
 # VerifyThis Competition
 
-2025 edition at ETAPS 2025 in Hamilton, Canada - consider the Participation link below!
+### Upcoming: 
+**The 2026 edition of VerifyThis at [ETAPS 2026](https://etaps.org/2026/) in Turin, Italy**
+
 
 ## About
 
 VerifyThis is a series of program verification competitions, which has
 taken place annually since 2011 (with the exception of 2020). Previous
 competitions in the series have been held at FoVeOOS 2011, FM 2012,
-Dagstuhl (April 2014), and ETAPS 2015--2024. The challenge problems
+Dagstuhl (April 2014), and ETAPS 2015--2025. The challenge problems
 and solutions of previous competitions are available in the
 [archive](archive).
 
@@ -44,15 +46,13 @@ judged for correctness, completeness, and elegance.
 **The use of AI-based tools is allowed; solutions to challenges need to mention which AI tools were used, if any.**
 
 
-## 2025 Organizers
--   [Jenna DiVincenzo](https://jennalwise.github.io/), Purdue, [jennad@purdue.edu](mailto:jennad@purdue.edu)
--   [Thomas Wies](https://cs.nyu.edu/~wies/), NYU, [wies@cs.nyu.edu](mailto:wies@cs.nyu.edu)
+## 2026 Organizers
+- [Sacha-Elie Ayoun](https://giltho.github.io/), Imperial College London, UK, [s.ayoun17@imperial.ac.uk](mailto:s.ayoun17@imperial.ac.uk)
+- [Thibault Dardinier](https://dardinier.me/), ETH Zurich, Switzerland, [thibault.dardinier@inf.ethz.ch](mailto:thibault.dardinier@inf.ethz.ch)
 
-## More information
-
--   [Call for Problems](cfp)
--   [Participation](participation)
--   [Prizes](prizes)
+## More information:
+like call for problems and call for participation will follow
+<!-- internal: look at git history! -->
 
 ## Steering Committee
 
@@ -60,17 +60,6 @@ judged for correctness, completeness, and elegance.
 -   [Rosemary Monahan](http://www.cs.nuim.ie/users/dr-rosemary-monahan), Maynooth University Maynooth, Ireland
 -   [Peter Müller](https://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html), ETH Zurich, Switzerland
 -   [Mattias Ulbrich](https://formal.iti.kit.edu/ulbrich/), Karlsruhe Institute of Technology, Germany
-
-## **Sponsors**
-
-We are grateful for funding from 
-
-![](https://docs.certora.com/en/latest/_static/Certora_Logo_Black.svg)
-Certora
-
-![](aws.jpg)
-Amazon Web Services
-
 
 ## Related Events and Activities
 
