@@ -6,21 +6,19 @@ menus:
 title: Participation	
 ---
 
-### Important Dates for VerifyThis 2025
+### Important Dates for VerifyThis 2026
 
-* **Travel grant application deadline:** TBA
-* **Early registration deadline (physical attendees):** April 1, 2025;  ~February 28, 2025~
-* **Normal registration deadline (physical attendees):** April 18, 2025; ~March 21, 2025~
-* **Registration deadline (virtual attendees):** April 18, 2025
-* **Competition:** May 3rd and 4th, 2025
+* **Travel grant application deadline:** tba
+* **Early registration deadline (physical attendees):** tba
+* **Normal registration deadline (physical attendees):** tba
+* **Registration deadline (virtual attendees):** 
+* **Competition:** April 11 and April 12 2026
 
-### Participation at VerifyThis 2025
+### Participation at VerifyThis 2026
 
-Participation is open for anybody interested. Teams of up to two people are allowed. VerifyThis will be held as a hybrid workshop as part of ETAPS 2025 in Hamilton, Canada. 
+Participation is open for anybody interested. Teams of up to two people are allowed. VerifyThis will be held <!-- as a hybrid workshop --> as part of ETAPS 2026 in Turino, Italy. 
 
-Registration for physical attendance of ETAPS workshops is required. To register as a physical attendee, use the [registration page of ETAPS'2025](https://etaps.org/2025/registration/) and register for both Saturday and Sunday. The actual competition will happen on the first day, whereas the second day will be used to discuss and evaluate the solutions. To register as a virtual attendee, please complete the [registration form](https://forms.gle/BRh56QLu34aor8QA7).
-
-More details and a full program will be announced [here on the website](../program/).
+Registration for physical attendance of ETAPS workshops is required. To register as a physical attendee, use the [registration page of ETAPS'2026](https://etaps.org/2026/registration/) and register for both Saturday and Sunday. The actual competition will happen on the first day, whereas the second day will be used to discuss and evaluate the solutions. <!-- To register as a virtual attendee, please complete the [registration form](https://forms.gle/BRh56QLu34aor8QA7). More details and a full program will be announced [here on the website](../program/). -->
 
 We particularly encourage participation of:
 

@@ -50,6 +50,11 @@ Submissions should be sent by email to [s.ayoun17@imperial.ac.uk](s.ayoun17@impe
 Contributors are encouraged to look at the [archive of previous
 problems](../archive) or here:
 
+* 2025:
+  * [Minimum Excludant (PDF, 126 KB)](../archive/2025/challenges/verifyThis2025-Challenge-1.pdf)
+  * [Linus Torvald’s Elegant Linked-List Removal (PDF, 118 KB)](../archive/2025/challenges/verifyThis2025-Challenge-2.pdf)
+  * [Persistent Arrays (PDF, 150 KB)](../archive/2025/challenges/verifyThis2025-Challenge-3.pdf)
+  * [Persistent Disjoint Sets (PDF, 161 KB)](../archive/2025/challenges/verifyThis2025-Challenge-4.pdf)
 * 2024:
   * [The Rope Data Structure (PDF, 131 KB)](../archive/2024/challenges/verifyThis2024-Challenge-0.pdf)
   * [Smart Array Copy by Shuffled Subsegments (PDF, 137 KB)](../archive/2024/challenges/verifyThis2024-Challenge-1.pdf)
