@@ -84,3 +84,25 @@ A workshop on comparative empirical evaluation of reasoning systems
 [COMPARE2012](http://compare2012.verifythis.org/) was held on June
 30th at IJCAR 2012 in Manchester. Competitions were one of the main
 topics of the workshop.
+
+## **Sponsors**
+
+We gratefully acknowledge generous sponsorship from [Amazon Web Services](https://aws.amazon.com/)
+
+<center>
+{{<figure link="https://aws.amazon.com/" 
+         src="aws.jpg" 
+         alt="Link to Amazon Web Services"
+         caption="Amazon Web Services"
+         width="20em"
+>}}
+</center>
+
+and [Jane Street](https://janestreet.com/)
+<center>
+{{<figure link="https://janestreet.com/" 
+         src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Jane_Street_Capital_Logo.svg" alt="Link to Jane Street"
+         width="20em"
+         caption="Jane Street"
+>}}
+</center>
