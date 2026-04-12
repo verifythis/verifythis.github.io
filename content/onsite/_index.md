@@ -11,9 +11,8 @@ img{width:100%;}
 </style>
 
  
-# VerifyThis Competition
+# VerifyThis Competition at ETAPS Turin 2026
 
-### Upcoming: 
 **The 2026 edition of VerifyThis at [ETAPS 2026](https://etaps.org/2026/) in Turin, Italy**
 
 
@@ -45,14 +44,16 @@ judged for correctness, completeness, and elegance.
 
 **The use of AI-based tools is allowed; solutions to challenges need to mention which AI tools were used, if any.**
 
+## Challenges
+- [Challenge 1](archive/2026/challenge1.pdf)
+- [Challenge 2](archive/2026/challenge2.pdf)
+- [Challenge 3 and 4](archive/2026/challenge3and4.pdf)
+
 
 ## 2026 Organizers
 - [Sacha-Elie Ayoun](https://giltho.github.io/), Imperial College London, UK, [s.ayoun17@imperial.ac.uk](mailto:s.ayoun17@imperial.ac.uk)
 - [Thibault Dardinier](https://dardinier.me/), ETH Zurich, Switzerland, [thibault.dardinier@inf.ethz.ch](mailto:thibault.dardinier@inf.ethz.ch)
 
-## More information:
-like call for problems and call for participation will follow
-<!-- internal: look at git history! -->
 
 ## Steering Committee
 
