@@ -2,20 +2,27 @@
 menus: 
   onsite:
     weight: 300
-title: Latest Awards	
+title: Latest Awards
+style: |
+ li { margin-botto: 10px; }
 ---
+<style>
+  .main > ul > li { margin-bottom: 20px; }
+</style>
 
 At the onsite competition the organisers award prizes to teams for
 their solutions to the challenges.
 
-## The winners from 2025 are:
+## The winners from 2026 are:
 
-* **Overall Best Team**: “Ghost in the Loop”:  Jonáš Fiala and Thibault Dardinier (Student Team)
-* **Best 1-person Team**: “Lurking in the Grass”: Alexander Summers
-* **Most Impressive Tool Medley**: “The Marians”: Marian Lingsch-Rosenfeld and Gidon Ernst
-* **Best Contributed Problem**: Ștefan Ciobâcă
-* **Innovative Tool Feature**: Model checking based on symbolic execution used by the “Delaware Blue Hens”: Stephen Siegel and Alex Wilton
-* **Innovative Tool Feature**: Fully automated memory safety verification with Broom used by “IsaTUW”: Florian Sextl
+
+* **Best Overall Team**: *The Steelmakers* – Li-yao Xia and Jacques-Henri Jourdan)
+* **Second Best Team**: *Misnomar IYKYK* – Marco Eilers and Jonáš Fiala
+* **Best One-Person Team**: *YYY*: Jean-Christophe Filliâtre
+* **Best Student Team**: The prize has been awarded to two teams:
+  * *VerCors --dev-unsafe-optimization*: Alexander Stekelenburg and Ömer Şakar
+  * *VVV*: Vladimir Gladshtein and Vitaly Kurin
+* **Most Impressive Use of AI**: *NaginAI*: Nicolas Klose
 
 The winners of previous competitions are listed in the 
 [archive](../archive/).
@@ -30,11 +37,11 @@ from [Amazon Web Services](https://aws.amazon.com/)
 >}}
 </center>
 
-and [Certora](https://certora.com/)
+and [Jane Street](https://janestreet.com/)
 <center>
-{{<figure link="https://certora.com/" 
-         src="https://docs.certora.com/en/latest/_static/Certora_Logo_Black.svg" alt="Link to Certora"
+{{<figure link="https://janestreet.com/" 
+         src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Jane_Street_Capital_Logo.svg" alt="Link to Jane Street"
          width="20em"
-         caption="Certora"
+         caption="Jane Street"
 >}}
 </center>
