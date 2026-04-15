@@ -10,7 +10,7 @@ VerifyThis will be held at [IST Torino, Via Jacopo Durandi 10](https://maps.goog
 
 See also the [official programme of ETAPS](https://etaps.org/2026/programme/programme-sat/#VerifyThis).
 
-## Saturday (provisional schedule)
+## Saturday
 
 Note: in case you are **not available on Sunday**, please let the
 organisers know before the competition.

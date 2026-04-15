@@ -52,7 +52,7 @@ judged for correctness, completeness, and elegance.
 
 ## 2026 Organizers
 - [Sacha-Elie Ayoun](https://giltho.github.io/), Imperial College London, UK, [s.ayoun17@imperial.ac.uk](mailto:s.ayoun17@imperial.ac.uk)
-- [Thibault Dardinier](https://dardinier.me/), ETH Zurich, Switzerland, [thibault.dardinier@inf.ethz.ch](mailto:thibault.dardinier@inf.ethz.ch)
+- [Thibault Dardinier](https://dardinier.me/), EPFL, Switzerland, [thibault.dardinier@epfl.ch](mailto:thibault.dardinier@epfl.ch)
 
 
 ## Steering Committee

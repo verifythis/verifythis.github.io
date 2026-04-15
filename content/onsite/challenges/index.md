@@ -5,7 +5,9 @@ menus:
     weight: 300
 ---
 
-Challenges are currently being solicited. For more information see the [Call For Problems](../cfp/).
+- [Challenge 1](../archive/2026/challenge1.pdf)
+- [Challenge 2](../archive/2026/challenge2.pdf)
+- [Challenge 3 and 4](../archive/2026/challenge3and4.pdf)
 
 The challenges of previous competitions are available in the [archive](../archive).
 
