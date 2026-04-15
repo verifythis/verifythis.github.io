@@ -16,7 +16,7 @@ their solutions to the challenges.
 ## The winners from 2026 are:
 
 
-* **Best Overall Team**: *The Steelmakers* – Li-yao Xia and Jacques-Henri Jourdan)
+* **Best Overall Team**: *The Steelmakers* – Li-yao Xia and Jacques-Henri Jourdan
 * **Second Best Team**: *Misnomar IYKYK* – Marco Eilers and Jonáš Fiala
 * **Best One-Person Team**: *YYY*: Jean-Christophe Filliâtre
 * **Best Student Team**: The prize has been awarded to two teams:
