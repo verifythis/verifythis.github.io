@@ -3,13 +3,13 @@
 This repo hosts the web pages for both verifythis onsite and ltc events. The page is available under
 https://verifythis.github.io/
 
-The webpage has been designed and implemented by Alexander Weigl (@wadoon on github).
+The webpage has been designed and implemented by Alexander Weigl (@wadoon on GitHub).
 @mattulbrich can also be asked for most questions.
 
 This page uses [Hugo](https://gohugo.io/) to compose static pages from input descriptions.
 It relies on [SASS](https://sass-lang.com/) for preprocessing of style sheets.
 
-The github workflow in `.github/workflows/hugo.yml` compiles the pages on checkin 
+The GitHub workflow in `.github/workflows/hugo.yml` compiles the pages on checkin 
 
 In order to test the page, you can do one of the following (after initialising docker, s. below)
 

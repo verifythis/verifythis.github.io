@@ -17,9 +17,9 @@ and at ETAPS 2026 in Turin, Italy.
 <!--more-->
 
 ## Challenges
-- [Challenge 1](archive/2026/challenge1.pdf)
-- [Challenge 2](archive/2026/challenge2.pdf)
-- [Challenge 3 and 4](archive/2026/challenge3and4.pdf)
+* **[Challenge 1](challenge1.pdf)** 
+* **[Challenge 2](challenge2.pdf)**  
+* **[Challenge 3 and 4](challenge3and4.pdf)**  
 
 ## Prizes
 
@@ -50,7 +50,7 @@ We gratefully acknowledge generous sponsorship from [Amazon Web Services](https:
 and [Jane Street](https://janestreet.com/)
 <center>
 {{<figure link="https://janestreet.com/" 
-         src="ane_Street_Capital_Logo.svg" alt="Link to Jane Street"
+         src="Jane_Street_Capital_Logo.svg" alt="Link to Jane Street"
          width="20em"
          caption="Jane Street"
 >}}

@@ -43,11 +43,11 @@ updated as time goes on.
     -   [tree_barrier.java (JAVA, 10 KB)](solutions//tree_barrier.java) - Challenge 2: all tasks, but not the bonus
     -   [tree_traversal.java (JAVA, 4 KB)](solutions//tree_traversal.java) - Challenge 3: Task 1 
 
-    See also Bart Jacob's [paper](http://dl.acm.org/citation.cfm?id=2955818&CFID=927804033&CFTOKEN=57745610) in the proceedings of FTfJP 2016.
+    See also Bart Jacob's [paper](https://doi.org/10.1145/2955811.2955818) in the proceedings of FTfJP 2016.
 
 -   Luca Weibel and Christiaan Dirkx (Dafny) - [Challenge 1 (DFY, 2 KB)](solutions//challenge1.dfy)
     attached to this page
--   Combined solutions of [Martin  Clochard (Why3), Léon Gondelman & Mário Pereira (Why3)](http://toccata.lri.fr/gallery/verifythis2016.en.html)
+-   Combined solutions of [Martin  Clochard (Why3), Léon Gondelman & Mário Pereira (Why3)](https://web.archive.org/web/20170603173415/http://toccata.lri.fr/gallery/verifythis2016.en.html)
 -   Jan Friso Groote (mCRL2) - [Challenge1.zip (ZIP, 5 KB)](solutions//ChallengeI.zip),
     [Challenge2.zip (ZIP, 6 KB)](solutions//ChallengeII.zip),
     [Challenge3.zip (ZIP, 246 KB)](solutions//ChallengeIII.zip)

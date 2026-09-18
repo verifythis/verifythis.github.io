@@ -54,10 +54,10 @@ here:
  
 ## Solutions
 
-Raphael Rieu (Why 3) [solutions (GZ, 49 KB)](solutions//solutions.tar.gz)
+Raphael Rieu (Why 3) [solutions (GZ, 49 KB)](solutions/solutions.tar.gz)
 
-Wytse Oortwijn and Mohsen Safari (VerCors), [Gap Buffer](https://github.com/utwente-fmt/vercors/blob/master/examples/verifythis2018/challenge1.pvl), 
-[Colored Tiles](https://github.com/utwente-fmt/vercors/blob/master/examples/verifythis2018/challenge2.pvl)
+Wytse Oortwijn and Mohsen Safari (VerCors), [Gap Buffer](https://github.com/utwente-fmt/vercors/blob/4002e68a77e170d18bcfb80e94f44c98ced220d1/examples/verifythis/2018/challenge1.pvl), 
+[Colored Tiles](https://github.com/utwente-fmt/vercors/blob/4002e68a77e170d18bcfb80e94f44c98ced220d1/examples/verifythis/2018/challenge2.pvl)
 
 ## Rules
 

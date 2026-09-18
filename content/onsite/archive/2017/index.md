@@ -82,7 +82,7 @@ In case you end up bored, here is a followup to the Why3-Challenge from Jean-Chr
 [Frama_C (C, 2 KB)](solutions/naive.c))
 
 4. Mihai Herda (KeY) 
-   [solution challenge 1 (JAVA, 3 KB)](solutions/Sort.java) solution challenge 2 ([1 (JAVA, 2 KB)](solutions/KEYsolutionchallenge2_Sort.java), [2 (PROOF, 266 KB)](solutions/KEYchallenge2.Sort(challenge2.Sort__sort((I)).JML%20normal_behavior%20operation%20contract.0.proof), [3 (PROOF, 103 KB)](solutions/KEYchallenge2.Sort(challenge2.Sort__swap((I,int,int)).JML%20normal_behavior%20operation%20contract.0.proof)) [solution challenge 3 (JAVA, 2 KB)](solutions/TreeBuffer.java)
+   [solution challenge 1 (JAVA, 3 KB)](solutions/Sort.java) solution challenge 2 ([1 (JAVA, 2 KB)](solutions/KEYsolutionchallenge2_Sort.java), [2 (PROOF, 266 KB)](solutions/KEYchallenge2.Sort_challenge2.Sort__sort_I_.JML_normal_behavior_operation_contract.0.proof), [3 (PROOF, 103 KB)](solutions/KEYchallenge2.Sort_challenge2.Sort__swap_I,int,int_.JML_normal_behavior_operation_contract.0.proof)) [solution challenge 3 (JAVA, 2 KB)](solutions/TreeBuffer.java)
 
 5. Michael Kirsten, Jonas Schiffl (KeY) [solution challenge 1 (JAVA, 2 KB)](solutions/KEYPairInsertionSort.java) ([signature (ASC, 836 Bytes)](solutions/KEYsignature.asc)),updated solution [challenge 1 (GZ, 1.4 MB)](solutions/PairInsertionSort.tar.gz), [signature (ASC, 834 Bytes)](solutions/signature.asc), [solution challenge 3 (JAVA, 3 KB)](solutions/KEYsolutionchallenge3secondsession_OddEvenTranspositionSort.java)
 ([signature (ASC, 836 Bytes)](solutions/KIVchallenge3_signature.asc), [comment (TXT, 408 Bytes)](solutions/KEYchallenge3comment.txt)) [solution challenge 4 (JAVA, 3 KB)](solutions/Kirsten_TreeBuffer.java) ([signature (ASC, 836 Bytes)](solutions/Kirsten_signature.asc)) 
