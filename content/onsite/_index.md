@@ -51,10 +51,10 @@ mention which AI tools were used, if any.**
 
 ## Steering Committee
 
-* [Marieke Huisman], University of Twente, the Netherlands
-* [Rosemary Monahan], Maynooth University Maynooth, Ireland
-* [Peter Müller], ETH Zurich, Switzerland
-* [Mattias Ulbrich], Karlsruhe Institute of Technology, Germany
+* [Marieke Huisman](https://mariekehuisman.personalweb.utwente.nl/), University of Twente, the Netherlands
+* [Rosemary Monahan](https://www.maynoothuniversity.ie/faculty-science-engineering/our-people/rosemary-monahan), Maynooth University Maynooth, Ireland
+* [Peter Müller](https://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html), ETH Zurich, Switzerland
+* [Mattias Ulbrich](https://formal.kastel.kit.edu/ulbrich/), Karlsruhe Institute of Technology, Germany
 
 ## Related Events and Activities
 
@@ -80,29 +80,3 @@ A workshop on comparative empirical evaluation of reasoning systems
 [COMPARE2012](https://dblp.org/db/conf/cade/compare2012.html) was held 
 on June 30th at IJCAR 2012 in Manchester. Competitions were one of the 
 main topics of the workshop.
-
-## Contacts
-
-## 2027 Organizers
-
-* [Mário Pereira](https://mariojppereira.github.io)
-* [Neea Rusch](https://neea.pl)
-
-## Steering Committee
-
-* [Marieke Huisman]
-* [Rosemary Monahan]
-* [Peter Müller]
-* [Mattias Ulbrich]
-
-## LTC Organizers
-
-* [Mailing list](https://www.lists.kit.edu/sympa/info/verifythis-ltc)
-* [Gidon Ernst](https://www.sosy-lab.org/people/ernst/)
-* [Alexander Weigl](https://logic.kastel.kit.edu/weigl/)
-
-
-[Marieke Huisman]: https://mariekehuisman.personalweb.utwente.nl/
-[Rosemary Monahan]: https://www.maynoothuniversity.ie/faculty-science-engineering/our-people/rosemary-monahan
-[Peter Müller]: https://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html
-[Mattias Ulbrich]: https://formal.kastel.kit.edu/ulbrich/
