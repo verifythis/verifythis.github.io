@@ -1,0 +1,13 @@
+Challenge 4: Deciding Cyclicity of a List
+
+Given: A Java linked data structure with the signature
+
+public class Node {
+  Node next;
+  public boolean cyclic() {
+    //...
+  }
+}
+
+Challenge:
+Implement and verify the method cyclic() to return true when the data structure is cyclic (i.e., this Node can be reached by following next links) and false when it is not.

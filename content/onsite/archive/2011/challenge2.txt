@@ -1,0 +1,13 @@
+Challenge 2: Finding the Maximum in a Tree
+
+Time:
+90 minutes
+
+Given:
+A non-empty binary tree, where every node carries an integer.
+
+Challenge:
+Implement and verify a program that computes the maximum of the values in the tree.
+
+Motivation:
+The challenge was constructed by the organizers to explore how tools handle heap data structures that are not lists. The challenge, nonetheless, did admit a reasonably simple specification with an abstract sequence, map, or similar data type, as it did not involve properties such as the ordering of elements in a tree. Another aspect not tested was data structure mutation.
