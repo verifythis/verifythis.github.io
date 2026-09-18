@@ -12,7 +12,7 @@ VerifyThis 2026 was organized by
 [Sacha-Elie Ayoun](https://giltho.github.io/) (Imperial College London)
 and
 [Thibault Dardinier](https://dardinier.me/) (EPFL)
-and took place at ETAPS 2026 in Turin, Italy.
+and at ETAPS 2026 in Turin, Italy.
 
 <!--more-->
 

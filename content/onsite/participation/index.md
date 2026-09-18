@@ -6,19 +6,29 @@ menus:
 title: Participation	
 ---
 
-### Important Dates for VerifyThis 2026
+### Important Dates for VerifyThis 2027
 
-* **Travel grant application deadline:** March 3, 2026
-* **Early registration deadline (physical attendees):** March 10, 2026
-* **Normal registration deadline (physical attendees):** April 3, 2026
-* **Registration deadline (virtual attendees):** April 3, 2026
-* **Competition:** April 11 and April 12 2026
+<!-- * **Travel grant application deadline:**  -->
+* **Early registration deadline (physical attendees):** TBD
+* **Normal registration deadline (physical attendees):** TBD
+* **Registration deadline (virtual attendees):** TBD
+* **Competition:** April 10 and April 11 2027
 
-### Participation at VerifyThis 2026
+### Participation at VerifyThis 2027
 
-Participation is open for anybody interested. Teams of up to two people are allowed. VerifyThis will be held as a hybrid workshop as part of ETAPS 2026 in Turino, Italy. 
+Participation is open for anybody interested. 
+Teams of up to two people are allowed. 
+VerifyThis will be held as a hybrid workshop as part of ETAPS 2027 in Copenhagen, Denmark. 
 
-Registration for physical attendance of ETAPS workshops is required. To register as a physical attendee, use the [registration page of ETAPS'2026](https://etaps.org/2026/registration/) and register for both Saturday and Sunday. The actual competition will happen on the first day, whereas the second day will be used to discuss and evaluate the solutions. To register as a virtual attendee, please complete the [registration form](https://forms.gle/HzDHWzuhERGw2WaZ8). More details and a full program will be announced [here on the website](../program/).
+<!-- 
+    Registration for physical attendance of ETAPS workshops is required. 
+    To register as a physical attendee, use the 
+    [registration page of ETAPS'2026](https://etaps.org/2026/registration/) 
+    and register for both Saturday and Sunday. 
+    The actual competition will happen on the first day, whereas the second day will be used to discuss and evaluate the solutions. 
+    To register as a virtual attendee, please complete the [registration form](https://forms.gle/HzDHWzuhERGw2WaZ8). 
+    More details and a full program will be announced [here on the website](../program/).
+-->
 
 We particularly encourage participation of:
 
@@ -26,6 +36,7 @@ We particularly encourage participation of:
 - non-developer teams / using a tool someone else developed
 - several teams using the same tool
 
+<!--
 
 ### Travel Grants
 
@@ -41,7 +52,6 @@ have a need.
 
 Please submit your application to [this form](https://docs.google.com/forms/d/e/1FAIpQLSerenw56tJTNQwMoB8MQrqeMDxriiVxWmO7SIokxHTD-Dk2Dg/viewform) by March 3rd.
 
-<!--
 The competition has funds for a limited number of travel grants. A grant
 covers the incurred travel and accommodation costs up to a certain
 limit. The currently-expected limit is EUR 400 for those coming from
