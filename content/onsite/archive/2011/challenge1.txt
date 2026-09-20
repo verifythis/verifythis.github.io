@@ -1,0 +1,27 @@
+Challenge 1: Finding the Maximum in an Array
+
+Time:
+60 minutes
+
+Given:
+A non-empty integer array a.
+
+Challenge:
+Verify that the index returned by the method max() given in Fig. 1 points to an element maximal in the array.
+
+public static int max(int[] a) {
+    int x = 0;
+    int y = a.length-1;
+    while (x != y) {
+        if (a[x] <= a[y]) x++;
+        else y--;
+    }
+    return x;
+}
+
+Fig. 1 Search by elimination
+
+Motivation:
+This challenge is an instance of Kaldewaij’s Search by Elimination [10], where an element with a given property is located by eliminating elements that do not have that property. The challenge was selected as it involves a relatively simple but interesting invariant, expressing that the maximal element is in the remaining search space rather than maintaining the maximal element found so far.
+
+[10]: A. Kaldewaij. Programming: the derivation of algorithms. Prentice-Hall, Inc., 1990.

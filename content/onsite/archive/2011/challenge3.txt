@@ -1,0 +1,13 @@
+Challenge 3: Finding Two Duplets in an Array
+
+Time:
+90 minutes
+
+Given:
+An integer array a of length n + 2 with n ≥2. It is known that at least two values stored in the array appear twice (i.e., there are at least two duplets).
+
+Challenge:
+Implement and verify a program that find two such values. You may assume that the array contains values between 0 and n−1.
+
+Motivation:
+This challenge is a popular “job interview-style” question, but we are not aware of its origin. The challenge was selected as it requires complicated array reasoning, specifications, and invariants.

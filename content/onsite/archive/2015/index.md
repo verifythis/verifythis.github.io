@@ -44,12 +44,12 @@ Competition challenges will be posted here. Tentative schedule for April
 The [solutions (ZIP, 5 KB)](solutions/challenge3-v2.zip) developed by participants during the competition, and polished
 afterwards. Solutions may be updated as time goes on.
 
--   [Jean-Christophe Filliâtre & Guillaume Melquiond (Why3)](http://toccata.lri.fr/gallery/verifythis2015.en.html)
+-   [Jean-Christophe Filliâtre & Guillaume Melquiond (Why3)](https://web.archive.org/web/20230608054552/https://toccata.lri.fr/gallery/verifythis2015.en.html)
 -   [Gidon Ernst & Jörg Pfähler (KIV)](https://swt.informatik.uni-augsburg.de/swt/projects/verifythis-competition-2015/)
 -   Nadia Polikarpova & Carlo A. Furia (AutoProof): [relaxed prefix](http://comcom.csail.mit.edu/#repo-relaxed_prefix), 
     [gcd](http://comcom.csail.mit.edu/e4pubs/#repo-gcd), [dancing lists](http://comcom.csail.mit.edu/e4pubs/#repo-dancing)
 -   [Rustan Leino (Dafny)](https://dafny.codeplex.com/SourceControl/latest#Test/VerifyThis2015/#Test)
--   Jan Friso Groote (mCRL2), attached to this page: [relaxed prefix](http://verifythis2015.cost-ic0701.org/solutions/challenge1.mcrl2?attredirects=0&d=1), [gcd](http://verifythis2015.cost-ic0701.org/solutions/challenge2.mcrl2?attredirects=0&d=1), [dancing lists](http://verifythis2015.cost-ic0701.org/solutions/challenge3-v2.mcrl2?attredirects=0&d=1)
+-   Jan Friso Groote (mCRL2), attached to this page: [relaxed prefix](https://web.archive.org/web/20230726025243/http://verifythis2015.cost-ic0701.org/solutions), [gcd](https://web.archive.org/web/20230726025243/http://verifythis2015.cost-ic0701.org/solutions), [dancing lists](https://web.archive.org/web/20230726025243/http://verifythis2015.cost-ic0701.org/solutions)
 
 ## RULES
 

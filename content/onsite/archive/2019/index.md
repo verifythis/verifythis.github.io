@@ -24,11 +24,11 @@ The competition report can be found [here (PDF, 285 KB)](solutions/Extended%20Re
 * Sample solutions by the organizers\
   [challenge 1 (ZIP, 3 KB)](solutions/SampleSolutionsChallenge1.zip), [challenge 2 (ZIP, 5 KB)](solutions/SampleSolutionsChallenge2.zip), [challenge 3 (ZIP, 2 KB)](solutions/SampleSolutionsChallenge3.zip)
 
-* Mergesort: Quentin Garchery, [challenge 1](solutions/T1challenge1.zip),
-[challenge 2](solutions/T1challenge2.zip), [challenge 3](solutions/T1challenge3.zip)
+* Mergesort: Quentin Garchery\
+ <!--[challenge 1](solutions/T1challenge1.zip),[challenge 2](solutions/T1challenge2.zip), [challenge 3](solutions/T1challenge3.zip) -->
 
 * VerCors T(w/o)o: Marieke Huisman, Sebastiaan Joosten\
-  [solutions](https://github.com/utwente-fmt/vercors/tree/master/examples/verifythis2019)
+  [solutions](https://github.com/utwente-fmt/vercors/tree/4002e68a77e170d18bcfb80e94f44c98ced220d1/examples/verifythis/2019)
 
 * Bashers: Mohammad Abdulaziz, Maximilian P L Haslbeck
 
@@ -42,13 +42,13 @@ The competition report can be found [here (PDF, 285 KB)](solutions/Extended%20Re
   [solutions](https://github.com/vprevosto/VerifyThis2019Challenges/tree/v1.0)
 
 * The Refiners: Peter Lammich, Simon Wimmer\
-  [solutions](https://ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Solutions%202019/T7/T7.zip)
+  <!-- [solutions](https://ethz.ch/content/dam/ethz/special-interest/infk/chair-program-method/pm/documents/Verify%20This/Solutions%202019/T7/T7.zip) -->
 
 * KIV: Stefan Bodenmüller, Gerhard Schellhorn\
   [solutions](https://kiv.isse.de/projects/VerifyThis2019.html)
 
 * Sophie & Wytse: Sophie Lathouwers, Wytse Oortwijn\
-  [solutions](https://github.com/utwente-fmt/vercors/tree/master/examples/verifythis2019)
+  [solutions](https://github.com/utwente-fmt/vercors/tree/4002e68a77e170d18bcfb80e94f44c98ced220d1/examples/verifythis/2019)
 
 * Coinductive Sorcery: Jasper Hugunin\
   [challenge 1 (V, 4 KB)](solutions/T10Challenge1.v), [challenge 2 (V, 5 KB)](solutions/T10Challenge2.v), [challenge 3 (V, 6 KB)](solutions/T10Challenge3.v)

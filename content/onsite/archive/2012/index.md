@@ -53,7 +53,7 @@ approximate.
 
 -   [team VeriFast (ZIP, 12 KB)](solutions/verifythis2012_team_verifast.zip)
     (competition solutions, 2012-08-30)
--   [team KIV](http://www.informatik.uni-augsburg.de/swt/projects/verifythis-competition-2012/) (2012-09-06)
+-   team KIV (2012-09-06)
 -   [team GNATprove (GZ, 4 KB)](solutions//gnatprove_final.tar.gz),
     challenges 1 and 2 (2012-12-07)
 -   [team KeY](http://formal.iti.kit.edu/%7Ebruns/VerifyThis/) (2013-07-11)

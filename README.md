@@ -3,13 +3,13 @@
 This repo hosts the web pages for both verifythis onsite and ltc events. The page is available under
 https://verifythis.github.io/
 
-The webpage has been designed and implemented by Alexander Weigl (@wadoon on github).
+The webpage has been designed and implemented by Alexander Weigl (@wadoon on GitHub).
 @mattulbrich can also be asked for most questions.
 
 This page uses [Hugo](https://gohugo.io/) to compose static pages from input descriptions.
 It relies on [SASS](https://sass-lang.com/) for preprocessing of style sheets.
 
-The github workflow in `.github/workflows/hugo.yml` compiles the pages on checkin 
+The GitHub workflow in `.github/workflows/hugo.yml` compiles the pages on checkin 
 
 In order to test the page, you can do one of the following (after initialising docker, s. below)
 
@@ -44,6 +44,7 @@ For the onsite: I assume it will be the same ;)
 To add another iteration of the etaps WS: Just copy the last one and adapt the files in an obvious fashion. It will automatically show up in the listing
 
 ## TODO 
+
 * [x] Scraping/replicate the current ETHZ site
       incl. all submitted artifacts
 * [x] Merge with VT LTC
@@ -53,10 +54,8 @@ To add another iteration of the etaps WS: Just copy the last one and adapt the f
 * [ ] Design
   * [ ] Test for small devices
 * [ ] Link checking
-* [x] Prepare 2025
-  * [x] Archive 2024
-    * [x] Created. Challenges archived 
-    * [ ] Solutions are missing. 
+* [ ] Annually: prepare year YYYY
+  * [ ] Archive YYYX: organizers, challenges, solutions, prizes, web assets
   * [ ] Update "Call for Problems"
   * [ ] Update "Call for Participation"
 
