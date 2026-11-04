@@ -8,11 +8,12 @@ title: Participation
 
 ### Important Dates for VerifyThis 2027
 
-<!-- * **Travel grant application deadline:**  -->
-* **Early registration deadline (physical attendees):** TBD
-* **Normal registration deadline (physical attendees):** TBD
-* **Registration deadline (virtual attendees):** TBD
-* **Competition:** April 10 and April 11 2027
+* Call for Problems: **18 December 2026**
+* Travel grant application deadline: TBD
+* Early registration deadline (physical attendees): TBD
+* Normal registration deadline (physical attendees): TBD
+* Registration deadline (virtual attendees): TBD
+* Competition: **April 10 and April 11 2027**
 
 ### Participation at VerifyThis 2027
 

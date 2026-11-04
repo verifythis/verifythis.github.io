@@ -11,6 +11,10 @@ menus:
 The 2027 edition of VerifyThis will take place at 
 [ETAPS 2027](https://etaps.org/2027/) in Copenhagen, Denmark.
 
+## Call for Problems
+
+We are currently accepting problem proposals -- see the <mark>[call for problems](/onsite/cfp)</mark>.
+
 ## About
 
 VerifyThis is a series of program verification competitions, which has

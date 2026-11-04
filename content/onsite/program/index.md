@@ -5,9 +5,9 @@ menus:
 title: Program
 ---
 
-The program details will be updated closer to the event.
-
+The program details will be updated closer to the event.   
 See also the [official programme of ETAPS](https://etaps.org/2027/).
+
 
 ## Saturday 10 April 2027
 
