@@ -17,7 +17,7 @@ menus:
 VerifyThis 2027 will take place as part of the European Joint Conferences on
 Theory and Practice of Software (ETAPS 2027) on 10 and 11 April 2027. It is the
 15th event in the VerifyThis competition series. Information on previous events
-and participants can be found at https://verifythis.github.io.
+and participants can be found at <https://verifythis.github.io>.
 
 The aims of the competition are:
 - to bring together those interested in formal verification, and to provide an
