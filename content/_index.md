@@ -54,7 +54,7 @@ a:hover.button {
 VerifyThis is a series of program verification competitions, which has
 taken place annually since 2011 (with the exception of 2020). Previous
 competitions in the series have been held at FoVeOOS 2011, FM 2012,
-Dagstuhl (April 2014), and ETAPS 2015---2025.
+Dagstuhl (April 2014), and ETAPS 2015---2026.
 
 The aims of the competition are:
 
